@@ -428,4 +428,3 @@ jobs:
         with:
           name: HuuHungSAMP-iOS-IPA
           path: HuuHungSAMP.ipa
-          path: HuuHungSAMP.ipa
