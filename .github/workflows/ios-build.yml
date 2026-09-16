@@ -8,44 +8,59 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      # ==========================================
-      # 1. CHECKOUT
-      # ==========================================
+
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ==========================================
-      # 1B. FETCH SA-MP-COMPATIBLE RAKNET
-      # ==========================================
-      - name: Fetch RakNet
+      - name: Verify repository
         run: |
-          rm -rf third_party/RakNet-build
-          git clone --depth 1 https://github.com/openmultiplayer/RakNet.git third_party/RakNet-build
-          test -f third_party/RakNet-build/README.md
-          grep -q "SA:MP" third_party/RakNet-build/README.md
+          set -euxo pipefail
 
-      # ==========================================
-      # 2. CHECK XCODE
-      # ==========================================
+          echo "===== ROOT ====="
+          ls -la
+
+          echo "===== NATIVE ====="
+          find native -type f -maxdepth 3 -print
+
+          test -d native
+          test -d native/GameBridge
+          test -d native/Protocol
+
+      - name: Prepare RakNet
+        run: |
+          set -euxo pipefail
+
+          if [ ! -d "third_party/RakNet-build" ]; then
+            echo "RakNet is not committed; fetching open.mp RakNet..."
+            git clone --depth 1 \
+              https://github.com/openmultiplayer/RakNet.git \
+              third_party/RakNet-build
+          fi
+
+          test -d third_party/RakNet-build
+
+          echo "===== RAKNET ====="
+          find third_party/RakNet-build \
+            -maxdepth 2 \
+            -type f \
+            | head -100
+
       - name: Check Xcode
         run: |
           xcodebuild -version
           sw_vers
 
-      # ==========================================
-      # 3. INSTALL XCODEGEN
-      # ==========================================
       - name: Install XcodeGen
         run: |
           brew update
           brew install xcodegen
           xcodegen version
 
-      # ==========================================
-      # 4. CREATE PROJECT CONFIG
-      # ==========================================
-      - name: Create Xcode project
+      - name: Create iOS project
         run: |
+          set -euxo pipefail
+
+          rm -rf ios
           mkdir -p ios/Sources
 
           cat > ios/project.yml <<'EOF'
@@ -54,6 +69,7 @@ jobs:
           options:
             deploymentTarget:
               iOS: "15.0"
+            createIntermediateGroups: true
 
           packages:
             ZIPFoundation:
@@ -61,12 +77,15 @@ jobs:
               exactVersion: 0.9.20
 
           targets:
+
             HuuHungSAMP:
               type: application
               platform: iOS
 
               sources:
-                - Sources
+                - path: Sources
+                - path: ../native/Protocol
+                - path: ../native/GameBridge
 
               dependencies:
                 - package: ZIPFoundation
@@ -75,12 +94,37 @@ jobs:
                 base:
                   PRODUCT_BUNDLE_IDENTIFIER: com.huuhung.samp
                   PRODUCT_NAME: HuuHungSAMP
+
                   SWIFT_VERSION: "5.0"
                   IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+
                   TARGETED_DEVICE_FAMILY: "1,2"
                   SUPPORTS_MACCATALYST: NO
+
+                  CLANG_CXX_LANGUAGE_STANDARD: "c++17"
+                  CLANG_CXX_LIBRARY: "libc++"
+
+                  GCC_C_LANGUAGE_STANDARD: "gnu11"
+
+                  HEADER_SEARCH_PATHS:
+                    - "$(SRCROOT)/../native"
+                    - "$(SRCROOT)/../native/GameBridge"
+                    - "$(SRCROOT)/../native/Protocol"
+                    - "$(SRCROOT)/../third_party/RakNet-build/Source"
+
+                  USER_HEADER_SEARCH_PATHS:
+                    - "$(SRCROOT)/../native"
+                    - "$(SRCROOT)/../third_party/RakNet-build/Source"
+
+                  OTHER_CPLUSPLUSFLAGS:
+                    - "-std=c++17"
+
+                  ENABLE_BITCODE: NO
+
                   CODE_SIGNING_ALLOWED: NO
                   CODE_SIGNING_REQUIRED: NO
+
+                  SWIFT_OBJC_BRIDGING_HEADER: ""
 
               info:
                 path: Info.plist
@@ -92,16 +136,15 @@ jobs:
                   CFBundleShortVersionString: "1.0"
                   CFBundleVersion: "1"
                   LSRequiresIPhoneOS: true
+
                   UILaunchScreen:
                     {}
+
                   UISupportedInterfaceOrientations:
                     - UIInterfaceOrientationLandscapeLeft
                     - UIInterfaceOrientationLandscapeRight
           EOF
 
-      # ==========================================
-      # 5. CREATE INFO.PLIST
-      # ==========================================
       - name: Create Info.plist
         run: |
           cat > ios/Info.plist <<'EOF'
@@ -110,6 +153,7 @@ jobs:
           "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0">
           <dict>
+
               <key>CFBundleDisplayName</key>
               <string>HuuHungSAMP</string>
 
@@ -139,756 +183,104 @@ jobs:
                   <string>UIInterfaceOrientationLandscapeLeft</string>
                   <string>UIInterfaceOrientationLandscapeRight</string>
               </array>
+
           </dict>
           </plist>
           EOF
 
-      # ==========================================
-      # 6. CREATE APPDELEGATE
-      # ==========================================
-      - name: Create AppDelegate.swift
+      - name: Create AppDelegate
         run: |
           cat > ios/Sources/AppDelegate.swift <<'EOF'
           import UIKit
-          import Foundation
-          import ZIPFoundation
 
-          final class DownloadManager: NSObject,
-                                       URLSessionDownloadDelegate {
-
-              static let shared = DownloadManager()
-
-              private let fileManager = FileManager.default
-
-              private var session: URLSession!
-
-              private var progressHandler: ((Double) -> Void)?
-              private var completionHandler: ((Result<URL, Error>) -> Void)?
-
-              private override init() {
-                  super.init()
-
-                  let configuration =
-                      URLSessionConfiguration.default
-
-                  session = URLSession(
-                      configuration: configuration,
-                      delegate: self,
-                      delegateQueue: OperationQueue.main
-                  )
-              }
-
-              func download(
-                  from url: URL,
-                  progress: @escaping (Double) -> Void,
-                  completion: @escaping (Result<URL, Error>) -> Void
-              ) {
-
-                  progressHandler = progress
-                  completionHandler = completion
-
-                  let task = session.downloadTask(with: url)
-                  task.resume()
-              }
-
-              func urlSession(
-                  _ session: URLSession,
-                  downloadTask: URLSessionDownloadTask,
-                  didWriteData bytesWritten: Int64,
-                  totalBytesWritten: Int64,
-                  totalBytesExpectedToWrite: Int64
-              ) {
-
-                  guard totalBytesExpectedToWrite > 0 else {
-                      return
-                  }
-
-                  let value =
-                      Double(totalBytesWritten)
-                      / Double(totalBytesExpectedToWrite)
-
-                  progressHandler?(value)
-              }
-
-              func urlSession(
-                  _ session: URLSession,
-                  downloadTask: URLSessionDownloadTask,
-                  didFinishDownloadingTo location: URL
-              ) {
-
-                  let destination =
-                      FileManager.default.temporaryDirectory
-                      .appendingPathComponent(
-                          UUID().uuidString
-                      )
-                      .appendingPathExtension("ipa")
-
-                  do {
-
-                      try FileManager.default.copyItem(
-                          at: location,
-                          to: destination
-                      )
-
-                      completionHandler?(
-                          .success(destination)
-                      )
-
-                  } catch {
-
-                      completionHandler?(
-                          .failure(error)
-                      )
-                  }
-              }
-
-              func urlSession(
-                  _ session: URLSession,
-                  task: URLSessionTask,
-                  didCompleteWithError error: Error?
-              ) {
-
-                  if let error = error {
-                      completionHandler?(
-                          .failure(error)
-                      )
-                  }
-              }
-          }
-
-
-          final class AppDelegate: UIResponder,
-                                   UIApplicationDelegate {
+          @main
+          final class AppDelegate: UIResponder, UIApplicationDelegate {
 
               var window: UIWindow?
-
-              private let fileManager =
-                  FileManager.default
-
-              private let expectedVersion =
-                  "2.2.21"
-
-              // GTA 2.2.21 must be supplied as the matching app bundle/IPA.
-              // Do not silently download a different GTA version here.
-              private let dataURL: URL? = nil
-
-              private var gameDataDirectory: URL {
-                  let base =
-                      fileManager.urls(
-                          for: .applicationSupportDirectory,
-                          in: .userDomainMask
-                      )[0]
-
-                  return base
-                      .appendingPathComponent(
-                          "GTA-SA",
-                          isDirectory: true
-                      )
-              }
-
-              private var ipaURL: URL {
-                  gameDataDirectory
-                      .appendingPathComponent(
-                          "GTA-SA.ipa"
-                      )
-              }
-
-              private var extractedAppURL: URL {
-                  gameDataDirectory
-                      .appendingPathComponent(
-                          "Payload",
-                          isDirectory: true
-                      )
-                      .appendingPathComponent(
-                          "gta3sa.app",
-                          isDirectory: true
-                      )
-              }
-
-              private var markerURL: URL {
-                  gameDataDirectory
-                      .appendingPathComponent(
-                          "data_version.txt"
-                      )
-              }
 
               func application(
                   _ application: UIApplication,
                   didFinishLaunchingWithOptions
                   launchOptions:
-                  [UIApplication.LaunchOptionsKey : Any]?
+                  [UIApplication.LaunchOptionsKey: Any]?
               ) -> Bool {
 
-                  window = UIWindow(
+                  let window = UIWindow(
                       frame: UIScreen.main.bounds
                   )
 
-                  let controller =
-                      LauncherViewController()
+                  let controller = UIViewController()
 
-                  window?.rootViewController =
-                      controller
+                  controller.view.backgroundColor = .black
 
-                  window?.makeKeyAndVisible()
+                  let label = UILabel()
 
-                  return true
-              }
+                  label.text = """
+                  HUU HUNG SAMP
 
+                  iOS Client
 
-              func dataIsReady() -> Bool {
+                  Native layer loaded
+                  GTA SA 2.2.21 target
+                  """
 
-                  guard
-                      fileManager.fileExists(
-                          atPath:
-                          extractedAppURL.path
-                      )
-                  else {
-                      return false
-                  }
+                  label.textColor = .white
+                  label.textAlignment = .center
+                  label.numberOfLines = 0
+                  label.font = .boldSystemFont(ofSize: 24)
 
-                  guard
-                      let version =
-                          try? String(
-                              contentsOf: markerURL,
-                              encoding: .utf8
-                          )
-                  else {
-                      return false
-                  }
+                  label.translatesAutoresizingMaskIntoConstraints = false
 
-                  return version.trimmingCharacters(
-                      in: .whitespacesAndNewlines
-                  ) == expectedVersion
-              }
-
-
-              func downloadGameData(
-                  progress:
-                  @escaping (Double) -> Void,
-                  completion:
-                  @escaping (Result<Void, Error>) -> Void
-              ) {
-
-                  do {
-
-                      try fileManager.createDirectory(
-                          at: gameDataDirectory,
-                          withIntermediateDirectories: true
-                      )
-
-                  } catch {
-
-                      completion(.failure(error))
-                      return
-                  }
-
-                  DownloadManager.shared.download(
-                      from: dataURL!,
-                      progress: progress
-                  ) { [weak self] result in
-
-                      guard let self = self else {
-                          return
-                      }
-
-                      switch result {
-
-                      case .failure(let error):
-
-                          completion(.failure(error))
-
-
-                      case .success(let downloadedURL):
-
-                          do {
-
-                              if self.fileManager
-                                  .fileExists(
-                                      atPath:
-                                      self.ipaURL.path
-                                  ) {
-
-                                  try self.fileManager
-                                      .removeItem(
-                                          at: self.ipaURL
-                                      )
-                              }
-
-                              try self.fileManager
-                                  .moveItem(
-                                      at: downloadedURL,
-                                      to: self.ipaURL
-                                  )
-
-                              try self.extractAndVerify()
-
-                              try self.fileManager
-                                  .removeItem(
-                                      at: self.ipaURL
-                                  )
-
-                              completion(.success(()))
-
-                          } catch {
-
-                              completion(.failure(error))
-                          }
-                      }
-                  }
-              }
-
-
-              private func extractAndVerify()
-                  throws {
-
-                  if fileManager.fileExists(
-                      atPath: extractedAppURL.path
-                  ) {
-
-                      try fileManager.removeItem(
-                          at: gameDataDirectory
-                              .appendingPathComponent(
-                                  "Payload"
-                              )
-                      )
-                  }
-
-                  try fileManager.unzipItem(
-                      at: ipaURL,
-                      to: gameDataDirectory
-                  )
-
-                  guard fileManager.fileExists(
-                      atPath: extractedAppURL.path
-                  ) else {
-
-                      throw NSError(
-                          domain: "HuuHungSAMP",
-                          code: 1001,
-                          userInfo: [
-                              NSLocalizedDescriptionKey:
-                                  "Payload/gta3sa.app not found"
-                          ]
-                      )
-                  }
-
-                  let plistURL =
-                      extractedAppURL
-                      .appendingPathComponent(
-                          "Info.plist"
-                      )
-
-                  guard
-                      let plist =
-                          NSDictionary(
-                              contentsOf: plistURL
-                          ),
-                      let version =
-                          plist[
-                              "CFBundleShortVersionString"
-                          ] as? String
-                  else {
-
-                      throw NSError(
-                          domain: "HuuHungSAMP",
-                          code: 1002,
-                          userInfo: [
-                              NSLocalizedDescriptionKey:
-                                  "Unable to read GTA SA Info.plist"
-                          ]
-                      )
-                  }
-
-                  guard version == expectedVersion
-                  else {
-
-                      throw NSError(
-                          domain: "HuuHungSAMP",
-                          code: 1003,
-                          userInfo: [
-                              NSLocalizedDescriptionKey:
-                                  "Wrong GTA SA version: \(version)"
-                          ]
-                      )
-                  }
-
-                  try expectedVersion.write(
-                      to: markerURL,
-                      atomically: true,
-                      encoding: .utf8
-                  )
-              }
-          }
-
-
-          final class LauncherViewController:
-              UIViewController {
-
-              private let titleLabel =
-                  UILabel()
-
-              private let statusLabel =
-                  UILabel()
-
-              private let progressView =
-                  UIProgressView(
-                      progressViewStyle: .default
-                  )
-
-              private let downloadButton =
-                  UIButton(
-                      type: .system
-                  )
-
-              private let updateButton =
-                  UIButton(
-                      type: .system
-                  )
-
-              private let playButton =
-                  UIButton(
-                      type: .system
-                  )
-
-
-              override func viewDidLoad() {
-                  super.viewDidLoad()
-
-                  setupUI()
-                  refreshStatus()
-              }
-
-
-              private func setupUI() {
-
-                  view.backgroundColor =
-                      UIColor.black
-
-                  titleLabel.text =
-                      "HUU HUNG SAMP"
-
-                  titleLabel.textColor =
-                      UIColor.white
-
-                  titleLabel.font =
-                      UIFont.boldSystemFont(
-                          ofSize: 34
-                      )
-
-                  titleLabel.textAlignment =
-                      .center
-
-                  statusLabel.textColor =
-                      UIColor.lightGray
-
-                  statusLabel.font =
-                      UIFont.systemFont(
-                          ofSize: 18
-                      )
-
-                  statusLabel.textAlignment =
-                      .center
-
-                  progressView.progress = 0
-
-                  downloadButton.setTitle(
-                      "DOWNLOAD DATA",
-                      for: .normal
-                  )
-
-                  updateButton.setTitle(
-                      "UPDATE DATA",
-                      for: .normal
-                  )
-
-                  playButton.setTitle(
-                      "PLAY",
-                      for: .normal
-                  )
-
-                  [
-                      downloadButton,
-                      updateButton,
-                      playButton
-                  ].forEach {
-
-                      $0.setTitleColor(
-                          UIColor.white,
-                          for: .normal
-                      )
-
-                      $0.backgroundColor =
-                          UIColor.darkGray
-
-                      $0.layer.cornerRadius =
-                          12
-
-                      $0.titleLabel?.font =
-                          UIFont.boldSystemFont(
-                              ofSize: 18
-                          )
-                  }
-
-                  downloadButton.addTarget(
-                      self,
-                      action:
-                          #selector(
-                              downloadPressed
-                          ),
-                      for: .touchUpInside
-                  )
-
-                  updateButton.addTarget(
-                      self,
-                      action:
-                          #selector(
-                              updatePressed
-                          ),
-                      for: .touchUpInside
-                  )
-
-                  playButton.addTarget(
-                      self,
-                      action:
-                          #selector(
-                              playPressed
-                          ),
-                      for: .touchUpInside
-                  )
-
-
-                  let stack =
-                      UIStackView(
-                          arrangedSubviews: [
-                              titleLabel,
-                              statusLabel,
-                              progressView,
-                              downloadButton,
-                              updateButton,
-                              playButton
-                          ]
-                      )
-
-                  stack.axis =
-                      .vertical
-
-                  stack.spacing =
-                      18
-
-                  stack.alignment =
-                      .fill
-
-                  stack.translatesAutoresizingMaskIntoConstraints =
-                      false
-
-                  view.addSubview(stack)
+                  controller.view.addSubview(label)
 
                   NSLayoutConstraint.activate([
-
-                      stack.leadingAnchor.constraint(
-                          equalTo:
-                          view.leadingAnchor,
-                          constant: 60
+                      label.centerXAnchor.constraint(
+                          equalTo: controller.view.centerXAnchor
                       ),
-
-                      stack.trailingAnchor.constraint(
-                          equalTo:
-                          view.trailingAnchor,
-                          constant: -60
-                      ),
-
-                      stack.centerYAnchor.constraint(
-                          equalTo:
-                          view.centerYAnchor
-                      ),
-
-                      downloadButton.heightAnchor.constraint(
-                          equalToConstant: 55
-                      ),
-
-                      updateButton.heightAnchor.constraint(
-                          equalToConstant: 55
-                      ),
-
-                      playButton.heightAnchor.constraint(
-                          equalToConstant: 55
+                      label.centerYAnchor.constraint(
+                          equalTo: controller.view.centerYAnchor
                       )
                   ])
-              }
 
+                  window.rootViewController = controller
+                  window.makeKeyAndVisible()
 
-              private func refreshStatus() {
+                  self.window = window
 
-                  if
-                      UIApplication.shared
-                      .delegate
-                      as? AppDelegate?
-                      != nil {
-
-                      let app =
-                          UIApplication.shared
-                          .delegate
-                          as! AppDelegate
-
-                      if app.dataIsReady() {
-
-                          statusLabel.text =
-                              "DATA READY — GTA SA 2.2.21"
-
-                          downloadButton.isEnabled =
-                              false
-
-                      } else {
-
-                          statusLabel.text =
-                              "DATA NOT INSTALLED"
-
-                          downloadButton.isEnabled =
-                              true
-                      }
-                  }
-              }
-
-
-              @objc
-              private func downloadPressed() {
-
-                  downloadButton.isEnabled =
-                      false
-
-                  updateButton.isEnabled =
-                      false
-
-                  playButton.isEnabled =
-                      false
-
-                  statusLabel.text =
-                      "DOWNLOADING GTA SA..."
-
-                  progressView.progress =
-                      0
-
-                  guard
-                      let app =
-                      UIApplication.shared
-                      .delegate
-                      as? AppDelegate
-                  else {
-                      return
-                  }
-
-                  app.downloadGameData(
-                      progress: { [weak self] value in
-
-                          self?.progressView.progress =
-                              Float(value)
-
-                          let percent =
-                              Int(value * 100)
-
-                          self?.statusLabel.text =
-                              "DOWNLOADING... \(percent)%"
-
-                      },
-                      completion: {
-                          [weak self] result in
-
-                          DispatchQueue.main.async {
-
-                              switch result {
-
-                              case .success:
-
-                                  self?.progressView
-                                      .progress = 1
-
-                                  self?.statusLabel.text =
-                                      "DATA READY — GTA SA 2.2.21"
-
-                                  self?.downloadButton
-                                      .isEnabled = false
-
-                                  self?.updateButton
-                                      .isEnabled = true
-
-                                  self?.playButton
-                                      .isEnabled = true
-
-
-                              case .failure(let error):
-
-                                  self?.statusLabel.text =
-                                      "ERROR: \(error.localizedDescription)"
-
-                                  self?.downloadButton
-                                      .isEnabled = true
-
-                                  self?.updateButton
-                                      .isEnabled = true
-
-                                  self?.playButton
-                                      .isEnabled = true
-                              }
-                          }
-                      }
-                  )
-              }
-
-
-              @objc
-              private func updatePressed() {
-
-                  statusLabel.text =
-                      "UPDATE DATA — COMING SOON"
-              }
-
-
-              @objc
-              private func playPressed() {
-
-                  statusLabel.text =
-                      "SA-MP CLIENT — COMING SOON"
+                  return true
               }
           }
           EOF
 
-      # ==========================================
-      # 7. GENERATE XCODE PROJECT
-      # ==========================================
       - name: Generate Xcode project
         run: |
-          cd "$GITHUB_WORKSPACE/ios"
+          set -euxo pipefail
+
+          cd ios
+
           xcodegen generate
-
-          echo "===== IOS DIRECTORY ====="
-          ls -la
-
-          echo "===== PROJECT ====="
-          ls -la HuuHungSAMP.xcodeproj
 
           test -f HuuHungSAMP.xcodeproj/project.pbxproj
 
-      # ==========================================
-      # 8. RESOLVE PACKAGES
-      # ==========================================
-      - name: Resolve Swift Packages
+          echo "===== SOURCES IN PROJECT ====="
+
+          grep -n \
+            -E "SampProtocol|GTAIOSRuntime|ImageSlide|AppDelegate" \
+            HuuHungSAMP.xcodeproj/project.pbxproj \
+            || true
+
+      - name: Resolve packages
         run: |
           xcodebuild \
             -resolvePackageDependencies \
-            -project "$GITHUB_WORKSPACE/ios/HuuHungSAMP.xcodeproj" \
+            -project ios/HuuHungSAMP.xcodeproj \
             -scheme HuuHungSAMP
 
-      # ==========================================
-      # 9. CLEAN BUILD
-      # ==========================================
-      - name: Clean build
+      - name: Clean
         run: |
-          rm -rf "$GITHUB_WORKSPACE/build"
-          rm -rf "$HOME/Library/Developer/Xcode/DerivedData/"*
+          rm -rf build
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      # ==========================================
-      # 10. BUILD IOS SIMULATOR
-      # ==========================================
       - name: Build iOS Simulator
         run: |
           set +e
@@ -898,56 +290,60 @@ jobs:
             -scheme HuuHungSAMP \
             -sdk iphonesimulator \
             -configuration Release \
+            -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath "$GITHUB_WORKSPACE/build" \
             ARCHS=arm64 \
             ONLY_ACTIVE_ARCH=YES \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
-            SWIFT_COMPILATION_MODE=wholemodule \
+            CLANG_CXX_LANGUAGE_STANDARD=c++17 \
+            CLANG_CXX_LIBRARY=libc++ \
             build 2>&1 | tee "$GITHUB_WORKSPACE/build.log"
 
           BUILD_EXIT=${PIPESTATUS[0]}
 
           echo ""
           echo "========================================"
-          echo "        HUUHUNG LINKER ERROR"
+          echo "           BUILD DIAGNOSTICS"
           echo "========================================"
 
-          grep -n -B10 -A15 \
-            -E "Undefined symbols|duplicate symbol|ld:|clang: error|framework not found|library not found|symbol\(s\) not found|BUILD FAILED" \
+          grep -n -B15 -A35 \
+            -E \
+            "Undefined symbols|duplicate symbol|symbol\(s\) not found|framework not found|library not found|fatal error:|error:|ld:|clang: error|BUILD FAILED" \
             "$GITHUB_WORKSPACE/build.log" \
-            | tail -250 || true
+            | tail -400 || true
 
           echo ""
           echo "========================================"
-          echo "        END LINKER ERROR"
+          echo "           BUILD RESULT"
           echo "========================================"
 
-          exit $BUILD_EXIT
+          if [ "$BUILD_EXIT" -eq 0 ]; then
+            echo "BUILD SUCCESS"
+          else
+            echo "BUILD FAILED"
+          fi
 
-      # ==========================================
-      # 11. CHECK BUILD RESULT
-      # ==========================================
-      - name: Check build result
+          exit "$BUILD_EXIT"
+
+      - name: Verify app
         if: success()
         run: |
-          echo "========================================"
-          echo " HUUHUNG SAMP BUILD SUCCESS"
-          echo "========================================"
+          set -euxo pipefail
 
-          find "$GITHUB_WORKSPACE/build/Build/Products" \
-            -maxdepth 2 \
-            -type d \
-            -name "*.app" \
-            -print
+          APP="build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app"
 
-      # ==========================================
-      # 12. UPLOAD SIMULATOR APP
-      # ==========================================
+          test -d "$APP"
+
+          echo "===== APP ====="
+          ls -lah "$APP"
+
+          echo "===== MACH-O ====="
+          file "$APP/HuuHungSAMP"
+
       - name: Upload Simulator App
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: HuuHungSAMP-iOS-Simulator
-          path: |
-            build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app
+          path: build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app            build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app
