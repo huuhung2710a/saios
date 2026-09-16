@@ -1,4 +1,4 @@
-name: HuuHungSAMP iOS
+Name: HuuHungSAMP iOS IPA
 
 on:
   workflow_dispatch:
@@ -49,32 +49,14 @@ jobs:
           set -euxo pipefail
 
           if [ ! -d "third_party/RakNet-build" ]; then
-
-            echo "RakNet not found."
-            echo "Fetching open.mp RakNet..."
-
+            echo "RakNet not found. Fetching open.mp RakNet..."
             mkdir -p third_party
-
-            git clone \
-              --depth 1 \
-              https://github.com/openmultiplayer/RakNet.git \
-              third_party/RakNet-build
-
+            git clone --depth 1 https://github.com/openmultiplayer/RakNet.git third_party/RakNet-build
           else
-
             echo "RakNet already exists."
-
           fi
 
           test -d third_party/RakNet-build
-
-          echo ""
-          echo "===== RAKNET ====="
-
-          find third_party/RakNet-build \
-            -maxdepth 2 \
-            -type f \
-            | head -100
 
 
       # ==========================================
@@ -83,12 +65,7 @@ jobs:
       - name: Check Xcode
         run: |
           set -euxo pipefail
-
-          echo "===== XCODE ====="
           xcodebuild -version
-
-          echo ""
-          echo "===== MACOS ====="
           sw_vers
 
 
@@ -98,31 +75,23 @@ jobs:
       - name: Install XcodeGen
         run: |
           set -euxo pipefail
-
           brew update
           brew install xcodegen
-
           xcodegen version
 
 
       # ==========================================
-      # 6. PREPARE IOS
+      # 6. PREPARE IOS DIRECTORY
       # ==========================================
       - name: Prepare iOS project
         run: |
           set -euxo pipefail
-
           rm -rf ios
-
           mkdir -p ios/Sources
-
-          echo "===== IOS DIRECTORY ====="
-          find ios -maxdepth 2 -print
 
 
       # ==========================================
       # 7. CREATE XCODE PROJECT CONFIG
-      # NO ZIPFOUNDATION
       # ==========================================
       - name: Create project.yml
         run: |
@@ -141,97 +110,57 @@ jobs:
               platform: iOS
 
               sources:
-
                 - path: Sources
-
                 - path: ../native/Protocol
-
                 - path: ../native/GameBridge
 
               settings:
                 base:
-
                   PRODUCT_BUNDLE_IDENTIFIER: com.huuhung.samp
-
                   PRODUCT_NAME: HuuHungSAMP
-
                   SWIFT_VERSION: "5.0"
-
                   IPHONEOS_DEPLOYMENT_TARGET: "15.0"
-
                   TARGETED_DEVICE_FAMILY: "1,2"
-
                   SUPPORTS_MACCATALYST: NO
-
                   CLANG_CXX_LANGUAGE_STANDARD: "c++17"
-
                   CLANG_CXX_LIBRARY: "libc++"
-
                   GCC_C_LANGUAGE_STANDARD: "gnu11"
 
                   HEADER_SEARCH_PATHS:
-
                     - "$(SRCROOT)/../native"
-
                     - "$(SRCROOT)/../native/GameBridge"
-
                     - "$(SRCROOT)/../native/Protocol"
-
                     - "$(SRCROOT)/../third_party/RakNet-build/Source"
 
                   USER_HEADER_SEARCH_PATHS:
-
                     - "$(SRCROOT)/../native"
-
                     - "$(SRCROOT)/../native/GameBridge"
-
                     - "$(SRCROOT)/../native/Protocol"
-
                     - "$(SRCROOT)/../third_party/RakNet-build/Source"
 
                   OTHER_CPLUSPLUSFLAGS:
-
                     - "-std=c++17"
 
                   ENABLE_BITCODE: NO
-
                   CODE_SIGNING_ALLOWED: NO
-
                   CODE_SIGNING_REQUIRED: NO
+                  CODE_SIGN_IDENTITY: ""
 
               info:
-
                 path: Info.plist
-
                 properties:
-
                   CFBundleDisplayName: HuuHungSAMP
-
                   CFBundleIdentifier: com.huuhung.samp
-
                   CFBundleName: HuuHungSAMP
-
                   CFBundlePackageType: APPL
-
                   CFBundleShortVersionString: "1.0"
-
                   CFBundleVersion: "1"
-
                   LSRequiresIPhoneOS: true
-
-                  UILaunchScreen:
-                    {}
-
+                  UILaunchScreen: {}
                   UISupportedInterfaceOrientations:
-
                     - UIInterfaceOrientationLandscapeLeft
-
                     - UIInterfaceOrientationLandscapeRight
-
           EOF
-
-          echo "===== project.yml ====="
-          cat ios/project.yml
 
 
       # ==========================================
@@ -241,64 +170,37 @@ jobs:
         run: |
           cat > ios/Info.plist <<'EOF'
           <?xml version="1.0" encoding="UTF-8"?>
-
-          <!DOCTYPE plist PUBLIC
-          "-//Apple//DTD PLIST 1.0//EN"
-          "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0">
-
           <dict>
-
               <key>CFBundleDisplayName</key>
               <string>HuuHungSAMP</string>
-
               <key>CFBundleIdentifier</key>
               <string>com.huuhung.samp</string>
-
               <key>CFBundleName</key>
               <string>HuuHungSAMP</string>
-
               <key>CFBundlePackageType</key>
               <string>APPL</string>
-
               <key>CFBundleShortVersionString</key>
               <string>1.0</string>
-
               <key>CFBundleVersion</key>
               <string>1</string>
-
               <key>LSRequiresIPhoneOS</key>
               <true/>
-
               <key>UILaunchScreen</key>
               <dict/>
-
               <key>UISupportedInterfaceOrientations</key>
-
               <array>
-
-                  <string>
-                  UIInterfaceOrientationLandscapeLeft
-                  </string>
-
-                  <string>
-                  UIInterfaceOrientationLandscapeRight
-                  </string>
-
+                  <string>UIInterfaceOrientationLandscapeLeft</string>
+                  <string>UIInterfaceOrientationLandscapeRight</string>
               </array>
-
           </dict>
-
           </plist>
           EOF
 
-          echo "===== Info.plist ====="
-          cat ios/Info.plist
-
 
       # ==========================================
-      # 9. APPDELEGATE
+      # 9. APPDELEGATE.SWIFT
       # ==========================================
       - name: Create AppDelegate.swift
         run: |
@@ -306,295 +208,103 @@ jobs:
           import UIKit
           import Foundation
 
-          final class AppDelegate:
-              UIResponder,
-              UIApplicationDelegate {
-
+          final class AppDelegate: UIResponder, UIApplicationDelegate {
               var window: UIWindow?
 
               func application(
                   _ application: UIApplication,
-                  didFinishLaunchingWithOptions
-                  launchOptions:
-                  [UIApplication.LaunchOptionsKey: Any]?
+                  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
               ) -> Bool {
-
-                  let window =
-                      UIWindow(
-                          frame:
-                          UIScreen.main.bounds
-                      )
-
-                  let controller =
-                      LauncherViewController()
-
-                  window.rootViewController =
-                      controller
-
+                  let window = UIWindow(frame: UIScreen.main.bounds)
+                  let controller = LauncherViewController()
+                  window.rootViewController = controller
                   window.makeKeyAndVisible()
-
-                  self.window =
-                      window
-
-                  print(
-                      "[HUUHUNG] Application launched"
-                  )
-
+                  self.window = window
+                  print("[HUUHUNG] Application launched")
                   return true
               }
           }
 
-
-          final class LauncherViewController:
-              UIViewController {
-
-              private let titleLabel =
-                  UILabel()
-
-              private let statusLabel =
-                  UILabel()
-
-              private let downloadButton =
-                  UIButton(type: .system)
-
-              private let updateButton =
-                  UIButton(type: .system)
-
-              private let playButton =
-                  UIButton(type: .system)
-
+          final class LauncherViewController: UIViewController {
+              private let titleLabel = UILabel()
+              private let statusLabel = UILabel()
+              private let downloadButton = UIButton(type: .system)
+              private let updateButton = UIButton(type: .system)
+              private let playButton = UIButton(type: .system)
 
               override func viewDidLoad() {
-
                   super.viewDidLoad()
-
                   setupUI()
               }
 
-
               private func setupUI() {
+                  view.backgroundColor = .black
 
-                  view.backgroundColor =
-                      .black
+                  titleLabel.text = "HUU HUNG SAMP"
+                  titleLabel.textColor = .white
+                  titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
+                  titleLabel.textAlignment = .center
 
+                  statusLabel.text = "GTA SA 2.2.21"
+                  statusLabel.textColor = .lightGray
+                  statusLabel.font = UIFont.systemFont(ofSize: 18)
+                  statusLabel.textAlignment = .center
 
-                  titleLabel.text =
-                      "HUU HUNG SAMP"
+                  configureButton(downloadButton, title: "DOWNLOAD DATA")
+                  configureButton(updateButton, title: "UPDATE DATA")
+                  configureButton(playButton, title: "PLAY")
 
-                  titleLabel.textColor =
-                      .white
+                  downloadButton.addTarget(self, action: #selector(downloadPressed), for: .touchUpInside)
+                  updateButton.addTarget(self, action: #selector(updatePressed), for: .touchUpInside)
+                  playButton.addTarget(self, action: #selector(playPressed), for: .touchUpInside)
 
-                  titleLabel.font =
-                      UIFont.boldSystemFont(
-                          ofSize: 36
-                      )
-
-                  titleLabel.textAlignment =
-                      .center
-
-
-                  statusLabel.text =
-                      "GTA SA 2.2.21"
-
-                  statusLabel.textColor =
-                      .lightGray
-
-                  statusLabel.font =
-                      UIFont.systemFont(
-                          ofSize: 18
-                      )
-
-                  statusLabel.textAlignment =
-                      .center
-
-
-                  configureButton(
-                      downloadButton,
-                      title: "DOWNLOAD DATA"
-                  )
-
-
-                  configureButton(
-                      updateButton,
-                      title: "UPDATE DATA"
-                  )
-
-
-                  configureButton(
-                      playButton,
-                      title: "PLAY"
-                  )
-
-
-                  downloadButton.addTarget(
-                      self,
-                      action:
-                          #selector(
-                              downloadPressed
-                          ),
-                      for:
-                          .touchUpInside
-                  )
-
-
-                  updateButton.addTarget(
-                      self,
-                      action:
-                          #selector(
-                              updatePressed
-                          ),
-                      for:
-                          .touchUpInside
-                  )
-
-
-                  playButton.addTarget(
-                      self,
-                      action:
-                          #selector(
-                              playPressed
-                          ),
-                      for:
-                          .touchUpInside
-                  )
-
-
-                  let stack =
-                      UIStackView(
-                          arrangedSubviews: [
-
-                              titleLabel,
-
-                              statusLabel,
-
-                              downloadButton,
-
-                              updateButton,
-
-                              playButton
-
-                          ]
-                      )
-
-
-                  stack.axis =
-                      .vertical
-
-                  stack.spacing =
-                      20
-
-                  stack.translatesAutoresizingMaskIntoConstraints =
-                      false
-
+                  let stack = UIStackView(arrangedSubviews: [
+                      titleLabel, statusLabel, downloadButton, updateButton, playButton
+                  ])
+                  stack.axis = .vertical
+                  stack.spacing = 20
+                  stack.translatesAutoresizingMaskIntoConstraints = false
 
                   view.addSubview(stack)
 
-
                   NSLayoutConstraint.activate([
-
-                      stack.leadingAnchor.constraint(
-                          equalTo:
-                              view.leadingAnchor,
-                          constant: 80
-                      ),
-
-                      stack.trailingAnchor.constraint(
-                          equalTo:
-                              view.trailingAnchor,
-                          constant: -80
-                      ),
-
-                      stack.centerYAnchor.constraint(
-                          equalTo:
-                              view.centerYAnchor
-                      ),
-
-                      downloadButton.heightAnchor.constraint(
-                          equalToConstant: 60
-                      ),
-
-                      updateButton.heightAnchor.constraint(
-                          equalToConstant: 60
-                      ),
-
-                      playButton.heightAnchor.constraint(
-                          equalToConstant: 60
-                      )
-
+                      stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
+                      stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
+                      stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                      downloadButton.heightAnchor.constraint(equalToConstant: 60),
+                      updateButton.heightAnchor.constraint(equalToConstant: 60),
+                      playButton.heightAnchor.constraint(equalToConstant: 60)
                   ])
               }
 
-
-              private func configureButton(
-                  _ button: UIButton,
-                  title: String
-              ) {
-
-                  button.setTitle(
-                      title,
-                      for: .normal
-                  )
-
-                  button.setTitleColor(
-                      .white,
-                      for: .normal
-                  )
-
-                  button.backgroundColor =
-                      .darkGray
-
-                  button.layer.cornerRadius =
-                      12
-
-                  button.titleLabel?.font =
-                      UIFont.boldSystemFont(
-                          ofSize: 18
-                      )
+              private func configureButton(_ button: UIButton, title: String) {
+                  button.setTitle(title, for: .normal)
+                  button.setTitleColor(.white, for: .normal)
+                  button.backgroundColor = .darkGray
+                  button.layer.cornerRadius = 12
+                  button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
               }
 
-
-              @objc
-              private func downloadPressed() {
-
-                  statusLabel.text =
-                      "DATA DOWNLOAD"
-
-                  print(
-                      "[HUUHUNG] DOWNLOAD DATA"
-                  )
+              @objc private func downloadPressed() {
+                  statusLabel.text = "DATA DOWNLOAD"
+                  print("[HUUHUNG] DOWNLOAD DATA")
               }
 
-
-              @objc
-              private func updatePressed() {
-
-                  statusLabel.text =
-                      "DATA UPDATE"
-
-                  print(
-                      "[HUUHUNG] UPDATE DATA"
-                  )
+              @objc private func updatePressed() {
+                  statusLabel.text = "DATA UPDATE"
+                  print("[HUUHUNG] UPDATE DATA")
               }
 
-
-              @objc
-              private func playPressed() {
-
-                  statusLabel.text =
-                      "SA-MP CLIENT"
-
-                  print(
-                      "[HUUHUNG] PLAY"
-                  )
+              @objc private func playPressed() {
+                  statusLabel.text = "SA-MP CLIENT"
+                  print("[HUUHUNG] PLAY")
               }
-
           }
           EOF
 
 
       # ==========================================
       # 10. MAIN.SWIFT
-      # FIX _main
       # ==========================================
       - name: Create main.swift
         run: |
@@ -611,47 +321,13 @@ jobs:
 
 
       # ==========================================
-      # 11. CHECK NO UNWANTED DEPENDENCIES
+      # 11. CHECK DEPENDENCIES
       # ==========================================
       - name: Check dependencies
         run: |
           set -euxo pipefail
-
-          echo "===== CHECK ZIPFOUNDATION ====="
-
-          if grep -Rni \
-            "ZIPFoundation" \
-            ios \
-            2>/dev/null; then
-
-              echo "ERROR: ZIPFoundation still exists."
-
-              exit 1
-
-          else
-
-              echo "OK: ZIPFoundation removed."
-
-          fi
-
-
-          echo ""
-          echo "===== CHECK UIUTILITIES ====="
-
-          if grep -Rni \
-            "UIUtilities" \
-            ios \
-            2>/dev/null; then
-
-              echo "ERROR: UIUtilities reference found."
-
-              exit 1
-
-          else
-
-              echo "OK: UIUtilities not referenced."
-
-          fi
+          if grep -Rni "ZIPFoundation" ios 2>/dev/null; then exit 1; fi
+          if grep -Rni "UIUtilities" ios 2>/dev/null; then exit 1; fi
 
 
       # ==========================================
@@ -660,32 +336,9 @@ jobs:
       - name: Generate Xcode project
         run: |
           set -euxo pipefail
-
           cd ios
-
           xcodegen generate
-
-          echo ""
-          echo "===== GENERATED IOS PROJECT ====="
-
-          find . \
-            -maxdepth 3 \
-            -type f \
-            -print
-
-
-          test -f \
-            HuuHungSAMP.xcodeproj/project.pbxproj
-
-
-          echo ""
-          echo "===== PROJECT SOURCES ====="
-
-          grep -n \
-            -E \
-            "AppDelegate|main.swift|SampProtocol|GTAIOSRuntime|ImageSlide" \
-            HuuHungSAMP.xcodeproj/project.pbxproj \
-            || true
+          test -f HuuHungSAMP.xcodeproj/project.pbxproj
 
 
       # ==========================================
@@ -694,145 +347,75 @@ jobs:
       - name: Clean build
         run: |
           set -euxo pipefail
-
-          rm -rf \
-            "$GITHUB_WORKSPACE/build"
-
-          rm -rf \
-            "$HOME/Library/Developer/Xcode/DerivedData/"*
+          rm -rf "$GITHUB_WORKSPACE/build"
+          rm -rf "$HOME/Library/Developer/Xcode/DerivedData/"*
 
 
       # ==========================================
-      # 14. BUILD IOS SIMULATOR
+      # 14. BUILD FOR IPHONEOS (REAL DEVICE)
       # ==========================================
-      - name: Build iOS Simulator
+      - name: Build iOS App (iphoneos)
         run: |
-
           set +e
 
-          echo ""
           echo "========================================"
-          echo "       HUUHUNG IOS BUILD START"
+          echo "       HUUHUNG IOS DEVICE BUILD"
           echo "========================================"
 
           xcodebuild \
-            -project \
-              "$GITHUB_WORKSPACE/ios/HuuHungSAMP.xcodeproj" \
-            -scheme \
-              HuuHungSAMP \
-            -sdk \
-              iphonesimulator \
-            -configuration \
-              Release \
-            -destination \
-              'generic/platform=iOS Simulator' \
-            -derivedDataPath \
-              "$GITHUB_WORKSPACE/build" \
+            -project "$GITHUB_WORKSPACE/ios/HuuHungSAMP.xcodeproj" \
+            -scheme HuuHungSAMP \
+            -sdk iphoneos \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$GITHUB_WORKSPACE/build" \
             ARCHS=arm64 \
-            ONLY_ACTIVE_ARCH=YES \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES \
             CLANG_CXX_LANGUAGE_STANDARD=c++17 \
             CLANG_CXX_LIBRARY=libc++ \
             build \
-            2>&1 |
-            tee \
-              "$GITHUB_WORKSPACE/build.log"
-
+            2>&1 | tee "$GITHUB_WORKSPACE/build.log"
 
           BUILD_EXIT=${PIPESTATUS[0]}
 
-
-          echo ""
-          echo "========================================"
-          echo "       HUUHUNG BUILD DIAGNOSTICS"
-          echo "========================================"
-
-
-          grep -n \
-            -B20 \
-            -A40 \
-            -E \
-            "Undefined symbols|duplicate symbol|symbol\(s\) not found|framework not found|library not found|fatal error:|error:|ld:|clang: error|BUILD FAILED" \
-            "$GITHUB_WORKSPACE/build.log" \
-            | tail -500 \
-            || true
-
-
-          echo ""
-          echo "========================================"
-          echo "             BUILD RESULT"
-          echo "========================================"
-
-
-          if [ "$BUILD_EXIT" -eq 0 ]; then
-
-              echo "BUILD SUCCESS"
-
-          else
-
+          if [ "$BUILD_EXIT" -ne 0 ]; then
               echo "BUILD FAILED"
-
+              grep -n -B10 -A20 -E "Undefined symbols|error:|ld:|clang: error|BUILD FAILED" "$GITHUB_WORKSPACE/build.log" | tail -300 || true
+              exit "$BUILD_EXIT"
           fi
 
-
-          exit "$BUILD_EXIT"
+          echo "BUILD SUCCESS"
 
 
       # ==========================================
-      # 15. VERIFY APP
+      # 15. PACKAGE IPA
       # ==========================================
-      - name: Verify app
-        if: success()
+      - name: Package IPA File
         run: |
-
           set -euxo pipefail
 
-          APP="$GITHUB_WORKSPACE/build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app"
+          APP_DIR="$GITHUB_WORKSPACE/build/Build/Products/Release-iphoneos/HuuHungSAMP.app"
+          test -d "$APP_DIR"
 
+          cd "$GITHUB_WORKSPACE/build/Build/Products/Release-iphoneos"
 
-          echo "========================================"
-          echo "             APP VERIFY"
-          echo "========================================"
+          mkdir -p Payload
+          cp -R HuuHungSAMP.app Payload/
 
+          zip -r "$GITHUB_WORKSPACE/HuuHungSAMP.ipa" Payload
 
-          test -d "$APP"
-
-
-          echo ""
-          echo "===== APP ====="
-
-          ls -lah "$APP"
-
-
-          echo ""
-          echo "===== EXECUTABLE ====="
-
-          file \
-            "$APP/HuuHungSAMP"
-
-
-          echo ""
-          echo "===== ARCHITECTURE ====="
-
-          lipo \
-            -info \
-            "$APP/HuuHungSAMP"
-
-
-          echo ""
-          echo "===== APP VERIFIED ====="
+          echo "===== IPA CREATED SUCCESSFULLY ====="
+          ls -lh "$GITHUB_WORKSPACE/HuuHungSAMP.ipa"
 
 
       # ==========================================
-      # 16. UPLOAD APP
+      # 16. UPLOAD IPA ARTIFACT
       # ==========================================
-      - name: Upload Simulator App
-        if: success()
+      - name: Upload IPA Artifact
         uses: actions/upload-artifact@v4
         with:
-
-          name: HuuHungSAMP-iOS-Simulator
-
-          path: |
-            build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app
+          name: HuuHungSAMP-iOS-IPA
+          path: HuuHungSAMP.ipa
