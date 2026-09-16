@@ -23,9 +23,16 @@ jobs:
         run: |
           set -euxo pipefail
 
+          echo "========================================"
+          echo "        HUUHUNG REPOSITORY CHECK"
+          echo "========================================"
+
+          echo ""
           echo "===== ROOT ====="
+          pwd
           ls -la
 
+          echo ""
           echo "===== NATIVE ====="
           find native -maxdepth 3 -type f -print || true
 
@@ -35,28 +42,35 @@ jobs:
 
 
       # ==========================================
-      # 3. RAKNET
+      # 3. PREPARE RAKNET
       # ==========================================
       - name: Prepare RakNet
         run: |
           set -euxo pipefail
 
           if [ ! -d "third_party/RakNet-build" ]; then
-            echo "RakNet not found in repository."
+
+            echo "RakNet not found."
             echo "Fetching open.mp RakNet..."
 
             mkdir -p third_party
 
-            git clone --depth 1 \
+            git clone \
+              --depth 1 \
               https://github.com/openmultiplayer/RakNet.git \
               third_party/RakNet-build
+
           else
+
             echo "RakNet already exists."
+
           fi
 
           test -d third_party/RakNet-build
 
-          echo "===== RAKNET FILES ====="
+          echo ""
+          echo "===== RAKNET ====="
+
           find third_party/RakNet-build \
             -maxdepth 2 \
             -type f \
@@ -64,36 +78,51 @@ jobs:
 
 
       # ==========================================
-      # 4. XCODE
+      # 4. CHECK XCODE
       # ==========================================
       - name: Check Xcode
         run: |
+          set -euxo pipefail
+
+          echo "===== XCODE ====="
           xcodebuild -version
+
+          echo ""
+          echo "===== MACOS ====="
           sw_vers
 
 
       # ==========================================
-      # 5. XCODEGEN
+      # 5. INSTALL XCODEGEN
       # ==========================================
       - name: Install XcodeGen
         run: |
+          set -euxo pipefail
+
           brew update
           brew install xcodegen
+
           xcodegen version
 
 
       # ==========================================
-      # 6. CREATE IOS DIRECTORIES
+      # 6. PREPARE IOS
       # ==========================================
       - name: Prepare iOS project
         run: |
           set -euxo pipefail
 
+          rm -rf ios
+
           mkdir -p ios/Sources
+
+          echo "===== IOS DIRECTORY ====="
+          find ios -maxdepth 2 -print
 
 
       # ==========================================
       # 7. CREATE XCODE PROJECT CONFIG
+      # NO ZIPFOUNDATION
       # ==========================================
       - name: Create project.yml
         run: |
@@ -105,11 +134,6 @@ jobs:
               iOS: "15.0"
             createIntermediateGroups: true
 
-          packages:
-            ZIPFoundation:
-              url: https://github.com/weichsel/ZIPFoundation.git
-              exactVersion: 0.9.20
-
           targets:
 
             HuuHungSAMP:
@@ -117,20 +141,22 @@ jobs:
               platform: iOS
 
               sources:
-                - path: Sources
-                - path: ../native/Protocol
-                - path: ../native/GameBridge
 
-              dependencies:
-                - package: ZIPFoundation
+                - path: Sources
+
+                - path: ../native/Protocol
+
+                - path: ../native/GameBridge
 
               settings:
                 base:
 
                   PRODUCT_BUNDLE_IDENTIFIER: com.huuhung.samp
+
                   PRODUCT_NAME: HuuHungSAMP
 
                   SWIFT_VERSION: "5.0"
+
                   IPHONEOS_DEPLOYMENT_TARGET: "15.0"
 
                   TARGETED_DEVICE_FAMILY: "1,2"
@@ -138,42 +164,57 @@ jobs:
                   SUPPORTS_MACCATALYST: NO
 
                   CLANG_CXX_LANGUAGE_STANDARD: "c++17"
+
                   CLANG_CXX_LIBRARY: "libc++"
 
                   GCC_C_LANGUAGE_STANDARD: "gnu11"
 
                   HEADER_SEARCH_PATHS:
+
                     - "$(SRCROOT)/../native"
+
                     - "$(SRCROOT)/../native/GameBridge"
+
                     - "$(SRCROOT)/../native/Protocol"
+
                     - "$(SRCROOT)/../third_party/RakNet-build/Source"
 
                   USER_HEADER_SEARCH_PATHS:
+
                     - "$(SRCROOT)/../native"
+
                     - "$(SRCROOT)/../native/GameBridge"
+
                     - "$(SRCROOT)/../native/Protocol"
+
                     - "$(SRCROOT)/../third_party/RakNet-build/Source"
 
                   OTHER_CPLUSPLUSFLAGS:
+
                     - "-std=c++17"
 
                   ENABLE_BITCODE: NO
 
                   CODE_SIGNING_ALLOWED: NO
+
                   CODE_SIGNING_REQUIRED: NO
 
               info:
+
                 path: Info.plist
 
                 properties:
 
                   CFBundleDisplayName: HuuHungSAMP
+
                   CFBundleIdentifier: com.huuhung.samp
+
                   CFBundleName: HuuHungSAMP
 
                   CFBundlePackageType: APPL
 
                   CFBundleShortVersionString: "1.0"
+
                   CFBundleVersion: "1"
 
                   LSRequiresIPhoneOS: true
@@ -182,9 +223,15 @@ jobs:
                     {}
 
                   UISupportedInterfaceOrientations:
+
                     - UIInterfaceOrientationLandscapeLeft
+
                     - UIInterfaceOrientationLandscapeRight
+
           EOF
+
+          echo "===== project.yml ====="
+          cat ios/project.yml
 
 
       # ==========================================
@@ -196,8 +243,8 @@ jobs:
           <?xml version="1.0" encoding="UTF-8"?>
 
           <!DOCTYPE plist PUBLIC
-            "-//Apple//DTD PLIST 1.0//EN"
-            "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          "-//Apple//DTD PLIST 1.0//EN"
+          "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 
           <plist version="1.0">
 
@@ -230,19 +277,24 @@ jobs:
               <key>UISupportedInterfaceOrientations</key>
 
               <array>
+
                   <string>
-                      UIInterfaceOrientationLandscapeLeft
+                  UIInterfaceOrientationLandscapeLeft
                   </string>
 
                   <string>
-                      UIInterfaceOrientationLandscapeRight
+                  UIInterfaceOrientationLandscapeRight
                   </string>
+
               </array>
 
           </dict>
 
           </plist>
           EOF
+
+          echo "===== Info.plist ====="
+          cat ios/Info.plist
 
 
       # ==========================================
@@ -283,6 +335,10 @@ jobs:
 
                   self.window =
                       window
+
+                  print(
+                      "[HUUHUNG] Application launched"
+                  )
 
                   return true
               }
@@ -357,10 +413,12 @@ jobs:
                       title: "DOWNLOAD DATA"
                   )
 
+
                   configureButton(
                       updateButton,
                       title: "UPDATE DATA"
                   )
+
 
                   configureButton(
                       playButton,
@@ -404,13 +462,20 @@ jobs:
                   let stack =
                       UIStackView(
                           arrangedSubviews: [
+
                               titleLabel,
+
                               statusLabel,
+
                               downloadButton,
+
                               updateButton,
+
                               playButton
+
                           ]
                       )
+
 
                   stack.axis =
                       .vertical
@@ -455,6 +520,7 @@ jobs:
                       playButton.heightAnchor.constraint(
                           equalToConstant: 60
                       )
+
                   ])
               }
 
@@ -493,7 +559,6 @@ jobs:
                   statusLabel.text =
                       "DATA DOWNLOAD"
 
-
                   print(
                       "[HUUHUNG] DOWNLOAD DATA"
                   )
@@ -505,7 +570,6 @@ jobs:
 
                   statusLabel.text =
                       "DATA UPDATE"
-
 
                   print(
                       "[HUUHUNG] UPDATE DATA"
@@ -519,18 +583,18 @@ jobs:
                   statusLabel.text =
                       "SA-MP CLIENT"
 
-
                   print(
                       "[HUUHUNG] PLAY"
                   )
               }
+
           }
           EOF
 
 
       # ==========================================
       # 10. MAIN.SWIFT
-      # FIX: Undefined symbol _main
+      # FIX _main
       # ==========================================
       - name: Create main.swift
         run: |
@@ -547,7 +611,51 @@ jobs:
 
 
       # ==========================================
-      # 11. GENERATE XCODE PROJECT
+      # 11. CHECK NO UNWANTED DEPENDENCIES
+      # ==========================================
+      - name: Check dependencies
+        run: |
+          set -euxo pipefail
+
+          echo "===== CHECK ZIPFOUNDATION ====="
+
+          if grep -Rni \
+            "ZIPFoundation" \
+            ios \
+            2>/dev/null; then
+
+              echo "ERROR: ZIPFoundation still exists."
+
+              exit 1
+
+          else
+
+              echo "OK: ZIPFoundation removed."
+
+          fi
+
+
+          echo ""
+          echo "===== CHECK UIUTILITIES ====="
+
+          if grep -Rni \
+            "UIUtilities" \
+            ios \
+            2>/dev/null; then
+
+              echo "ERROR: UIUtilities reference found."
+
+              exit 1
+
+          else
+
+              echo "OK: UIUtilities not referenced."
+
+          fi
+
+
+      # ==========================================
+      # 12. GENERATE XCODE PROJECT
       # ==========================================
       - name: Generate Xcode project
         run: |
@@ -557,12 +665,21 @@ jobs:
 
           xcodegen generate
 
-          echo "===== IOS ====="
-          find . -maxdepth 2 -type f -print
+          echo ""
+          echo "===== GENERATED IOS PROJECT ====="
 
-          test -f HuuHungSAMP.xcodeproj/project.pbxproj
+          find . \
+            -maxdepth 3 \
+            -type f \
+            -print
 
-          echo "===== SOURCES IN PROJECT ====="
+
+          test -f \
+            HuuHungSAMP.xcodeproj/project.pbxproj
+
+
+          echo ""
+          echo "===== PROJECT SOURCES ====="
 
           grep -n \
             -E \
@@ -572,44 +689,41 @@ jobs:
 
 
       # ==========================================
-      # 12. RESOLVE PACKAGES
-      # ==========================================
-      - name: Resolve Swift packages
-        run: |
-          set -euxo pipefail
-
-          xcodebuild \
-            -resolvePackageDependencies \
-            -project \
-              "$GITHUB_WORKSPACE/ios/HuuHungSAMP.xcodeproj" \
-            -scheme HuuHungSAMP
-
-
-      # ==========================================
       # 13. CLEAN
       # ==========================================
       - name: Clean build
         run: |
-          rm -rf "$GITHUB_WORKSPACE/build"
+          set -euxo pipefail
+
+          rm -rf \
+            "$GITHUB_WORKSPACE/build"
 
           rm -rf \
             "$HOME/Library/Developer/Xcode/DerivedData/"*
 
 
       # ==========================================
-      # 14. BUILD
+      # 14. BUILD IOS SIMULATOR
       # ==========================================
       - name: Build iOS Simulator
         run: |
 
           set +e
 
+          echo ""
+          echo "========================================"
+          echo "       HUUHUNG IOS BUILD START"
+          echo "========================================"
+
           xcodebuild \
             -project \
               "$GITHUB_WORKSPACE/ios/HuuHungSAMP.xcodeproj" \
-            -scheme HuuHungSAMP \
-            -sdk iphonesimulator \
-            -configuration Release \
+            -scheme \
+              HuuHungSAMP \
+            -sdk \
+              iphonesimulator \
+            -configuration \
+              Release \
             -destination \
               'generic/platform=iOS Simulator' \
             -derivedDataPath \
@@ -622,7 +736,9 @@ jobs:
             CLANG_CXX_LIBRARY=libc++ \
             build \
             2>&1 |
-            tee "$GITHUB_WORKSPACE/build.log"
+            tee \
+              "$GITHUB_WORKSPACE/build.log"
+
 
           BUILD_EXIT=${PIPESTATUS[0]}
 
@@ -650,9 +766,13 @@ jobs:
 
 
           if [ "$BUILD_EXIT" -eq 0 ]; then
+
               echo "BUILD SUCCESS"
+
           else
+
               echo "BUILD FAILED"
+
           fi
 
 
@@ -670,30 +790,49 @@ jobs:
 
           APP="$GITHUB_WORKSPACE/build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app"
 
+
+          echo "========================================"
+          echo "             APP VERIFY"
+          echo "========================================"
+
+
           test -d "$APP"
 
+
+          echo ""
           echo "===== APP ====="
 
           ls -lah "$APP"
 
 
+          echo ""
           echo "===== EXECUTABLE ====="
 
-          file "$APP/HuuHungSAMP"
+          file \
+            "$APP/HuuHungSAMP"
 
 
+          echo ""
           echo "===== ARCHITECTURE ====="
 
-          lipo -info "$APP/HuuHungSAMP"
+          lipo \
+            -info \
+            "$APP/HuuHungSAMP"
+
+
+          echo ""
+          echo "===== APP VERIFIED ====="
 
 
       # ==========================================
-      # 16. UPLOAD
+      # 16. UPLOAD APP
       # ==========================================
       - name: Upload Simulator App
         if: success()
         uses: actions/upload-artifact@v4
         with:
+
           name: HuuHungSAMP-iOS-Simulator
+
           path: |
             build/Build/Products/Release-iphonesimulator/HuuHungSAMP.app
