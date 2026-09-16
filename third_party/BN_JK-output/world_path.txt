@@ -1,0 +1,634 @@
+
+================================================
+NAME=PlayerFactory
+TARGET=10026cf8c
+FUNCTION=FUN_10026cf8c
+ENTRY=10026cf8c
+BODY=[[10026cf8c, 10026d067]]
+
+=== DECOMPILE ===
+
+void FUN_10026cf8c(int param_1)
+
+{
+  long lVar1;
+  long lVar2;
+  long *plVar3;
+  float fVar4;
+  undefined8 uVar5;
+  
+  lVar1 = 0x998;
+  FUN_10023cb7c();
+  FUN_10026cb64();
+  plVar3 = &DAT_100741a68 + (long)param_1 * 0x3b;
+  *plVar3 = lVar1;
+  if (param_1 == 1) {
+    *(undefined4 *)(lVar1 + 0x720) = 1;
+    lVar1 = DAT_100741c40;
+  }
+  lVar2 = *(long *)(lVar1 + 0x18);
+  if (lVar2 == 0) {
+    *(undefined4 *)(lVar1 + 0x14) = 0;
+  }
+  else {
+    fVar4 = *(float *)(lVar2 + 0x38);
+    uVar5 = *(undefined8 *)(lVar2 + 0x30);
+    FUN_10022a904(0,0,0);
+    lVar1 = *(long *)(lVar1 + 0x18);
+    *(ulong *)(lVar1 + 0x30) =
+         CONCAT44((float)((ulong)uVar5 >> 0x20) +
+                  (float)((ulong)*(undefined8 *)(lVar1 + 0x30) >> 0x20),
+                  (float)uVar5 + (float)*(undefined8 *)(lVar1 + 0x30));
+    *(float *)(lVar1 + 0x38) = fVar4 + *(float *)(lVar1 + 0x38);
+  }
+  FUN_1001826ac(*plVar3);
+  *(undefined1 *)(*plVar3 + 0x8de) = 100;
+  (&DAT_100741b80)[(long)param_1 * 0x1d8] = 0;
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10026cf8c | stp d9,d8,[sp, #-0x50]!
+10026cf90 | stp x24,x23,[sp, #0x10]
+10026cf94 | stp x22,x21,[sp, #0x20]
+10026cf98 | stp x20,x19,[sp, #0x30]
+10026cf9c | stp x29,x30,[sp, #0x40]
+10026cfa0 | add x29,sp,#0x40
+10026cfa4 | mov x20,x0
+10026cfa8 | mov w0,#0x998
+10026cfac | bl 0x10023cb7c
+10026cfb0 | mov x19,x0
+10026cfb4 | mov x1,x20
+10026cfb8 | mov w2,#0x0
+10026cfbc | bl 0x10026cb64
+10026cfc0 | sxtw x21,w20
+10026cfc4 | adrp x22,0x100741000
+10026cfc8 | add x22,x22,#0xa68
+10026cfcc | mov w8,#0x1d8
+10026cfd0 | smaddl x23,w20,w8,x22
+10026cfd4 | str x19,[x23]
+10026cfd8 | cmp w20,#0x1
+10026cfdc | b.ne 0x10026cfec
+10026cfe0 | mov w8,#0x1
+10026cfe4 | str w8,[x19, #0x720]
+10026cfe8 | ldr x19,[x23]
+10026cfec | ldr x0,[x19, #0x18]
+10026cff0 | cbz x0,0x10026d02c
+10026cff4 | ldr s8,[x0, #0x38]
+10026cff8 | ldr d9,[x0, #0x30]
+10026cffc | fmov s0,wzr
+10026d000 | fmov s1,wzr
+10026d004 | fmov s2,wzr
+10026d008 | bl 0x10022a904
+10026d00c | ldr x8,[x19, #0x18]
+10026d010 | ldr d0,[x8, #0x30]
+10026d014 | fadd v0.2S,v9.2S,v0.2S
+10026d018 | str d0,[x8, #0x30]
+10026d01c | ldr s0,[x8, #0x38]
+10026d020 | fadd s0,s8,s0
+10026d024 | str s0,[x8, #0x38]
+10026d028 | b 0x10026d030
+10026d02c | str wzr,[x19, #0x14]
+10026d030 | ldr x0,[x23]
+10026d034 | bl 0x1001826ac
+10026d038 | ldr x8,[x23]
+10026d03c | mov w9,#0x64
+10026d040 | strb w9,[x8, #0x8de]
+10026d044 | mov w8,#0x1d8
+10026d048 | smaddl x8,w21,w8,x22
+10026d04c | strb wzr,[x8, #0x118]
+10026d050 | ldp x29,x30,[sp, #0x40]
+10026d054 | ldp x20,x19,[sp, #0x30]
+10026d058 | ldp x22,x21,[sp, #0x20]
+10026d05c | ldp x24,x23,[sp, #0x10]
+10026d060 | ldp d9,d8,[sp], #0x50
+10026d064 | ret
+
+=== CALLERS ===
+1000dd1b4|FUN_1000dd1b4
+
+=== CALLEES ===
+10026cb64|FUN_10026cb64
+10022a904|FUN_10022a904
+1001826ac|FUN_1001826ac
+10023cb7c|FUN_10023cb7c
+
+================================================
+NAME=PostCreate
+TARGET=1001826ac
+FUNCTION=FUN_1001826ac
+ENTRY=1001826ac
+BODY=[[1001826ac, 100182737]]
+
+=== DECOMPILE ===
+
+void FUN_1001826ac(long *param_1)
+
+{
+  if (param_1[4] != 0) {
+    if (param_1[3] == 0) {
+      FUN_10016c590(param_1 + 1,*(long *)(param_1[4] + 8) + 0x20);
+    }
+    else {
+      FUN_10022a654();
+    }
+  }
+  FUN_1001431f0(param_1);
+  (**(code **)(*param_1 + 0x10))(param_1);
+  if (((*(byte *)((long)param_1 + 0x5a) & 7 | 4) != 5) && ((*(uint *)(param_1 + 5) & 0x40004) == 0))
+  {
+    FUN_100160c10(param_1);
+    return;
+  }
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+1001826ac | stp x20,x19,[sp, #-0x20]!
+1001826b0 | stp x29,x30,[sp, #0x10]
+1001826b4 | add x29,sp,#0x10
+1001826b8 | mov x19,x0
+1001826bc | ldr x8,[x0, #0x20]
+1001826c0 | cbz x8,0x1001826e4
+1001826c4 | ldr x8,[x8, #0x8]
+1001826c8 | add x1,x8,#0x20
+1001826cc | ldr x0,[x19, #0x18]
+1001826d0 | cbz x0,0x1001826dc
+1001826d4 | bl 0x10022a654
+1001826d8 | b 0x1001826e4
+1001826dc | add x0,x19,#0x8
+1001826e0 | bl 0x10016c590
+1001826e4 | mov x0,x19
+1001826e8 | bl 0x1001431f0
+1001826ec | ldr x8,[x19]
+1001826f0 | ldr x8,[x8, #0x10]
+1001826f4 | mov x0,x19
+1001826f8 | blr x8
+1001826fc | ldrb w8,[x19, #0x5a]
+100182700 | orr w8,w8,#0x4
+100182704 | and w8,w8,#0x7
+100182708 | cmp w8,#0x5
+10018270c | b.eq 0x10018271c
+100182710 | ldr w8,[x19, #0x28]
+100182714 | tst w8,#0x40004
+100182718 | b.eq 0x100182728
+10018271c | ldp x29,x30,[sp, #0x10]
+100182720 | ldp x20,x19,[sp], #0x20
+100182724 | ret
+100182728 | mov x0,x19
+10018272c | ldp x29,x30,[sp, #0x10]
+100182730 | ldp x20,x19,[sp], #0x20
+100182734 | b 0x100160c10
+
+=== CALLERS ===
+100174540|FUN_100174540
+1000eb104|FUN_1000eb104
+1000fb7bc|FUN_1000fb7bc
+100425740|FUN_100425740
+1000e9044|FUN_1000e9044
+10021dc70|FUN_10021dc70
+10009ad30|FUN_10009ad30
+1000d6254|FUN_1000d6254
+1003fdf2c|FUN_1003fdf2c
+1000ddb5c|FUN_1000ddb5c
+1000cd424|FUN_1000cd424
+10041954c|FUN_10041954c
+100320550|FUN_100320550
+100279034|FUN_100279034
+1000b7800|FUN_1000b7800
+1000f9b30|FUN_1000f9b30
+10009b350|FUN_10009b350
+100279198|FUN_100279198
+1000bda10|FUN_1000bda10
+100321fac|FUN_100321fac
+1003e5538|FUN_1003e5538
+100046878|FUN_100046878
+100105918|FUN_100105918
+10016be08|FUN_10016be08
+100342244|FUN_100342244
+1000aec94|FUN_1000aec94
+10024656c|FUN_10024656c
+100116c74|FUN_100116c74
+1003f3734|FUN_1003f3734
+100424d58|FUN_100424d58
+10027aa30|FUN_10027aa30
+10031f91c|FUN_10031f91c
+10024567c|FUN_10024567c
+10026d120|FUN_10026d120
+100149b8c|FUN_100149b8c
+10021ef6c|FUN_10021ef6c
+100109e84|FUN_100109e84
+100324b00|FUN_100324b00
+1002779fc|FUN_1002779fc
+1003e3900|FUN_1003e3900
+10009a804|FUN_10009a804
+10042eaf8|FUN_10042eaf8
+1000d4ca8|FUN_1000d4ca8
+10042aff8|FUN_10042aff8
+1000d708c|FUN_1000d708c
+10026cf8c|FUN_10026cf8c
+100424e18|FUN_100424e18
+1000def8c|FUN_1000def8c
+1000fd868|FUN_1000fd868
+1000bc740|FUN_1000bc740
+1003dd308|FUN_1003dd308
+1000cf180|FUN_1000cf180
+100419904|FUN_100419904
+10016db88|FUN_10016db88
+100097378|FUN_100097378
+1002edfb4|FUN_1002edfb4
+100116e68|FUN_100116e68
+1000cdc08|FUN_1000cdc08
+10027bb1c|FUN_10027bb1c
+100423108|FUN_100423108
+1000ab8ec|FUN_1000ab8ec
+1000c2fe4|FUN_1000c2fe4
+1000f6844|FUN_1000f6844
+1004042c0|FUN_1004042c0
+1000c2af8|FUN_1000c2af8
+10042c694|FUN_10042c694
+10023858c|FUN_10023858c
+1000af4d4|FUN_1000af4d4
+1002466a4|FUN_1002466a4
+10007f618|FUN_10007f618
+10016acfc|FUN_10016acfc
+100238d78|FUN_100238d78
+10010c1b0|FUN_10010c1b0
+1000f7854|FUN_1000f7854
+
+=== CALLEES ===
+100160c10|FUN_100160c10
+10016c590|FUN_10016c590
+10022a654|FUN_10022a654
+1001431f0|FUN_1001431f0
+
+================================================
+NAME=PostCreateStage1
+TARGET=1001431f0
+FUNCTION=FUN_1001431f0
+ENTRY=1001431f0
+BODY=[[1001431f0, 100143203]]
+
+=== DECOMPILE ===
+
+void FUN_1001431f0(long param_1)
+
+{
+  if (*(long *)(param_1 + 0x20) != 0) {
+    FUN_1002acda4(*(undefined8 *)(*(long *)(param_1 + 0x20) + 8));
+    return;
+  }
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+1001431f0 | ldr x8,[x0, #0x20]
+1001431f4 | cbz x8,0x100143200
+1001431f8 | ldr x0,[x8, #0x8]
+1001431fc | b 0x1002acda4
+100143200 | ret
+
+=== CALLERS ===
+100186578|FUN_100186578
+1000fb7bc|FUN_1000fb7bc
+1000def8c|FUN_1000def8c
+1001826ac|FUN_1001826ac
+100186e9c|FUN_100186e9c
+100419904|FUN_100419904
+1002370b8|FUN_1002370b8
+1000cd844|FUN_1000cd844
+1002edfb4|FUN_1002edfb4
+10041954c|FUN_10041954c
+100238a20|FUN_100238a20
+1000f9b30|FUN_1000f9b30
+1000cdc08|FUN_1000cdc08
+10026a880|FUN_10026a880
+1003c432c|FUN_1003c432c
+100121584|FUN_100121584
+100234db0|FUN_100234db0
+100260f14|FUN_100260f14
+100105918|FUN_100105918
+1000f6844|FUN_1000f6844
+10012c91c|FUN_10012c91c
+10010f8a4|FUN_10010f8a4
+100236cfc|FUN_100236cfc
+10023858c|FUN_10023858c
+10007f008|FUN_10007f008
+10016acfc|FUN_10016acfc
+1003caab0|FUN_1003caab0
+100238d78|FUN_100238d78
+1003cb6ac|FUN_1003cb6ac
+1000d40bc|FUN_1000d40bc
+100428880|FUN_100428880
+1002779fc|FUN_1002779fc
+1003e3900|FUN_1003e3900
+1000c4a18|FUN_1000c4a18
+10011feb8|FUN_10011feb8
+
+=== CALLEES ===
+1002acda4|FUN_1002acda4
+
+================================================
+NAME=PostCreateStage2
+TARGET=100160c10
+FUNCTION=FUN_100160c10
+ENTRY=100160c10
+BODY=[[100160c10, 100160c73]]
+
+=== DECOMPILE ===
+
+void FUN_100160c10(long param_1)
+
+{
+  long *plVar1;
+  
+  if ((*(long *)(param_1 + 0xe0) == 0) && ((*(byte *)(param_1 + 0x2a) >> 2 & 1) == 0)) {
+    plVar1 = (long *)&DAT_00000018;
+    FUN_10016dd28();
+    *plVar1 = param_1;
+    *(long **)(param_1 + 0xe0) = plVar1;
+    plVar1[1] = (long)DAT_10077d678;
+    plVar1[2] = 0;
+    if (DAT_10077d678 != (long *)0x0) {
+      *(long **)((long)DAT_10077d678 + 0x10) = plVar1;
+    }
+    DAT_10077d678 = plVar1;
+    return;
+  }
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+100160c10 | stp x20,x19,[sp, #-0x20]!
+100160c14 | stp x29,x30,[sp, #0x10]
+100160c18 | add x29,sp,#0x10
+100160c1c | ldr x8,[x0, #0xe0]
+100160c20 | cbz x8,0x100160c30
+100160c24 | ldp x29,x30,[sp, #0x10]
+100160c28 | ldp x20,x19,[sp], #0x20
+100160c2c | ret
+100160c30 | mov x19,x0
+100160c34 | ldrb w8,[x0, #0x2a]
+100160c38 | tbnz w8,#0x2,0x100160c24
+100160c3c | mov w0,#0x18
+100160c40 | bl 0x10016dd28
+100160c44 | str x19,[x0]
+100160c48 | str x0,[x19, #0xe0]
+100160c4c | adrp x8,0x10077d000
+100160c50 | add x8,x8,#0x678
+100160c54 | ldr x9,[x8]
+100160c58 | stp x9,xzr,[x0, #0x8]
+100160c5c | cbz x9,0x100160c64
+100160c60 | str x0,[x9, #0x10]
+100160c64 | str x0,[x8]
+100160c68 | ldp x29,x30,[sp, #0x10]
+100160c6c | ldp x20,x19,[sp], #0x20
+100160c70 | ret
+
+=== CALLERS ===
+1000d7e7c|FUN_1000d7e7c
+1000fd868|FUN_1000fd868
+1000d7c2c|FUN_1000d7c2c
+100436648|FUN_100436648
+1003dfa70|FUN_1003dfa70
+1001826ac|FUN_1001826ac
+100186e9c|FUN_100186e9c
+100142940|FUN_100142940
+1003ebafc|FUN_1003ebafc
+1003caed0|FUN_1003caed0
+1002380b0|FUN_1002380b0
+10042cc30|FUN_10042cc30
+1000e910c|FUN_1000e910c
+10034632c|FUN_10034632c
+1001724e8|FUN_1001724e8
+100279198|FUN_100279198
+100142b48|FUN_100142b48
+1003caab0|FUN_1003caab0
+100109e84|FUN_100109e84
+100407290|FUN_100407290
+100185a4c|FUN_100185a4c
+10042a830|FUN_10042a830
+
+=== CALLEES ===
+10016dd28|FUN_10016dd28
+
+================================================
+NAME=EntityVirtual10
+TARGET=100160634
+FUNCTION=FUN_100160634
+ENTRY=100160634
+BODY=[[100160634, 10016081f]]
+
+=== DECOMPILE ===
+
+void FUN_100160634(float param_1,float param_2,float param_3,float param_4,long *param_5)
+
+{
+  byte bVar1;
+  ulong uVar2;
+  undefined8 *puVar3;
+  long *plVar4;
+  uint uVar5;
+  int iVar6;
+  long *plVar7;
+  uint uVar8;
+  int iVar9;
+  uint uVar10;
+  
+  if ((*(byte *)((long)param_5 + 0x29) & 1) == 0) {
+    (**(code **)(*param_5 + 0x50))(param_5);
+    uVar5 = (uint)(param_1 / 50.0 + 60.0);
+    if ((((0xffffff0e < uVar5 - 0x79) && (uVar8 = (uint)(param_4 / 50.0 + 60.0), -0x79 < (int)uVar8)
+         ) && ((int)uVar8 < 0x79)) &&
+       (((iVar9 = (int)(param_3 / 50.0 + 60.0), -0x79 < iVar9 && (iVar9 < 0x79)) &&
+        ((iVar6 = (int)(param_2 / 50.0 + 60.0), -0x79 < iVar6 &&
+         ((iVar6 < 0x79 && (int)uVar8 <= iVar6) && (int)uVar5 <= iVar9)))))) {
+      do {
+        uVar10 = uVar5;
+        do {
+          uVar2 = (ulong)(uVar10 & 0xf | (uVar8 & 0xf) << 4);
+          bVar1 = *(byte *)((long)param_5 + 0x5a) & 7;
+          if (bVar1 == 4) {
+            plVar7 = &DAT_10077a268 + uVar2 * 3;
+          }
+          else if (bVar1 == 3) {
+            plVar7 = &DAT_10077a260 + uVar2 * 3;
+          }
+          else {
+            plVar7 = &DAT_10077a258 + uVar2 * 3;
+            if (bVar1 != 2) {
+              plVar7 = (long *)0x0;
+            }
+          }
+          puVar3 = (undefined8 *)&DAT_00000028;
+          FUN_1001453ec();
+          plVar4 = (long *)&DAT_00000018;
+          FUN_10016dd28();
+          *plVar4 = (long)param_5;
+          plVar4[2] = 0;
+          plVar4[1] = *plVar7;
+          if (*plVar7 != 0) {
+            *(long **)(*plVar7 + 0x10) = plVar4;
+          }
+          *plVar7 = (long)plVar4;
+          *puVar3 = plVar7;
+          puVar3[1] = plVar4;
+          puVar3[2] = &DAT_10077a258 + uVar2 * 3;
+          puVar3[3] = 0;
+          puVar3[4] = param_5[0x1b];
+          if (param_5[0x1b] != 0) {
+            *(undefined8 **)(param_5[0x1b] + 0x18) = puVar3;
+          }
+          param_5[0x1b] = (long)puVar3;
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 <= iVar9);
+        uVar8 = uVar8 + 1;
+      } while ((int)uVar8 <= iVar6);
+    }
+    return;
+  }
+  FUN_100144968(param_5);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+100160634 | sub sp,sp,#0x70
+100160638 | stp x28,x27,[sp, #0x10]
+10016063c | stp x26,x25,[sp, #0x20]
+100160640 | stp x24,x23,[sp, #0x30]
+100160644 | stp x22,x21,[sp, #0x40]
+100160648 | stp x20,x19,[sp, #0x50]
+10016064c | stp x29,x30,[sp, #0x60]
+100160650 | add x29,sp,#0x60
+100160654 | mov x19,x0
+100160658 | ldrb w8,[x0, #0x29]
+10016065c | tbnz w8,#0x0,0x100160724
+100160660 | ldr x8,[x19]
+100160664 | ldr x8,[x8, #0x50]
+100160668 | mov x0,x19
+10016066c | blr x8
+100160670 | mov w8,#0x42480000
+100160674 | fmov s4,w8
+100160678 | fdiv s5,s0,s4
+10016067c | mov w8,#0x42700000
+100160680 | fmov s0,w8
+100160684 | fadd s5,s5,s0
+100160688 | fcvtms w8,s5
+10016068c | str w8,[sp, #0xc]
+100160690 | sub w8,w8,#0x79
+100160694 | cmn w8,#0xf1
+100160698 | b.cc 0x100160704
+10016069c | fdiv s3,s3,s4
+1001606a0 | fadd s3,s3,s0
+1001606a4 | fcvtms w22,s3
+1001606a8 | cmn w22,#0x78
+1001606ac | b.lt 0x100160704
+1001606b0 | cmp w22,#0x78
+1001606b4 | b.gt 0x100160704
+1001606b8 | fdiv s2,s2,s4
+1001606bc | fadd s2,s2,s0
+1001606c0 | fcvtms w23,s2
+1001606c4 | cmn w23,#0x78
+1001606c8 | b.lt 0x100160704
+1001606cc | cmp w23,#0x78
+1001606d0 | b.gt 0x100160704
+1001606d4 | fdiv s1,s1,s4
+1001606d8 | fadd s0,s1,s0
+1001606dc | fcvtms w8,s0
+1001606e0 | str w8,[sp, #0x8]
+1001606e4 | cmn w8,#0x78
+1001606e8 | b.lt 0x100160704
+1001606ec | ldr w8,[sp, #0x8]
+1001606f0 | cmp w8,#0x78
+1001606f4 | ccmp w22,w8,#0x0,le
+1001606f8 | ldr w8,[sp, #0xc]
+1001606fc | ccmp w8,w23,#0x0,le
+100160700 | b.le 0x100160748
+100160704 | ldp x29,x30,[sp, #0x60]
+100160708 | ldp x20,x19,[sp, #0x50]
+10016070c | ldp x22,x21,[sp, #0x40]
+100160710 | ldp x24,x23,[sp, #0x30]
+100160714 | ldp x26,x25,[sp, #0x20]
+100160718 | ldp x28,x27,[sp, #0x10]
+10016071c | add sp,sp,#0x70
+100160720 | ret
+100160724 | mov x0,x19
+100160728 | ldp x29,x30,[sp, #0x60]
+10016072c | ldp x20,x19,[sp, #0x50]
+100160730 | ldp x22,x21,[sp, #0x40]
+100160734 | ldp x24,x23,[sp, #0x30]
+100160738 | ldp x26,x25,[sp, #0x20]
+10016073c | ldp x28,x27,[sp, #0x10]
+100160740 | add sp,sp,#0x70
+100160744 | b 0x100144968
+100160748 | adrp x25,0x10077a000
+10016074c | add x25,x25,#0x258
+100160750 | mov w26,#0x18
+100160754 | b 0x100160768
+100160758 | add w22,w22,#0x1
+10016075c | ldr w8,[sp, #0x8]
+100160760 | cmp w22,w8
+100160764 | b.gt 0x100160704
+100160768 | ubfiz w27,w22,#0x4,#0x4
+10016076c | ldr w28,[sp, #0xc]
+100160770 | b 0x100160784
+100160774 | str x20,[x19, #0xd8]
+100160778 | add w28,w28,#0x1
+10016077c | cmp w28,w23
+100160780 | b.gt 0x100160758
+100160784 | and w8,w28,#0xf
+100160788 | orr w8,w8,w27
+10016078c | umaddl x24,w8,w26,x25
+100160790 | ldrb w8,[x19, #0x5a]
+100160794 | and w8,w8,#0x7
+100160798 | cmp w8,#0x4
+10016079c | b.eq 0x1001607b8
+1001607a0 | cmp w8,#0x3
+1001607a4 | b.eq 0x1001607c0
+1001607a8 | cmp w8,#0x2
+1001607ac | b.ne 0x1001607c8
+1001607b0 | mov x21,x24
+1001607b4 | b 0x1001607cc
+1001607b8 | add x21,x24,#0x10
+1001607bc | b 0x1001607cc
+1001607c0 | add x21,x24,#0x8
+1001607c4 | b 0x1001607cc
+1001607c8 | mov x21,#0x0
+1001607cc | mov w0,#0x28
+1001607d0 | bl 0x1001453ec
+1001607d4 | mov x20,x0
+1001607d8 | mov w0,#0x18
+1001607dc | bl 0x10016dd28
+1001607e0 | str x19,[x0]
+1001607e4 | str xzr,[x0, #0x10]
+1001607e8 | ldr x8,[x21]
+1001607ec | str x8,[x0, #0x8]
+1001607f0 | ldr x8,[x21]
+1001607f4 | cbz x8,0x1001607fc
+1001607f8 | str x0,[x8, #0x10]
+1001607fc | str x0,[x21]
+100160800 | stp x21,x0,[x20]
+100160804 | stp x24,xzr,[x20, #0x10]
+100160808 | ldr x8,[x19, #0xd8]
+10016080c | str x8,[x20, #0x20]
+100160810 | ldr x8,[x19, #0xd8]
+100160814 | cbz x8,0x100160774
+100160818 | str x20,[x8, #0x18]
+10016081c | b 0x100160774
+
+=== CALLERS ===
+
+=== CALLEES ===
+100144968|FUN_100144968
+1001453ec|FUN_1001453ec
+10016dd28|FUN_10016dd28

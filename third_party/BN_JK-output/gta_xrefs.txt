@@ -1,0 +1,2336 @@
+
+==================================================
+STRING: 26CTaskSimpleUninterruptable
+STRING_ADDR: 100460100
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CTaskComplexClimb
+STRING_ADDR: 100460a90
+XREF_COUNT: 0
+
+==================================================
+STRING: 14CTaskSimpleSay
+STRING_ADDR: 100461d16
+XREF_COUNT: 0
+
+==================================================
+STRING: 24CEntitySeekPosCalculator
+STRING_ADDR: 100461ee4
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI32CEntitySeekPosCalculatorStandardE
+STRING_ADDR: 100461f00
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CTaskComplexBeCop
+STRING_ADDR: 100461f98
+XREF_COUNT: 0
+
+==================================================
+STRING: 7CEntity
+STRING_ADDR: 1004625cc
+XREF: 10049ba08
+XREF_COUNT: 1
+
+==================================================
+STRING: 36CTaskComplexCarDriveMissionFleeScene
+STRING_ADDR: 100464014
+XREF_COUNT: 0
+
+==================================================
+STRING: 46CTaskComplexUseClosestFreeScriptedAttractorRun
+STRING_ADDR: 10046403b
+XREF_COUNT: 0
+
+==================================================
+STRING: 49CTaskComplexUseClosestFreeScriptedAttractorSprint
+STRING_ADDR: 10046406c
+XREF_COUNT: 0
+
+==================================================
+STRING: 34CTaskComplexCarDriveMissionKillPed
+STRING_ADDR: 1004640a0
+XREF_COUNT: 0
+
+==================================================
+STRING: 16CTaskSimpleCower
+STRING_ADDR: 1004640c6
+XREF_COUNT: 0
+
+==================================================
+STRING: 13CPedModelInfo
+STRING_ADDR: 100465430
+XREF: 1004a6ae8
+XREF_COUNT: 1
+
+==================================================
+STRING: 17CVehicleModelInfo
+STRING_ADDR: 10046547d
+XREF: 1004a6ba0
+XREF_COUNT: 1
+
+==================================================
+STRING: @7CObject
+STRING_ADDR: 100465517
+XREF_COUNT: 0
+
+==================================================
+STRING: 4CPed
+STRING_ADDR: 100465748
+XREF: 1004a74d8
+XREF_COUNT: 1
+
+==================================================
+STRING: pA13CPedAttractor
+STRING_ADDR: 1004657be
+XREF_COUNT: 0
+
+==================================================
+STRING: 20CPedShelterAttractor
+STRING_ADDR: 1004657d0
+XREF: 1004a77c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CPedAtmAttractor
+STRING_ADDR: 1004657e7
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CPedSeatAttractor
+STRING_ADDR: 1004657fa
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CPedStopAttractor
+STRING_ADDR: 10046580e
+XREF_COUNT: 0
+
+==================================================
+STRING: 18CPedPizzaAttractor
+STRING_ADDR: 100465822
+XREF_COUNT: 0
+
+==================================================
+STRING: 26CPedTriggerScriptAttractor
+STRING_ADDR: 100465837
+XREF_COUNT: 0
+
+==================================================
+STRING: 19CPedLookAtAttractor
+STRING_ADDR: 100465854
+XREF_COUNT: 0
+
+==================================================
+STRING: 21CPedScriptedAttractor
+STRING_ADDR: 10046586a
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CPedParkAttractor
+STRING_ADDR: 100465882
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CPedStepAttractor
+STRING_ADDR: 100465896
+XREF_COUNT: 0
+
+==================================================
+STRING: 43CPedGroupDefaultTaskAllocatorFollowAnyMeans
+STRING_ADDR: 100465944
+XREF: 1004a7b78
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CPedGroupDefaultTaskAllocator
+STRING_ADDR: 100465972
+XREF_COUNT: 0
+
+==================================================
+STRING: 42CPedGroupDefaultTaskAllocatorFollowLimited
+STRING_ADDR: 100465992
+XREF: 1004a7bb0
+XREF_COUNT: 1
+
+==================================================
+STRING: 39CPedGroupDefaultTaskAllocatorStandStill
+STRING_ADDR: 1004659bf
+XREF: 1004a7be8
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CPedGroupDefaultTaskAllocatorChat
+STRING_ADDR: 1004659e9
+XREF: 1004a7c20
+XREF_COUNT: 1
+
+==================================================
+STRING: 35CPedGroupDefaultTaskAllocatorRandom
+STRING_ADDR: 100465a0d
+XREF: 1004a7c58
+XREF_COUNT: 1
+
+==================================================
+STRING: 43CPedGroupDefaultTaskAllocatorSitInLeaderCar
+STRING_ADDR: 100465a33
+XREF: 1004a7c90
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CEntitySeekPosCalculatorStandard
+STRING_ADDR: 100465a64
+XREF_COUNT: 0
+
+==================================================
+STRING: >14CEntityScanner
+STRING_ADDR: 100465b27
+XREF_COUNT: 0
+
+==================================================
+STRING: 14CObjectScanner
+STRING_ADDR: 100465b53
+XREF_COUNT: 0
+
+==================================================
+STRING: 15CVehicleScanner
+STRING_ADDR: 100465be0
+XREF_COUNT: 0
+
+==================================================
+STRING: 11CPedScanner
+STRING_ADDR: 100465bf2
+XREF_COUNT: 0
+
+==================================================
+STRING: 24CTaskSimpleCarDriveTimed
+STRING_ADDR: 100465c00
+XREF_COUNT: 0
+
+==================================================
+STRING: 10CPlayerPed
+STRING_ADDR: 100465c70
+XREF: 1004a8458
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskSimpleHailTaxiAndPause
+STRING_ADDR: 100468a5c
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskSimpleHitFromLeft
+STRING_ADDR: 100468a7a
+XREF_COUNT: 0
+
+==================================================
+STRING: 27CTaskSimpleHitByGunFromRear
+STRING_ADDR: 100468a93
+XREF_COUNT: 0
+
+==================================================
+STRING: 27CTaskSimpleHitByGunFromLeft
+STRING_ADDR: 100468ab2
+XREF_COUNT: 0
+
+==================================================
+STRING: 28CTaskSimpleHitByGunFromRight
+STRING_ADDR: 100468ad0
+XREF_COUNT: 0
+
+==================================================
+STRING: 19CTaskSimpleDetonate
+STRING_ADDR: 100468aef
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CTaskSimpleAbseil
+STRING_ADDR: 100468b05
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskSimpleFinishBrain
+STRING_ADDR: 100468b1a
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI24CEntitySeekPosCalculatorE
+STRING_ADDR: 100468b33
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI37CEntitySeekPosCalculatorEntitySurfaceE
+STRING_ADDR: 100468b68
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI33CEntitySeekPosCalculatorVehicleIdE
+STRING_ADDR: 100468baa
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI31CEntitySeekPosCalculatorDrivingE
+STRING_ADDR: 100468be8
+XREF_COUNT: 0
+
+==================================================
+STRING: 5CTask
+STRING_ADDR: 100468d40
+XREF: 1004a95e8
+XREF_COUNT: 1
+
+==================================================
+STRING: 11CTaskSimple
+STRING_ADDR: 100468d47
+XREF: 1004a95f8
+XREF_COUNT: 1
+
+==================================================
+STRING: 12CTaskComplex
+STRING_ADDR: 100468d55
+XREF: 1004a9610
+XREF_COUNT: 1
+
+==================================================
+STRING: 14CTaskAllocator
+STRING_ADDR: 100468d64
+XREF: 1004a9790
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskAllocatorPlayerCommandAttack
+STRING_ADDR: 100468d75
+XREF: 1004a97b8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskAllocatorAttack
+STRING_ADDR: 100468d99
+XREF: 1004a97a0
+XREF_COUNT: 1
+
+==================================================
+STRING: 41CTaskAllocatorKillThreatsBasicRandomGroup
+STRING_ADDR: 100468db0
+XREF: 1004a9830
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskAllocatorKillThreatsBasic
+STRING_ADDR: 100468ddc
+XREF: 1004a9818
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskAllocatorKillOnFoot
+STRING_ADDR: 100468dfd
+XREF: 1004a9848
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskAllocatorKillThreatsDriveby
+STRING_ADDR: 100468e18
+XREF: 1004a9860
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleRunNamedAnim
+STRING_ADDR: 100468e3c
+XREF: 1004a9b10
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleAnim
+STRING_ADDR: 100468e56
+XREF: 1004a9af8
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleRunAnim
+STRING_ADDR: 100468e68
+XREF: 1004a9b28
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleRunTimedAnim
+STRING_ADDR: 100468e7d
+XREF: 1004a9b40
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskSimplePlayHandSignalAnim
+STRING_ADDR: 100468e98
+XREF: 1004a9b58
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexPlayHandSignalAnim
+STRING_ADDR: 100468eb8
+XREF: 1004a9b70
+XREF_COUNT: 1
+
+==================================================
+STRING: 39CTaskSimpleSetCharIgnoreWeaponRangeFlag
+STRING_ADDR: 100468f60
+XREF: 1004aa528
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimpleFight
+STRING_ADDR: 100468f8a
+XREF: 1004aa540
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskSimpleFightingControl
+STRING_ADDR: 100468f9d
+XREF: 1004aa558
+XREF_COUNT: 1
+
+==================================================
+STRING: 17CTaskSimpleUseGun
+STRING_ADDR: 100468fba
+XREF: 1004aa570
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleGunControl
+STRING_ADDR: 100468fce
+XREF: 1004aa588
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskSimpleThrowProjectile
+STRING_ADDR: 100468fe6
+XREF: 1004aa5a0
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleThrowControl
+STRING_ADDR: 100469003
+XREF: 1004aa5b8
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleChoking
+STRING_ADDR: 10046901d
+XREF: 1004aa5d0
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimpleBeHit
+STRING_ADDR: 100469032
+XREF: 1004aa5e8
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexKillPedOnFoot
+STRING_ADDR: 100469045
+XREF: 1004aa600
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexKillPedOnFootStealth
+STRING_ADDR: 100469061
+XREF: 1004aa618
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexKillPedOnFootMelee
+STRING_ADDR: 100469084
+XREF: 1004aa630
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexKillPedOnFootArmed
+STRING_ADDR: 1004690a5
+XREF: 1004aa648
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskSimpleGangDriveBy
+STRING_ADDR: 1004690c6
+XREF: 1004aa660
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexDestroyCar
+STRING_ADDR: 1004690df
+XREF: 1004aa678
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexDestroyCarMelee
+STRING_ADDR: 1004690f8
+XREF: 1004aa690
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexDestroyCarArmed
+STRING_ADDR: 100469116
+XREF: 1004aa6a8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexRoadRage
+STRING_ADDR: 100469134
+XREF: 1004aa6c0
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexKillPedGroupOnFoot
+STRING_ADDR: 10046914c
+XREF: 1004aa6d8
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskSimpleStealthKill
+STRING_ADDR: 10046916d
+XREF: 1004aa6f0
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexKillPedFromBoat
+STRING_ADDR: 100469186
+XREF: 1004aa708
+XREF_COUNT: 1
+
+==================================================
+STRING: 36CTaskComplexSeekCoverUntilTargetDead
+STRING_ADDR: 1004691a4
+XREF: 1004aa720
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimplePause
+STRING_ADDR: 1004691cc
+XREF_COUNT: 0
+
+==================================================
+STRING: 20CTaskSimpleLookAbout
+STRING_ADDR: 1004691e0
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI41CEntitySeekPosCalculatorRadiusAngleOffsetE
+STRING_ADDR: 1004691fa
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskSimpleOnEscalator
+STRING_ADDR: 100469304
+XREF: 1004abef0
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleStandStill
+STRING_ADDR: 10046931d
+XREF: 1004abed8
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskComplexBeStill
+STRING_ADDR: 100469335
+XREF: 1004abf80
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskSimpleTogglePedThreatScanner
+STRING_ADDR: 10046934b
+XREF: 1004ac000
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleIKChain
+STRING_ADDR: 100469371
+XREF: 1004ac018
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CTaskSimpleSetCharDecisionMaker
+STRING_ADDR: 100469386
+XREF: 1004ac098
+XREF_COUNT: 1
+
+==================================================
+STRING: 40CTaskSimpleWaitUntilLeaderAreaCodesMatch
+STRING_ADDR: 1004693a8
+XREF: 1004ac130
+XREF_COUNT: 1
+
+==================================================
+STRING: 34CTaskSimpleWaitUntilAreaCodesMatch
+STRING_ADDR: 1004693d3
+XREF: 1004ac118
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskSimpleSetStayInSamePlace
+STRING_ADDR: 1004693f8
+XREF: 1004ac148
+XREF_COUNT: 1
+
+==================================================
+STRING: 34CTaskSimpleSetKindaStayInSamePlace
+STRING_ADDR: 100469418
+XREF: 1004ac160
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleDuckToggle
+STRING_ADDR: 10046943d
+XREF: 1004ac178
+XREF_COUNT: 1
+
+==================================================
+STRING: 14CTaskSimpleDie
+STRING_ADDR: 100469455
+XREF: 1004ac190
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskSimpleDieInCar
+STRING_ADDR: 100469466
+XREF: 1004ac1a8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexDieInCar
+STRING_ADDR: 10046947c
+XREF: 1004ac1c0
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimpleDrown
+STRING_ADDR: 100469493
+XREF: 1004ac1d8
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleDrownInCar
+STRING_ADDR: 1004694a6
+XREF: 1004ac1f0
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskComplexDie
+STRING_ADDR: 1004694be
+XREF: 1004ac208
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleDead
+STRING_ADDR: 1004694d0
+XREF: 1004ac220
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimpleTired
+STRING_ADDR: 1004694e2
+XREF: 1004ac238
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleSitDown
+STRING_ADDR: 1004694f5
+XREF: 1004ac250
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleSitIdle
+STRING_ADDR: 10046950a
+XREF: 1004ac268
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleStandUp
+STRING_ADDR: 10046951f
+XREF: 1004ac280
+XREF_COUNT: 1
+
+==================================================
+STRING: 38CTaskComplexSitDownThenIdleThenStandUp
+STRING_ADDR: 100469534
+XREF: 1004ac298
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexObserveTrafficLights
+STRING_ADDR: 10046955d
+XREF: 1004ac2b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 49CTaskComplexObserveTrafficLightsAndAchieveHeading
+STRING_ADDR: 100469580
+XREF: 1004ac2c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 42CTaskComplexCrossRoadLookAndAchieveHeading
+STRING_ADDR: 1004695b4
+XREF: 1004ac2e0
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleTurn180
+STRING_ADDR: 1004695e1
+XREF: 1004ac2f8
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexHitResponse
+STRING_ADDR: 1004695f6
+XREF: 1004ac310
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskComplexHitByGunResponse
+STRING_ADDR: 100469610
+XREF: 1004ac328
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexSunbathe
+STRING_ADDR: 10046962f
+XREF: 1004ac340
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskComplexUseEffect
+STRING_ADDR: 100469646
+XREF: 1004ac358
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexWaitAtAttractor
+STRING_ADDR: 10046965e
+XREF: 1004ac370
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexUseAttractor
+STRING_ADDR: 10046967c
+XREF: 1004ac388
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexWaitForDryWeather
+STRING_ADDR: 100469697
+XREF: 1004ac3a0
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexWaitForBus
+STRING_ADDR: 1004696b7
+XREF: 1004ac3b8
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleWaitForBus
+STRING_ADDR: 1004696d0
+XREF: 1004ac3d0
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleWaitForPizza
+STRING_ADDR: 1004696e8
+XREF: 1004ac3e8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexSequence
+STRING_ADDR: 100469702
+XREF: 1004ac400
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskComplexBeInGroup
+STRING_ADDR: 100469719
+XREF: 1004ac418
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexUsePairedAttractor
+STRING_ADDR: 100469731
+XREF: 1004ac430
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexAttractorPartnerWait
+STRING_ADDR: 100469752
+XREF: 1004ac448
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CTaskComplexUseAttractorPartner
+STRING_ADDR: 100469775
+XREF: 1004ac460
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexUseScriptedAttractor
+STRING_ADDR: 100469797
+XREF: 1004ac478
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskComplexOnFire
+STRING_ADDR: 1004697ba
+XREF: 1004ac490
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimplePlayerOnFire
+STRING_ADDR: 1004697cf
+XREF: 1004ac4a8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskSimpleIKManager
+STRING_ADDR: 1004697e9
+XREF: 1004ac4c0
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskSimpleIKLookAt
+STRING_ADDR: 100469800
+XREF: 1004ac4d8
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleIKPointArm
+STRING_ADDR: 100469816
+XREF: 1004ac4f0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskSimpleTriggerLookAt
+STRING_ADDR: 10046982e
+XREF: 1004ac508
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskSimpleClearLookAt
+STRING_ADDR: 100469849
+XREF: 1004ac520
+XREF_COUNT: 1
+
+==================================================
+STRING: 43CTaskComplexUseClosestFreeScriptedAttractor
+STRING_ADDR: 100469862
+XREF: 1004ac538
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexUseMobilePhone
+STRING_ADDR: 100469890
+XREF: 1004ac550
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexUseGoggles
+STRING_ADDR: 1004698ad
+XREF: 1004ac568
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskComplexInWater
+STRING_ADDR: 1004698c6
+XREF: 1004ac580
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexUseSequence
+STRING_ADDR: 1004698dc
+XREF: 1004ac598
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskComplexUseScriptedBrain
+STRING_ADDR: 1004698f6
+XREF: 1004ac5b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleHitFromRight
+STRING_ADDR: 100469916
+XREF_COUNT: 0
+
+==================================================
+STRING: 23CTaskSimpleHitFromFront
+STRING_ADDR: 100469930
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskSimpleHitFromBack
+STRING_ADDR: 10046994a
+XREF_COUNT: 0
+
+==================================================
+STRING: 28CTaskSimpleHitByGunFromFront
+STRING_ADDR: 100469964
+XREF_COUNT: 0
+
+==================================================
+STRING: 15CTaskSimpleNone
+STRING_ADDR: 100469984
+XREF_COUNT: 0
+
+==================================================
+STRING: 17CTaskSimpleUseAtm
+STRING_ADDR: 100469996
+XREF_COUNT: 0
+
+==================================================
+STRING: 28CTaskComplexUseEffectRunning
+STRING_ADDR: 1004699aa
+XREF_COUNT: 0
+
+==================================================
+STRING: 30CTaskComplexUseEffectSprinting
+STRING_ADDR: 1004699c9
+XREF_COUNT: 0
+
+==================================================
+STRING: ?26CTaskComplexLeaveCarAndDie
+STRING_ADDR: 100469d93
+XREF_COUNT: 0
+
+==================================================
+STRING: 20CTaskComplexLeaveCar
+STRING_ADDR: 100469db1
+XREF: 1004ad400
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexLeaveAnyCar
+STRING_ADDR: 100469dc8
+XREF: 1004ad4a8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexEnterCar
+STRING_ADDR: 100469de2
+XREF: 1004ad4c0
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskComplexEnterCarAsDriver
+STRING_ADDR: 100469df9
+XREF: 1004ad4d8
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CTaskComplexEnterCarAsPassenger
+STRING_ADDR: 100469e18
+XREF: 1004ad4f0
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexOpenDriverDoor
+STRING_ADDR: 100469e3a
+XREF: 1004ad508
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexOpenPassengerDoor
+STRING_ADDR: 100469e57
+XREF: 1004ad520
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexDragPedFromCar
+STRING_ADDR: 100469e77
+XREF: 1004ad538
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskComplexEnterCarAsDriverTimed
+STRING_ADDR: 100469e94
+XREF: 1004ad550
+XREF_COUNT: 1
+
+==================================================
+STRING: 36CTaskComplexEnterCarAsPassengerTimed
+STRING_ADDR: 100469eb8
+XREF: 1004ad568
+XREF_COUNT: 1
+
+==================================================
+STRING: 35CTaskComplexEnterCarAsPassengerWait
+STRING_ADDR: 100469edf
+XREF: 1004ad580
+XREF_COUNT: 1
+
+==================================================
+STRING: 35CTaskComplexLeaveCarAsPassengerWait
+STRING_ADDR: 100469f05
+XREF: 1004ad598
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexEnterBoatAsDriver
+STRING_ADDR: 100469f2b
+XREF: 1004ad5b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexStealCar
+STRING_ADDR: 100469f4b
+XREF: 1004ad5c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskComplexLeaveBoat
+STRING_ADDR: 100469f62
+XREF: 1004ad5e0
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexLeaveCarAndWander
+STRING_ADDR: 100469f7a
+XREF: 1004ad5f8
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexLeaveCarAndFlee
+STRING_ADDR: 100469f9a
+XREF: 1004ad610
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexScreamInCarThenLeave
+STRING_ADDR: 100469fb8
+XREF: 1004ad628
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskSimpleCarDrive
+STRING_ADDR: 100469fdb
+XREF: 1004ad640
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexCarDrive
+STRING_ADDR: 100469ff1
+XREF: 1004ad658
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexCarDriveWander
+STRING_ADDR: 10046a008
+XREF: 1004ad670
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexCarDriveMission
+STRING_ADDR: 10046a025
+XREF: 1004ad688
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexDriveToPoint
+STRING_ADDR: 10046a043
+XREF: 1004ad6a0
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexDrivePointRoute
+STRING_ADDR: 10046a05e
+XREF: 1004ad6b8
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CTaskComplexEnterAnyCarAsDriver
+STRING_ADDR: 10046a07c
+XREF: 1004ad6d0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexShuffleSeats
+STRING_ADDR: 10046a09e
+XREF: 1004ad6e8
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskSimpleCarSetTempAction
+STRING_ADDR: 10046a0b9
+XREF: 1004ad700
+XREF_COUNT: 1
+
+==================================================
+STRING: 36CTaskComplexGoToCarDoorAndStandStill
+STRING_ADDR: 10046a10c
+XREF: 1004ae400
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskSimpleCarAlign
+STRING_ADDR: 10046a133
+XREF: 1004ae418
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskSimpleCarOpenDoorFromOutside
+STRING_ADDR: 10046a149
+XREF: 1004ae430
+XREF_COUNT: 1
+
+==================================================
+STRING: 39CTaskSimpleCarOpenLockedDoorFromOutside
+STRING_ADDR: 10046a16d
+XREF: 1004ae448
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimplePickUpBike
+STRING_ADDR: 10046a197
+XREF: 1004ae460
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskSimpleCarCloseDoorFromInside
+STRING_ADDR: 10046a1af
+XREF: 1004ae478
+XREF_COUNT: 1
+
+==================================================
+STRING: 34CTaskSimpleCarCloseDoorFromOutside
+STRING_ADDR: 10046a1d3
+XREF: 1004ae490
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskSimpleCarGetIn
+STRING_ADDR: 10046a1f8
+XREF: 1004ae4a8
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleCarShuffle
+STRING_ADDR: 10046a20e
+XREF: 1004ae4c0
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskSimpleCarWaitToSlowDown
+STRING_ADDR: 10046a226
+XREF: 1004ae4d8
+XREF_COUNT: 1
+
+==================================================
+STRING: 37CTaskSimpleCarWaitForDoorNotToBeInUse
+STRING_ADDR: 10046a245
+XREF: 1004ae4f0
+XREF_COUNT: 1
+
+==================================================
+STRING: 48CTaskSimpleCarGoToPointNearDoorUntilDoorNotInUse
+STRING_ADDR: 10046a26d
+XREF: 1004ae508
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskSimpleCarSetPedInAsPassenger
+STRING_ADDR: 10046a2a0
+XREF: 1004ae520
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskSimpleCarSetPedInAsDriver
+STRING_ADDR: 10046a2c4
+XREF: 1004ae538
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskSimpleCarGetOut
+STRING_ADDR: 10046a2e5
+XREF: 1004ae550
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleCarJumpOut
+STRING_ADDR: 10046a2fc
+XREF: 1004ae568
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskSimpleCarForcePedOut
+STRING_ADDR: 10046a314
+XREF: 1004ae580
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleCarSetPedOut
+STRING_ADDR: 10046a330
+XREF: 1004ae598
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskSimpleCarSlowDragPedOut
+STRING_ADDR: 10046a34a
+XREF: 1004ae5b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskSimpleCarSlowBeDraggedOut
+STRING_ADDR: 10046a369
+XREF: 1004ae5c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 34CTaskSimpleCarSetPedSlowDraggedOut
+STRING_ADDR: 10046a38a
+XREF: 1004ae5e0
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CTaskComplexCarSlowBeDraggedOut
+STRING_ADDR: 10046a3af
+XREF: 1004ae5f8
+XREF_COUNT: 1
+
+==================================================
+STRING: 41CTaskComplexCarSlowBeDraggedOutAndStandUp
+STRING_ADDR: 10046a3d1
+XREF: 1004ae610
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleBikeJacked
+STRING_ADDR: 10046a3fd
+XREF: 1004ae628
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleCarFallOut
+STRING_ADDR: 10046a415
+XREF: 1004ae640
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskSimpleSetPedAsAutoDriver
+STRING_ADDR: 10046a42d
+XREF: 1004ae658
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskComplexGoToBoatSteeringWheel
+STRING_ADDR: 10046a44d
+XREF: 1004ae670
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexGetOnBoatSeat
+STRING_ADDR: 10046a471
+XREF: 1004ae688
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskSimpleCreateCarAndGetIn
+STRING_ADDR: 10046a48d
+XREF: 1004ae6a0
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CTaskSimpleWaitUntilPedIsOutCar
+STRING_ADDR: 10046a4ac
+XREF: 1004ae6b8
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskSimpleWaitUntilPedIsInCar
+STRING_ADDR: 10046a4ce
+XREF: 1004ae6d0
+XREF_COUNT: 1
+
+==================================================
+STRING: 42CTaskComplexDiveFromAttachedEntityAndGetUp
+STRING_ADDR: 10046a8f8
+XREF: 1004aedb8
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CTaskComplexEvasiveDiveAndGetUp
+STRING_ADDR: 10046a925
+XREF: 1004aeda0
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleHitHead
+STRING_ADDR: 10046a947
+XREF: 1004aedd0
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskSimpleEvasiveStep
+STRING_ADDR: 10046a95c
+XREF: 1004aede8
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexEvasiveStep
+STRING_ADDR: 10046a975
+XREF: 1004aee00
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskSimpleEvasiveDive
+STRING_ADDR: 10046a98f
+XREF: 1004aee18
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexHitPedWithCar
+STRING_ADDR: 10046a9a8
+XREF: 1004aee30
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskSimpleKillPedWithCar
+STRING_ADDR: 10046a9c4
+XREF: 1004aee48
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskSimpleHurtPedWithCar
+STRING_ADDR: 10046a9e0
+XREF: 1004aee60
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexWalkRoundCar
+STRING_ADDR: 10046a9fc
+XREF: 1004aee78
+XREF_COUNT: 1
+
+==================================================
+STRING: 36CTaskComplexWalkRoundBuildingAttempt
+STRING_ADDR: 10046aa17
+XREF: 1004aee90
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexWalkRoundObject
+STRING_ADDR: 10046aa3e
+XREF: 1004aeea8
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexMoveBackAndJump
+STRING_ADDR: 10046aa5c
+XREF: 1004aeec0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexEvasiveCower
+STRING_ADDR: 10046aa7a
+XREF: 1004aeed8
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexWalkRoundFire
+STRING_ADDR: 10046aa95
+XREF: 1004aeef0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskSimpleHitFromBehind
+STRING_ADDR: 10046aab4
+XREF_COUNT: 0
+
+==================================================
+STRING: 18CTaskSimpleHitWall
+STRING_ADDR: 10046aad2
+XREF_COUNT: 0
+
+==================================================
+STRING: 18CTaskSimpleGiveCPR
+STRING_ADDR: 10046ab14
+XREF: 1004af250
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexTreatAccident
+STRING_ADDR: 10046ab29
+XREF: 1004af268
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexMedicTreatInjuredPed
+STRING_ADDR: 10046ab45
+XREF: 1004af280
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexDriveFireTruck
+STRING_ADDR: 10046ab69
+XREF: 1004af298
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexUseSwatRope
+STRING_ADDR: 10046ab86
+XREF: 1004af2b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexUseWaterCannon
+STRING_ADDR: 10046aba0
+XREF: 1004af2c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexExtinguishFireOnFoot
+STRING_ADDR: 10046abbd
+XREF: 1004af2e0
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleHandsUp
+STRING_ADDR: 10046abe0
+XREF_COUNT: 0
+
+==================================================
+STRING: A22CTaskComplexWanderFlee
+STRING_ADDR: 10046ac33
+XREF_COUNT: 0
+
+==================================================
+STRING: 21CTaskComplexFleePoint
+STRING_ADDR: 10046ac4d
+XREF: 1004af728
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexFleeEntity
+STRING_ADDR: 10046ac65
+XREF: 1004af740
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexSmartFleePoint
+STRING_ADDR: 10046ac7e
+XREF: 1004af758
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexSmartFleeEntity
+STRING_ADDR: 10046ac9b
+XREF: 1004af770
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexFleeShooting
+STRING_ADDR: 10046acb9
+XREF: 1004af788
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexFleeAnyMeans
+STRING_ADDR: 10046acd4
+XREF: 1004af7a0
+XREF_COUNT: 1
+
+==================================================
+STRING: @22CTaskComplexGangLeader
+STRING_ADDR: 10046ad53
+XREF_COUNT: 0
+
+==================================================
+STRING: 24CTaskComplexGangFollower
+STRING_ADDR: 10046ad6d
+XREF: 1004afe38
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskSimpleGoToPointFine
+STRING_ADDR: 10046ad88
+XREF: 1004afe50
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexTrackEntity
+STRING_ADDR: 10046ada3
+XREF: 1004afe68
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskGangHassleVehicle
+STRING_ADDR: 10046adbd
+XREF: 1004afe80
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskGangHasslePed
+STRING_ADDR: 10046add6
+XREF: 1004afe98
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexStareAtPed
+STRING_ADDR: 10046adeb
+XREF: 1004afeb0
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleDoHandSignal
+STRING_ADDR: 10046ae04
+XREF: 1004afec8
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexSignalAtPed
+STRING_ADDR: 10046ae1e
+XREF: 1004afee0
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskGoToVehicleAndLean
+STRING_ADDR: 10046ae38
+XREF: 1004afef8
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskLeanOnVehicle
+STRING_ADDR: 10046ae52
+XREF: 1004aff10
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexPassObject
+STRING_ADDR: 10046ae67
+XREF: 1004aff28
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexGangJoinRespond
+STRING_ADDR: 10046ae80
+XREF: 1004aff40
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexProstituteSolicit
+STRING_ADDR: 10046ae9e
+XREF: 1004aff58
+XREF_COUNT: 1
+
+==================================================
+STRING: 34CTaskComplexGoToPointAndStandStill
+STRING_ADDR: 10046af9b
+XREF: 1004b0968
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexWanderStandard
+STRING_ADDR: 10046afc0
+XREF: 1004b0a30
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskComplexWander
+STRING_ADDR: 10046afdd
+XREF: 1004b0a18
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskComplexWanderCop
+STRING_ADDR: 10046aff2
+XREF: 1004b0ae0
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexWanderCriminal
+STRING_ADDR: 10046b00a
+XREF: 1004b0b90
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskComplexWanderProstitute
+STRING_ADDR: 10046b027
+XREF: 1004b0ba8
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexFollowNodeRoute
+STRING_ADDR: 10046b047
+XREF: 1004b0bc0
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleGoTo
+STRING_ADDR: 10046b065
+XREF: 1004b0bd8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskSimpleGoToPoint
+STRING_ADDR: 10046b077
+XREF: 1004b0bf0
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskSimpleAchieveHeading
+STRING_ADDR: 10046b08e
+XREF: 1004b0c08
+XREF_COUNT: 1
+
+==================================================
+STRING: 39CTaskComplexGoToPointAndStandStillTimed
+STRING_ADDR: 10046b0aa
+XREF: 1004b0c20
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexGoToPointAiming
+STRING_ADDR: 10046b0d4
+XREF: 1004b0c38
+XREF_COUNT: 1
+
+==================================================
+STRING: 51CTaskComplexGoToPointAndStandStillAndAchieveHeading
+STRING_ADDR: 10046b0f2
+XREF: 1004b0c50
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskComplexFollowPointRoute
+STRING_ADDR: 10046b128
+XREF: 1004b0c68
+XREF_COUNT: 1
+
+==================================================
+STRING: 39CTaskComplexAvoidOtherPedWhileWandering
+STRING_ADDR: 10046b147
+XREF: 1004b0c80
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexGoToAttractor
+STRING_ADDR: 10046b173
+XREF: 1004b0c98
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexGoToPointAnyMeans
+STRING_ADDR: 10046b18f
+XREF: 1004b0cb0
+XREF_COUNT: 1
+
+==================================================
+STRING: 35CTaskComplexTurnToFaceEntityOrCoord
+STRING_ADDR: 10046b1af
+XREF: 1004b0cc8
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexFollowPatrolRoute
+STRING_ADDR: 10046b1d5
+XREF: 1004b0ce0
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexGotoDoorAndOpen
+STRING_ADDR: 10046b1f5
+XREF: 1004b0cf8
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimpleSlideToCoord
+STRING_ADDR: 10046b213
+XREF: 1004b0d10
+XREF_COUNT: 1
+
+==================================================
+STRING: 34CTaskComplexInvestigateDisturbance
+STRING_ADDR: 10046b22d
+XREF: 1004b0d28
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexGoToPointShooting
+STRING_ADDR: 10046b252
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexWanderGang
+STRING_ADDR: 10046b272
+XREF_COUNT: 0
+
+==================================================
+STRING: 23CTaskComplexWanderMedic
+STRING_ADDR: 10046b28c
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskSimpleScratchHead
+STRING_ADDR: 10046b2a6
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI32CEntitySeekPosCalculatorFixedPosE
+STRING_ADDR: 10046b2e4
+XREF_COUNT: 0
+
+==================================================
+STRING: 22CTaskInteriorBeInHouse
+STRING_ADDR: 10046b35a
+XREF: 1004b1198
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskInteriorBeInOffice
+STRING_ADDR: 10046b373
+XREF: 1004b11b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskInteriorBeInShop
+STRING_ADDR: 10046b38d
+XREF: 1004b11c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskInteriorShopKeeper
+STRING_ADDR: 10046b3a5
+XREF: 1004b11e0
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskInteriorGoToInfo
+STRING_ADDR: 10046b3bf
+XREF: 1004b11f8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskInteriorUseInfo
+STRING_ADDR: 10046b3d7
+XREF: 1004b1210
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskInteriorSitInChair
+STRING_ADDR: 10046b3ee
+XREF: 1004b1228
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskInteriorLieInBed
+STRING_ADDR: 10046b408
+XREF: 1004b1240
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskInteriorSitAtDesk
+STRING_ADDR: 10046b420
+XREF: 1004b1258
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimpleGetUp
+STRING_ADDR: 10046b4f4
+XREF: 1004b1890
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexGetUpAndStandStill
+STRING_ADDR: 10046b507
+XREF: 1004b18a8
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleFall
+STRING_ADDR: 10046b528
+XREF: 1004b18c0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexFallAndGetUp
+STRING_ADDR: 10046b53a
+XREF: 1004b18d8
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexFallAndStayDown
+STRING_ADDR: 10046b555
+XREF: 1004b18f0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexInAirAndLand
+STRING_ADDR: 10046b573
+XREF: 1004b1908
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimpleInAir
+STRING_ADDR: 10046b58e
+XREF: 1004b1920
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleLand
+STRING_ADDR: 10046b5a1
+XREF: 1004b1938
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexFallToDeath
+STRING_ADDR: 10046b5b3
+XREF: 1004b1950
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleJump
+STRING_ADDR: 10046b5cd
+XREF: 1004b1968
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskComplexJump
+STRING_ADDR: 10046b5df
+XREF: 1004b1980
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskSimpleClimb
+STRING_ADDR: 10046b5f2
+XREF: 1004b1998
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskSimpleJetPack
+STRING_ADDR: 10046b605
+XREF: 1004b19b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexStuckInAir
+STRING_ADDR: 10046b61a
+XREF: 1004b19c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 19CTaskComplexPartner
+STRING_ADDR: 10046b640
+XREF: 1004b1e90
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexPartnerDeal
+STRING_ADDR: 10046b656
+XREF: 1004b1ea8
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexPartnerGreet
+STRING_ADDR: 10046b670
+XREF: 1004b1ec0
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskComplexPartnerChat
+STRING_ADDR: 10046b68b
+XREF: 1004b1ed8
+XREF_COUNT: 1
+
+==================================================
+STRING: 16CTaskComplexChat
+STRING_ADDR: 10046b6a5
+XREF: 1004b1ef0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexPartnerShove
+STRING_ADDR: 10046b6b8
+XREF: 1004b1f08
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskComplexWalkAlongsidePed
+STRING_ADDR: 10046b6d3
+XREF: 1004b1f20
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexWaitForPed
+STRING_ADDR: 10046b6f2
+XREF: 1004b1f38
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexBeInCouple
+STRING_ADDR: 10046b70b
+XREF: 1004b1f50
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleChat
+STRING_ADDR: 10046b724
+XREF_COUNT: 0
+
+==================================================
+STRING: 23CTaskSimplePlayerOnFoot
+STRING_ADDR: 10046b780
+XREF: 1004b2038
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleSwim
+STRING_ADDR: 10046b79a
+XREF: 1004b2050
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskSimpleArrestPed
+STRING_ADDR: 10046b80c
+XREF: 1004b22b0
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskComplexArrestPed
+STRING_ADDR: 10046b823
+XREF: 1004b22c8
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexPolicePursuit
+STRING_ADDR: 10046b83b
+XREF: 1004b22e0
+XREF_COUNT: 1
+
+==================================================
+STRING: 24CTaskComplexKillCriminal
+STRING_ADDR: 10046b857
+XREF: 1004b22f8
+XREF_COUNT: 1
+
+==================================================
+STRING: 20CTaskComplexCopInCar
+STRING_ADDR: 10046b872
+XREF: 1004b2310
+XREF_COUNT: 1
+
+==================================================
+STRING:  N20CTaskSimpleShakeFist
+STRING_ADDR: 10046b89a
+XREF: 10010bf24
+FUNCTION: 100109e84 | FUN_100109e84
+  CALLEE: 10043e894 | _strncpy
+  CALLEE: 10037362c | FUN_10037362c
+  CALLEE: 100362090 | FUN_100362090
+  CALLEE: 10036fbe8 | FUN_10036fbe8
+  CALLEE: 10018252c | FUN_10018252c
+  CALLEE: 1002d7e44 | FUN_1002d7e44
+  CALLEE: 100176940 | FUN_100176940
+  CALLEE: 1000c59b4 | FUN_1000c59b4
+  CALLEE: 10043e798 | _rand
+  CALLEE: 100100428 | FUN_100100428
+  CALLEE: 100197454 | FUN_100197454
+  CALLEE: 1001826ac | FUN_1001826ac
+  CALLEE: 100341db4 | FUN_100341db4
+  CALLEE: 1000daf00 | FUN_1000daf00
+  CALLEE: 10043e888 | _strncmp
+  CALLEE: 10043dfac | _bzero
+  CALLEE: 1000e6c48 | FUN_1000e6c48
+  CALLEE: 10022b8b4 | FUN_10022b8b4
+  CALLEE: 10043e84c | _strcpy
+  CALLEE: 100160c10 | FUN_100160c10
+  CALLEE: 100358c08 | FUN_100358c08
+  CALLEE: 1003b9984 | FUN_1003b9984
+  CALLEE: 1000dac28 | FUN_1000dac28
+  CALLEE: 10036a07c | FUN_10036a07c
+  CALLEE: 1000dcef0 | FUN_1000dcef0
+  CALLEE: 10022ba38 | FUN_10022ba38
+  CALLEE: 10039ecb0 | thunk_FUN_10039eb70
+  CALLEE: 10022b874 | FUN_10022b874
+  CALLEE: 10036c640 | FUN_10036c640
+  CALLEE: 10035abb0 | FUN_10035abb0
+  CALLEE: 1000da470 | FUN_1000da470
+  CALLEE: 10038fcfc | FUN_10038fcfc
+  CALLEE: 1003c9bcc | FUN_1003c9bcc
+  CALLEE: 10039064c | FUN_10039064c
+  CALLEE: 100175340 | FUN_100175340
+  CALLEE: 1003ca5d0 | FUN_1003ca5d0
+  CALLEE: 10035e990 | FUN_10035e990
+  CALLEE: 10043de50 | _acosf
+  CALLEE: 100191470 | FUN_100191470
+  CALLEE: 10043de20 | ___stack_chk_fail
+  CALLEE: 10018a6fc | FUN_10018a6fc
+  CALLEE: 1000da8f8 | FUN_1000da8f8
+  CALLEE: 100175868 | FUN_100175868
+  CALLEE: 1003af33c | FUN_1003af33c
+  CALLEE: 10039d23c | FUN_10039d23c
+  CALLEE: 100371870 | FUN_100371870
+  CALLEE: 100175ed8 | FUN_100175ed8
+  CALLEE: 10039dca8 | FUN_10039dca8
+  CALLEE: 10033d4ac | FUN_10033d4ac
+  CALLEE: 1003cc750 | FUN_1003cc750
+  CALLEE: 1003b2714 | FUN_1003b2714
+  CALLEE: 10017573c | FUN_10017573c
+  CALLEE: 10022b840 | FUN_10022b840
+  CALLEE: 100341690 | FUN_100341690
+  CALLEE: 10033d588 | FUN_10033d588
+  CALLEE: 100193c3c | FUN_100193c3c
+  CALLEE: 1000daf90 | FUN_1000daf90
+  CALLEE: 10035a068 | FUN_10035a068
+  CALLEE: 100318900 | FUN_100318900
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100383d64 | FUN_100383d64
+  CALLEE: 10036c254 | FUN_10036c254
+  CALLEE: 10039d5ac | FUN_10039d5ac
+XREF_COUNT: 1
+
+==================================================
+STRING: 17CTaskSimpleFacial
+STRING_ADDR: 10046b8b3
+XREF: 1004b2770
+XREF_COUNT: 1
+
+==================================================
+STRING: 18CTaskComplexFacial
+STRING_ADDR: 10046b8c7
+XREF: 1004b2788
+XREF_COUNT: 1
+
+==================================================
+STRING: 35CTaskSimpleAffectSecondaryBehaviour
+STRING_ADDR: 10046b8dc
+XREF: 1004b27a0
+XREF_COUNT: 1
+
+==================================================
+STRING: 21CTaskSimpleHoldEntity
+STRING_ADDR: 10046b902
+XREF: 1004b27b8
+XREF_COUNT: 1
+
+==================================================
+STRING: 26CTaskComplexGoPickUpEntity
+STRING_ADDR: 10046b91a
+XREF: 1004b27d0
+XREF_COUNT: 1
+
+==================================================
+STRING: 15CTaskSimpleDuck
+STRING_ADDR: 10046b937
+XREF: 1004b27e8
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CTaskSimpleDuckWhileShotsWhizzing
+STRING_ADDR: 10046b949
+XREF: 1004b2800
+XREF_COUNT: 1
+
+==================================================
+STRING: 23CTaskSimplePickUpEntity
+STRING_ADDR: 10046b96d
+XREF_COUNT: 0
+
+==================================================
+STRING: 24CTaskSimplePutDownEntity
+STRING_ADDR: 10046b987
+XREF_COUNT: 0
+
+==================================================
+STRING: 41CEntitySeekPosCalculatorRadiusAngleOffset
+STRING_ADDR: 10046b9f0
+XREF: 1004b2a48
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CEntitySeekPosCalculatorXYOffset
+STRING_ADDR: 10046ba1f
+XREF: 1004b2a78
+XREF_COUNT: 1
+
+==================================================
+STRING: 37CEntitySeekPosCalculatorEntitySurface
+STRING_ADDR: 10046ba42
+XREF: 1004b2aa8
+XREF_COUNT: 1
+
+==================================================
+STRING: 33CEntitySeekPosCalculatorVehicleId
+STRING_ADDR: 10046ba6a
+XREF: 1004b2ad8
+XREF_COUNT: 1
+
+==================================================
+STRING: 31CEntitySeekPosCalculatorDriving
+STRING_ADDR: 10046ba8e
+XREF: 1004b2b08
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CEntitySeekPosCalculatorFixedPos
+STRING_ADDR: 10046bab0
+XREF: 1004b2b38
+XREF_COUNT: 1
+
+==================================================
+STRING: 35CTaskComplexFollowLeaderInFormation
+STRING_ADDR: 10046bad3
+XREF: 1004b2b50
+XREF_COUNT: 1
+
+==================================================
+STRING: 32CTaskComplexFollowLeaderAnyMeans
+STRING_ADDR: 10046baf9
+XREF: 1004b2b68
+XREF_COUNT: 1
+
+==================================================
+STRING: 28CTaskComplexSeekEntityAiming
+STRING_ADDR: 10046bb1c
+XREF: 1004b2b80
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexFollowPedFootsteps
+STRING_ADDR: 10046bb3b
+XREF: 1004b2b98
+XREF_COUNT: 1
+
+==================================================
+STRING: 30CTaskComplexSeekEntityAnyMeansI32CEntitySeekPosCalculatorXYOffsetE
+STRING_ADDR: 10046bb5f
+XREF_COUNT: 0
+
+==================================================
+STRING: 30CTaskComplexInvestigateDeadPed
+STRING_ADDR: 10046bba4
+XREF: 1004b2e20
+XREF_COUNT: 1
+
+==================================================
+STRING: 29CTaskComplexReactToGunAimedAt
+STRING_ADDR: 10046bbc5
+XREF: 1004b2e38
+XREF_COUNT: 1
+
+==================================================
+STRING: 25CTaskComplexWaitForBackup
+STRING_ADDR: 10046bbe5
+XREF: 1004b2e50
+XREF_COUNT: 1
+
+==================================================
+STRING: 27CTaskComplexExtinguishFires
+STRING_ADDR: 10046bc01
+XREF: 1004b2e68
+XREF_COUNT: 1
+
+==================================================
+STRING: 8CVehicle
+STRING_ADDR: 10046c3c4
+XREF: 1004b4460
+XREF_COUNT: 1
+
+==================================================
+STRING: 22CTaskComplexSeekEntityI32CEntitySeekPosCalculatorXYOffsetE
+STRING_ADDR: 10046cb90
+XREF_COUNT: 0
+
+==================================================
+STRING: CTaskSimpleUseGun
+STRING_ADDR: 100486b18
+XREF: 100349198
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF: 1003491e4
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF: 100348f30
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF: 100348f7c
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF: 100349050
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF: 10034909c
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF: 10034930c
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF: 100349358
+FUNCTION: 100348bbc | FUN_100348bbc
+  CALLER: 100347aec | FUN_100347aec
+  CALLEE: 100260978 | FUN_100260978
+  CALLEE: 100260d80 | FUN_100260d80
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10024bbc4 | FUN_10024bbc4
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 100135348 | FUN_100135348
+  CALLEE: 1003476f8 | FUN_1003476f8
+  CALLEE: 10024297c | FUN_10024297c
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 100260828 | FUN_100260828
+  CALLEE: 10023c7e0 | FUN_10023c7e0
+  CALLEE: 100418f80 | FUN_100418f80
+  CALLEE: 10023f9a4 | FUN_10023f9a4
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+XREF_COUNT: 8
+
+==================================================
+STRING: CTaskComplexPassObject
+STRING_ADDR: 100486c95
+XREF: 10039a55c
+FUNCTION: 10039a518 | FUN_10039a518
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 10033d4ac | FUN_10033d4ac
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+  CALLEE: 100358c08 | FUN_100358c08
+XREF_COUNT: 1
+
+==================================================
+STRING: CTaskComplexBeInCouple
+STRING_ADDR: 100486d4d
+XREF: 1003bdeac
+FUNCTION: 1003bdbe0 | FUN_1003bdbe0
+  CALLEE: 100242b68 | FUN_100242b68
+  CALLEE: 100269030 | FUN_100269030
+  CALLEE: 1002d24f8 | FUN_1002d24f8
+  CALLEE: 1002d1f18 | FUN_1002d1f18
+  CALLEE: 10033d4ac | FUN_10033d4ac
+  CALLEE: 1003b96c0 | FUN_1003b96c0
+  CALLEE: 1002d1f94 | FUN_1002d1f94
+  CALLEE: 1002d2258 | FUN_1002d2258
+  CALLEE: 10043e798 | _rand
+  CALLEE: 1002d24b8 | FUN_1002d24b8
+  CALLEE: 1003bd8fc | FUN_1003bd8fc
+  CALLEE: 1003bd2cc | FUN_1003bd2cc
+XREF_COUNT: 1
+
+==================================================
+STRING: _swift_allocObject
+STRING_ADDR: 100932030
+XREF_COUNT: 0
+
+==================================================
+STRING: _swift_deallocObject
+STRING_ADDR: 1009320d9
+XREF_COUNT: 0
+
+==================================================
+STRING: _swift_allocObject
+STRING_ADDR: 1009b3098
+XREF: 1009ae320
+XREF: 1009ae968
+XREF: 1009af080
+XREF_COUNT: 3
+
+==================================================
+STRING: _swift_deallocObject
+STRING_ADDR: 1009b3119
+XREF: 1009ae370
+XREF: 1009ae97c
+XREF: 1009af094
+XREF_COUNT: 3

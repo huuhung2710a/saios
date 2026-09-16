@@ -1,0 +1,102 @@
+
+================================================
+TARGET=CPed_RTTI
+ADDR=1004a74d0
+BLOCK=__const R=true W=false X=false
+--- REFERENCES TO ---
+FROM=1004a71e0 TYPE=DATA
+  CODE=addr 1004a74d0
+FROM=1004a72e0 TYPE=DATA
+  CODE=addr 1004a74d0
+FROM=1004a73e0 TYPE=DATA
+  CODE=addr 1004a74d0
+FROM=1004a8460 TYPE=DATA
+  CODE=addr 1004a74d0
+REF_COUNT=4
+
+================================================
+TARGET=CPlayerPed_RTTI
+ADDR=1004a8450
+BLOCK=__const R=true W=false X=false
+--- REFERENCES TO ---
+REF_COUNT=0
+
+================================================
+TARGET=CVehicle_RTTI
+ADDR=1004b4458
+BLOCK=__const R=true W=false X=false
+--- REFERENCES TO ---
+FROM=1004b30d8 TYPE=DATA
+  CODE=addr 1004b4458
+FROM=1004b33d8 TYPE=DATA
+  CODE=addr 1004b4458
+FROM=1004b46a8 TYPE=DATA
+  CODE=addr 1004b4458
+FROM=1004b48e8 TYPE=DATA
+  CODE=addr 1004b4458
+REF_COUNT=4
+
+================================================
+TARGET=CPed_TextCandidate
+ADDR=100078664
+BLOCK=__text R=true W=false X=true
+FUNCTION_AT=100078664|FUN_100078664
+FUNCTION_CONTAINING=100078664|FUN_100078664
+--- REFERENCES TO ---
+FROM=1009a7e63 TYPE=DATA
+  CODE=uleb128 14h
+FROM=1004a74f8 TYPE=DATA
+  CODE=addr 100078664
+REF_COUNT=2
+
+================================================
+TARGET=CPlayerPed_Text1
+ADDR=100275324
+BLOCK=__text R=true W=false X=true
+FUNCTION_AT=100275324|FUN_100275324
+FUNCTION_CONTAINING=100275324|FUN_100275324
+--- REFERENCES TO ---
+FROM=1009a9dad TYPE=DATA
+  CODE=uleb128 4h
+FROM=1004a8478 TYPE=DATA
+  CODE=addr 100275324
+REF_COUNT=2
+
+================================================
+TARGET=CPlayerPed_Text2
+ADDR=100275368
+BLOCK=__text R=true W=false X=true
+FUNCTION_AT=100275368|FUN_100275368
+FUNCTION_CONTAINING=100275368|FUN_100275368
+--- REFERENCES TO ---
+FROM=1009a9dae TYPE=DATA
+  CODE=uleb128 44h
+FROM=1004a8480 TYPE=DATA
+  CODE=addr 100275368
+REF_COUNT=2
+
+================================================
+TARGET=CVehicle_Text1
+ADDR=1004236d4
+BLOCK=__text R=true W=false X=true
+FUNCTION_AT=1004236d4|thunk_FUN_100423668
+FUNCTION_CONTAINING=1004236d4|thunk_FUN_100423668
+--- REFERENCES TO ---
+FROM=1009abf03 TYPE=DATA
+  CODE=uleb128 6Ch
+FROM=1004b4480 TYPE=DATA
+  CODE=addr 1004236d4
+REF_COUNT=2
+
+================================================
+TARGET=CVehicle_Text2
+ADDR=1004236d8
+BLOCK=__text R=true W=false X=true
+FUNCTION_AT=1004236d8|FUN_1004236d8
+FUNCTION_CONTAINING=1004236d8|FUN_1004236d8
+--- REFERENCES TO ---
+FROM=1009abf04 TYPE=DATA
+  CODE=uleb128 4h
+FROM=1004b4488 TYPE=DATA
+  CODE=addr 1004236d8
+REF_COUNT=2

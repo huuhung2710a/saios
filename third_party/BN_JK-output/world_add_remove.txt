@@ -1,0 +1,237 @@
+
+========================================
+NAME=SectorRemoveCandidate
+TARGET=100144968
+FUNCTION=FUN_100144968
+ENTRY=100144968
+BODY=[[100144968, 1001449b3]]
+
+=== DECOMPILE ===
+
+void FUN_100144968(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+                  long *param_5)
+
+{
+  undefined4 local_30;
+  undefined4 uStack_2c;
+  undefined4 local_28;
+  undefined4 uStack_24;
+  
+  (**(code **)(*param_5 + 0x50))();
+  local_30 = param_1;
+  uStack_2c = param_2;
+  local_28 = param_3;
+  uStack_24 = param_4;
+  (**(code **)(*param_5 + 0x18))(param_5,&local_30);
+  return;
+}
+
+
+
+=== CALLERS ===
+100160634|FUN_100160634
+10016091c|FUN_10016091c
+
+=== CALLEES ===
+
+========================================
+NAME=SectorAdd
+TARGET=100160634
+FUNCTION=FUN_100160634
+ENTRY=100160634
+BODY=[[100160634, 10016081f]]
+
+=== DECOMPILE ===
+
+void FUN_100160634(float param_1,float param_2,float param_3,float param_4,long *param_5)
+
+{
+  byte bVar1;
+  ulong uVar2;
+  undefined8 *puVar3;
+  long *plVar4;
+  uint uVar5;
+  int iVar6;
+  long *plVar7;
+  uint uVar8;
+  int iVar9;
+  uint uVar10;
+  
+  if ((*(byte *)((long)param_5 + 0x29) & 1) == 0) {
+    (**(code **)(*param_5 + 0x50))(param_5);
+    uVar5 = (uint)(param_1 / 50.0 + 60.0);
+    if ((((0xffffff0e < uVar5 - 0x79) && (uVar8 = (uint)(param_4 / 50.0 + 60.0), -0x79 < (int)uVar8)
+         ) && ((int)uVar8 < 0x79)) &&
+       (((iVar9 = (int)(param_3 / 50.0 + 60.0), -0x79 < iVar9 && (iVar9 < 0x79)) &&
+        ((iVar6 = (int)(param_2 / 50.0 + 60.0), -0x79 < iVar6 &&
+         ((iVar6 < 0x79 && (int)uVar8 <= iVar6) && (int)uVar5 <= iVar9)))))) {
+      do {
+        uVar10 = uVar5;
+        do {
+          uVar2 = (ulong)(uVar10 & 0xf | (uVar8 & 0xf) << 4);
+          bVar1 = *(byte *)((long)param_5 + 0x5a) & 7;
+          if (bVar1 == 4) {
+            plVar7 = &DAT_10077a268 + uVar2 * 3;
+          }
+          else if (bVar1 == 3) {
+            plVar7 = &DAT_10077a260 + uVar2 * 3;
+          }
+          else {
+            plVar7 = &DAT_10077a258 + uVar2 * 3;
+            if (bVar1 != 2) {
+              plVar7 = (long *)0x0;
+            }
+          }
+          puVar3 = (undefined8 *)&DAT_00000028;
+          FUN_1001453ec();
+          plVar4 = (long *)&DAT_00000018;
+          FUN_10016dd28();
+          *plVar4 = (long)param_5;
+          plVar4[2] = 0;
+          plVar4[1] = *plVar7;
+          if (*plVar7 != 0) {
+            *(long **)(*plVar7 + 0x10) = plVar4;
+          }
+          *plVar7 = (long)plVar4;
+          *puVar3 = plVar7;
+          puVar3[1] = plVar4;
+          puVar3[2] = &DAT_10077a258 + uVar2 * 3;
+          puVar3[3] = 0;
+          puVar3[4] = param_5[0x1b];
+          if (param_5[0x1b] != 0) {
+            *(undefined8 **)(param_5[0x1b] + 0x18) = puVar3;
+          }
+          param_5[0x1b] = (long)puVar3;
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 <= iVar9);
+        uVar8 = uVar8 + 1;
+      } while ((int)uVar8 <= iVar6);
+    }
+    return;
+  }
+  FUN_100144968(param_5);
+  return;
+}
+
+
+
+=== CALLERS ===
+
+=== CALLEES ===
+1001453ec|FUN_1001453ec
+10016dd28|FUN_10016dd28
+100144968|FUN_100144968
+
+========================================
+NAME=WorldPostCreate
+TARGET=1001826ac
+FUNCTION=FUN_1001826ac
+ENTRY=1001826ac
+BODY=[[1001826ac, 100182737]]
+
+=== DECOMPILE ===
+
+void FUN_1001826ac(long *param_1)
+
+{
+  if (param_1[4] != 0) {
+    if (param_1[3] == 0) {
+      FUN_10016c590(param_1 + 1,*(long *)(param_1[4] + 8) + 0x20);
+    }
+    else {
+      FUN_10022a654();
+    }
+  }
+  FUN_1001431f0(param_1);
+  (**(code **)(*param_1 + 0x10))(param_1);
+  if (((*(byte *)((long)param_1 + 0x5a) & 7 | 4) != 5) && ((*(uint *)(param_1 + 5) & 0x40004) == 0))
+  {
+    FUN_100160c10(param_1);
+    return;
+  }
+  return;
+}
+
+
+
+=== CALLERS ===
+1004042c0|FUN_1004042c0
+100424d58|FUN_100424d58
+10042c694|FUN_10042c694
+1002edfb4|FUN_1002edfb4
+1000c2fe4|FUN_1000c2fe4
+100109e84|FUN_100109e84
+10027aa30|FUN_10027aa30
+100321fac|FUN_100321fac
+100279198|FUN_100279198
+1003e3900|FUN_1003e3900
+10026cf8c|FUN_10026cf8c
+10024656c|FUN_10024656c
+10042eaf8|FUN_10042eaf8
+1003f3734|FUN_1003f3734
+10010c1b0|FUN_10010c1b0
+1000d6254|FUN_1000d6254
+1000cdc08|FUN_1000cdc08
+100279034|FUN_100279034
+10009a804|FUN_10009a804
+10031f91c|FUN_10031f91c
+100423108|FUN_100423108
+10041954c|FUN_10041954c
+100174540|FUN_100174540
+1000b7800|FUN_1000b7800
+10016be08|FUN_10016be08
+100425740|FUN_100425740
+1000aec94|FUN_1000aec94
+100424e18|FUN_100424e18
+100105918|FUN_100105918
+100097378|FUN_100097378
+1003dd308|FUN_1003dd308
+100419904|FUN_100419904
+1000eb104|FUN_1000eb104
+10021dc70|FUN_10021dc70
+1000f6844|FUN_1000f6844
+1000d4ca8|FUN_1000d4ca8
+10024567c|FUN_10024567c
+1000e9044|FUN_1000e9044
+1000bc740|FUN_1000bc740
+1003e5538|FUN_1003e5538
+1003fdf2c|FUN_1003fdf2c
+10021ef6c|FUN_10021ef6c
+10042aff8|FUN_10042aff8
+1000d708c|FUN_1000d708c
+10023858c|FUN_10023858c
+1000ddb5c|FUN_1000ddb5c
+100324b00|FUN_100324b00
+10009ad30|FUN_10009ad30
+100238d78|FUN_100238d78
+1000def8c|FUN_1000def8c
+100116c74|FUN_100116c74
+100149b8c|FUN_100149b8c
+10027bb1c|FUN_10027bb1c
+1002466a4|FUN_1002466a4
+1000fd868|FUN_1000fd868
+10007f618|FUN_10007f618
+10009b350|FUN_10009b350
+1000af4d4|FUN_1000af4d4
+1000ab8ec|FUN_1000ab8ec
+100320550|FUN_100320550
+1000f7854|FUN_1000f7854
+1000cf180|FUN_1000cf180
+100116e68|FUN_100116e68
+1000fb7bc|FUN_1000fb7bc
+1000cd424|FUN_1000cd424
+1000c2af8|FUN_1000c2af8
+10016acfc|FUN_10016acfc
+100046878|FUN_100046878
+1000bda10|FUN_1000bda10
+1000f9b30|FUN_1000f9b30
+1002779fc|FUN_1002779fc
+10026d120|FUN_10026d120
+100342244|FUN_100342244
+10016db88|FUN_10016db88
+
+=== CALLEES ===
+10022a654|FUN_10022a654
+10016c590|FUN_10016c590
+1001431f0|FUN_1001431f0
+100160c10|FUN_100160c10

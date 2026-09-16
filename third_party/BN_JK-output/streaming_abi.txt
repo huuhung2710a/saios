@@ -1,0 +1,495 @@
+
+================================================
+NAME=RequestModel
+TARGET=0x100307D54
+FUNCTION=100307d54|FUN_100307d54
+=== DECOMPILE ===
+
+void FUN_100307d54(int param_1,uint param_2)
+
+{
+  long lVar1;
+  short sVar2;
+  uint uVar3;
+  short *psVar4;
+  long *plVar5;
+  byte bVar6;
+  uint uVar7;
+  short *psVar8;
+  
+  lVar1 = (long)param_1 * 0x14;
+  psVar8 = (short *)(&DAT_10086761c + lVar1);
+  bVar6 = (&DAT_10086762c)[lVar1];
+  if (bVar6 == 2) {
+    bVar6 = (&DAT_100867622)[lVar1];
+    if (((param_2 >> 4 & 1) != 0) && ((bVar6 >> 4 & 1) == 0)) {
+      DAT_1008e7f00 = DAT_1008e7f00 + 1;
+      bVar6 = bVar6 | 0x10;
+    }
+    (&DAT_100867622)[lVar1] = bVar6 | (byte)param_2;
+  }
+  else {
+    if (bVar6 != 0) {
+      param_2 = param_2 & 0xffffffef;
+    }
+    (&DAT_100867622)[lVar1] = (&DAT_100867622)[lVar1] | (byte)param_2;
+    uVar7 = (uint)bVar6;
+    if (1 < uVar7 - 3) {
+      if (uVar7 == 0) {
+        if (param_1 - 20000U >> 3 < 0x271) {
+          (&DAT_10086762c)[lVar1] = 1;
+          return;
+        }
+        if (param_1 < 20000) {
+          plVar5 = (long *)(&DAT_1007bc170)[param_1];
+          (**(code **)(*plVar5 + 0x78))();
+          if ((int)plVar5 != -1) {
+            FUN_100307d54((int)plVar5 + 0x63e7,8);
+          }
+        }
+        psVar4 = DAT_1008e7e40;
+        uVar7 = (int)psVar8 - (int)DAT_100867610;
+        uVar3 = (int)DAT_1008e7e40 - (int)DAT_100867610;
+        *psVar8 = *DAT_1008e7e40;
+        *(short *)(&DAT_10086761e + lVar1) = (short)(uVar3 >> 2) * -0x3333;
+        sVar2 = (short)(uVar7 >> 2) * -0x3333;
+        *psVar4 = sVar2;
+        *(short *)(CONCAT44(DAT_100867610._4_4_,(int)DAT_100867610) + (long)(int)*psVar8 * 0x14 + 2)
+             = sVar2;
+        DAT_1008e7e50 = DAT_1008e7e50 + 1;
+        if ((param_2 >> 4 & 1) != 0) {
+          DAT_1008e7f00 = DAT_1008e7f00 + 1;
+        }
+      }
+      else if (uVar7 == 1) {
+        if (*psVar8 == -1) {
+          return;
+        }
+        *(undefined2 *)
+         (CONCAT44(DAT_100867610._4_4_,(int)DAT_100867610) + (long)(int)*psVar8 * 0x14 + 2) =
+             *(undefined2 *)(&DAT_10086761e + lVar1);
+        *(short *)(CONCAT44(DAT_100867610._4_4_,(int)DAT_100867610) +
+                  (long)(int)*(short *)(&DAT_10086761e + lVar1) * 0x14) = *psVar8;
+        *psVar8 = -1;
+        *(undefined2 *)(&DAT_10086761e + lVar1) = 0xffff;
+        if (param_1 < 20000) {
+          plVar5 = (long *)(&DAT_1007bc170)[param_1];
+          (**(code **)(*plVar5 + 0x28))();
+          if ((int)plVar5 == 7) {
+            return;
+          }
+          plVar5 = (long *)(&DAT_1007bc170)[param_1];
+          (**(code **)(*plVar5 + 0x28))();
+          if ((int)plVar5 == 6) {
+            return;
+          }
+        }
+        psVar4 = DAT_1008e7e30;
+        if (((&DAT_100867622)[lVar1] & 6) != 0) {
+          return;
+        }
+        uVar7 = (int)psVar8 - (int)DAT_100867610;
+        uVar3 = (int)DAT_1008e7e30 - (int)DAT_100867610;
+        *psVar8 = *DAT_1008e7e30;
+        *(short *)(&DAT_10086761e + lVar1) = (short)(uVar3 >> 2) * -0x3333;
+        sVar2 = (short)(uVar7 >> 2) * -0x3333;
+        *psVar4 = sVar2;
+        *(short *)(CONCAT44(DAT_100867610._4_4_,(int)DAT_100867610) + (long)(int)*psVar8 * 0x14 + 2)
+             = sVar2;
+        return;
+      }
+      (&DAT_100867622)[lVar1] = (byte)param_2;
+      (&DAT_10086762c)[lVar1] = 2;
+      return;
+    }
+  }
+  return;
+}
+
+
+=== INSTRUCTIONS ===
+100307d54 | stp x22,x21,[sp, #-0x30]!
+100307d58 | stp x20,x19,[sp, #0x10]
+100307d5c | stp x29,x30,[sp, #0x20]
+100307d60 | add x29,sp,#0x20
+100307d64 | adrp x8,0x100867000
+100307d68 | add x8,x8,#0x61c
+100307d6c | mov w9,#0x14
+100307d70 | smaddl x19,w0,w9,x8
+100307d74 | ldrb w8,[x19, #0x10]
+100307d78 | cmp w8,#0x2
+100307d7c | b.ne 0x100307db8
+100307d80 | ldrb w8,[x19, #0x6]
+100307d84 | tbz w1,#0x4,0x100307da0
+100307d88 | tbnz w8,#0x4,0x100307da0
+100307d8c | adrp x9,0x1008e7000
+100307d90 | ldr w10,[x9, #0xf00]
+100307d94 | add w10,w10,#0x1
+100307d98 | str w10,[x9, #0xf00]
+100307d9c | orr w8,w8,#0x10
+100307da0 | orr w8,w8,w1
+100307da4 | strb w8,[x19, #0x6]
+100307da8 | ldp x29,x30,[sp, #0x20]
+100307dac | ldp x20,x19,[sp, #0x10]
+100307db0 | ldp x22,x21,[sp], #0x30
+100307db4 | ret
+100307db8 | and w9,w1,#0xffffffef
+100307dbc | cmp w8,#0x0
+100307dc0 | csel w20,w1,w9,eq
+100307dc4 | ldrb w9,[x19, #0x6]
+100307dc8 | orr w9,w9,w20
+100307dcc | strb w9,[x19, #0x6]
+100307dd0 | sub w9,w8,#0x3
+100307dd4 | cmp w9,#0x2
+100307dd8 | b.cc 0x100307da8
+100307ddc | sxtw x21,w0
+100307de0 | cbz w8,0x100307ee4
+100307de4 | cmp w8,#0x1
+100307de8 | b.ne 0x100307fc8
+100307dec | ldrsh x8,[x19]
+100307df0 | cmn x8,#0x1
+100307df4 | b.eq 0x100307da8
+100307df8 | ldrh w9,[x19, #0x2]
+100307dfc | adrp x20,0x100867000
+100307e00 | ldr x10,[x20, #0x610]
+100307e04 | mov w11,#0x14
+100307e08 | smaddl x8,w8,w11,x10
+100307e0c | strh w9,[x8, #0x2]
+100307e10 | ldrh w8,[x19]
+100307e14 | ldr x9,[x20, #0x610]
+100307e18 | ldrsh x10,[x19, #0x2]
+100307e1c | smull x10,w10,w11
+100307e20 | strh w8,[x9, x10, LSL #0x0]
+100307e24 | mov w8,#0xffff
+100307e28 | strh w8,[x19]
+100307e2c | strh w8,[x19, #0x2]
+100307e30 | mov w8,#0x4e1f
+100307e34 | cmp w0,w8
+100307e38 | b.gt 0x100307e74
+100307e3c | adrp x22,0x1007bc000
+100307e40 | add x22,x22,#0x170
+100307e44 | ldr x0,[x22, x21, LSL #0x3]
+100307e48 | ldr x8,[x0]
+100307e4c | ldr x8,[x8, #0x28]
+100307e50 | blr x8
+100307e54 | cmp w0,#0x7
+100307e58 | b.eq 0x100307da8
+100307e5c | ldr x0,[x22, x21, LSL #0x3]
+100307e60 | ldr x8,[x0]
+100307e64 | ldr x8,[x8, #0x28]
+100307e68 | blr x8
+100307e6c | cmp w0,#0x6
+100307e70 | b.eq 0x100307da8
+100307e74 | ldrb w8,[x19, #0x6]
+100307e78 | tst w8,#0x6
+100307e7c | b.ne 0x100307da8
+100307e80 | adrp x8,0x1008e7000
+100307e84 | ldr x8,[x8, #0xe30]
+100307e88 | ldr w9,[x20, #0x610]
+100307e8c | sub w10,w19,w9
+100307e90 | lsr w10,w10,#0x2
+100307e94 | sub w9,w8,w9
+100307e98 | lsr w9,w9,#0x2
+100307e9c | mov w11,#0xcccd
+100307ea0 | movk w11,#0xcccc, LSL #16
+100307ea4 | mul w9,w9,w11
+100307ea8 | ldrh w11,[x8]
+100307eac | strh w11,[x19]
+100307eb0 | strh w9,[x19, #0x2]
+100307eb4 | mov w9,#0xffffcccd
+100307eb8 | mul w9,w10,w9
+100307ebc | strh w9,[x8]
+100307ec0 | ldr x8,[x20, #0x610]
+100307ec4 | ldrsh x10,[x19]
+100307ec8 | mov w11,#0x14
+100307ecc | smaddl x8,w10,w11,x8
+100307ed0 | strh w9,[x8, #0x2]
+100307ed4 | ldp x29,x30,[sp, #0x20]
+100307ed8 | ldp x20,x19,[sp, #0x10]
+100307edc | ldp x22,x21,[sp], #0x30
+100307ee0 | ret
+100307ee4 | mov w8,#0xffffb1e0
+100307ee8 | add w8,w0,w8
+100307eec | lsr w8,w8,#0x3
+100307ef0 | cmp w8,#0x270
+100307ef4 | b.hi 0x100307f10
+100307ef8 | mov w8,#0x1
+100307efc | strb w8,[x19, #0x10]
+100307f00 | ldp x29,x30,[sp, #0x20]
+100307f04 | ldp x20,x19,[sp, #0x10]
+100307f08 | ldp x22,x21,[sp], #0x30
+100307f0c | ret
+100307f10 | mov w8,#0x4e1f
+100307f14 | cmp w0,w8
+100307f18 | b.gt 0x100307f4c
+100307f1c | adrp x8,0x1007bc000
+100307f20 | add x8,x8,#0x170
+100307f24 | ldr x0,[x8, x21, LSL #0x3]
+100307f28 | ldr x8,[x0]
+100307f2c | ldr x8,[x8, #0x78]
+100307f30 | blr x8
+100307f34 | cmn w0,#0x1
+100307f38 | b.eq 0x100307f4c
+100307f3c | mov w8,#0x63e7
+100307f40 | add w0,w0,w8
+100307f44 | mov w1,#0x8
+100307f48 | bl 0x100307d54
+100307f4c | adrp x8,0x1008e7000
+100307f50 | ldr x8,[x8, #0xe40]
+100307f54 | adrp x9,0x100867000
+100307f58 | ldr w10,[x9, #0x610]
+100307f5c | sub w11,w19,w10
+100307f60 | lsr w11,w11,#0x2
+100307f64 | sub w10,w8,w10
+100307f68 | lsr w10,w10,#0x2
+100307f6c | mov w12,#0xcccd
+100307f70 | movk w12,#0xcccc, LSL #16
+100307f74 | mul w10,w10,w12
+100307f78 | ldrh w12,[x8]
+100307f7c | strh w12,[x19]
+100307f80 | strh w10,[x19, #0x2]
+100307f84 | mov w10,#0xffffcccd
+100307f88 | mul w10,w11,w10
+100307f8c | strh w10,[x8]
+100307f90 | ldr x8,[x9, #0x610]
+100307f94 | ldrsh x9,[x19]
+100307f98 | mov w11,#0x14
+100307f9c | smaddl x8,w9,w11,x8
+100307fa0 | strh w10,[x8, #0x2]
+100307fa4 | adrp x8,0x1008e7000
+100307fa8 | ldr w9,[x8, #0xe50]
+100307fac | add w9,w9,#0x1
+100307fb0 | str w9,[x8, #0xe50]
+100307fb4 | tbz w20,#0x4,0x100307fc8
+100307fb8 | adrp x8,0x1008e7000
+100307fbc | ldr w9,[x8, #0xf00]
+100307fc0 | add w9,w9,#0x1
+100307fc4 | str w9,[x8, #0xf00]
+100307fc8 | strb w20,[x19, #0x6]
+100307fcc | mov w8,#0x2
+100307fd0 | strb w8,[x19, #0x10]
+100307fd4 | ldp x29,x30,[sp, #0x20]
+100307fd8 | ldp x20,x19,[sp, #0x10]
+100307fdc | ldp x22,x21,[sp], #0x30
+100307fe0 | ret
+=== CALLERS ===
+100321fac|FUN_100321fac
+10039ab4c|FUN_10039ab4c
+100044760|FUN_100044760
+1003b5df0|FUN_1003b5df0
+10030c848|FUN_10030c848
+1000acc80|FUN_1000acc80
+10030cbac|FUN_10030cbac
+1000ad1c4|FUN_1000ad1c4
+1000803a8|FUN_1000803a8
+1004042c0|FUN_1004042c0
+10030830c|FUN_10030830c
+1000c3cf0|FUN_1000c3cf0
+1003c0410|FUN_1003c0410
+100117948|FUN_100117948
+10030ec40|FUN_10030ec40
+10030eefc|FUN_10030eefc
+10031f91c|FUN_10031f91c
+1003442a4|FUN_1003442a4
+100395530|FUN_100395530
+100397500|FUN_100397500
+10030d4c4|FUN_10030d4c4
+1000e208c|FUN_1000e208c
+1003c2e40|FUN_1003c2e40
+10035ba78|FUN_10035ba78
+100089e80|FUN_100089e80
+100305a68|FUN_100305a68
+10030c828|FUN_10030c828
+100171698|FUN_100171698
+1000d25c4|FUN_1000d25c4
+100323a0c|FUN_100323a0c
+100170754|FUN_100170754
+100307ac0|FUN_100307ac0
+100342934|FUN_100342934
+10030e4b0|FUN_10030e4b0
+1000e8d88|FUN_1000e8d88
+10042bbb0|FUN_10042bbb0
+1000e294c|FUN_1000e294c
+1003083d8|FUN_1003083d8
+10015b70c|FUN_10015b70c
+10026fb34|FUN_10026fb34
+1000cb3c4|FUN_1000cb3c4
+10030a1f4|FUN_10030a1f4
+1000acf40|FUN_1000acf40
+100425740|FUN_100425740
+10031d184|FUN_10031d184
+10030677c|FUN_10030677c
+100398b98|FUN_100398b98
+1003093e8|FUN_1003093e8
+10030d038|FUN_10030d038
+100097378|FUN_100097378
+1003bb30c|FUN_1003bb30c
+1000446b0|FUN_1000446b0
+100107310|FUN_100107310
+100080af8|FUN_100080af8
+10040b364|FUN_10040b364
+100080e84|FUN_100080e84
+1000ae610|FUN_1000ae610
+100398460|FUN_100398460
+1000e2624|FUN_1000e2624
+1000f8a2c|FUN_1000f8a2c
+100308ff0|FUN_100308ff0
+1000bc740|FUN_1000bc740
+10035d0d0|FUN_10035d0d0
+1003cc4b0|FUN_1003cc4b0
+10027ca30|FUN_10027ca30
+1000bda10|FUN_1000bda10
+10039345c|FUN_10039345c
+1002402cc|FUN_1002402cc
+100384468|FUN_100384468
+100309ea4|FUN_100309ea4
+100399c80|FUN_100399c80
+1003cb4fc|FUN_1003cb4fc
+1000aec94|FUN_1000aec94
+1000812b8|FUN_1000812b8
+1000bf004|FUN_1000bf004
+10035ce68|FUN_10035ce68
+1003bb654|FUN_1003bb654
+100089ad4|FUN_100089ad4
+100307d54|FUN_100307d54
+100399570|FUN_100399570
+1000898b0|FUN_1000898b0
+1000ed23c|FUN_1000ed23c
+1003bb0d0|FUN_1003bb0d0
+100380644|FUN_100380644
+1000fa268|FUN_1000fa268
+100170318|FUN_100170318
+100086d60|FUN_100086d60
+10042eaf8|FUN_10042eaf8
+1000ad3d4|FUN_1000ad3d4
+10030c464|FUN_10030c464
+1002fb230|FUN_1002fb230
+100044a40|FUN_100044a40
+100350fe0|FUN_100350fe0
+1000cab48|FUN_1000cab48
+10030717c|FUN_10030717c
+10030c788|FUN_10030c788
+1000ae264|FUN_1000ae264
+1002208d4|FUN_1002208d4
+10030f7b0|FUN_10030f7b0
+1000ddb5c|FUN_1000ddb5c
+10018e734|FUN_10018e734
+1000d2964|FUN_1000d2964
+1000af4d4|FUN_1000af4d4
+100081184|FUN_100081184
+100222760|FUN_100222760
+10030639c|FUN_10030639c
+10016ecd8|FUN_10016ecd8
+10008955c|FUN_10008955c
+=== CALLEES ===
+100307d54|FUN_100307d54
+
+================================================
+NAME=LoadRequestedModels
+TARGET=0x1003078A4
+FUNCTION=1003078a4|FUN_1003078a4
+=== DECOMPILE ===
+
+void FUN_1003078a4(void)
+
+{
+  int iVar1;
+  
+  if (DAT_1008e8060 == '\0') {
+    iVar1 = (&DAT_1008e7f98)[(ulong)DAT_100673db0 * 0x26];
+  }
+  else {
+    DAT_100673db0 = 0;
+    iVar1 = DAT_1008e7f98;
+  }
+  if (iVar1 != 0) {
+    FUN_100307ac0();
+  }
+  if (DAT_1008e8060 == '\0') {
+    if ((&DAT_1008e7f98)[(ulong)(1 - DAT_100673db0) * 0x26] == 0) {
+      FUN_1003096a4((ulong)(1 - DAT_100673db0));
+      if ((&DAT_1008e7f98)[(ulong)DAT_100673db0 * 0x26] != 0 || DAT_1008e8060 != '\0')
+      goto LAB_100307924;
+    }
+    else if ((&DAT_1008e7f98)[(ulong)DAT_100673db0 * 0x26] != 0) goto LAB_100307924;
+    FUN_1003096a4();
+  }
+LAB_100307924:
+  if ((&DAT_1008e7f98)[(ulong)DAT_100673db0 * 0x26] != 2) {
+    DAT_100673db0 = 1 - DAT_100673db0;
+  }
+  return;
+}
+
+
+=== INSTRUCTIONS ===
+1003078a4 | stp x22,x21,[sp, #-0x30]!
+1003078a8 | stp x20,x19,[sp, #0x10]
+1003078ac | stp x29,x30,[sp, #0x20]
+1003078b0 | add x29,sp,#0x20
+1003078b4 | adrp x21,0x1008e8000
+1003078b8 | ldrb w8,[x21, #0x60]
+1003078bc | adrp x19,0x100673000
+1003078c0 | cbz w8,0x100307958
+1003078c4 | mov w0,#0x0
+1003078c8 | str wzr,[x19, #0xdb0]
+1003078cc | adrp x20,0x1008e7000
+1003078d0 | add x20,x20,#0xf18
+1003078d4 | mov w9,#0x98
+1003078d8 | umaddl x9,w0,w9,x20
+1003078dc | ldr w9,[x9, #0x80]
+1003078e0 | cbz w9,0x1003078ec
+1003078e4 | bl 0x100307ac0
+1003078e8 | ldrb w8,[x21, #0x60]
+1003078ec | cbnz w8,0x100307924
+1003078f0 | ldr w0,[x19, #0xdb0]
+1003078f4 | mov w9,#0x1
+1003078f8 | sub w8,w9,w0
+1003078fc | mov w22,#0x98
+100307900 | umaddl x10,w8,w22,x20
+100307904 | ldr w10,[x10, #0x80]
+100307908 | cbz w10,0x100307978
+10030790c | umaddl x8,w0,w22,x20
+100307910 | ldr w8,[x8, #0x80]
+100307914 | cmp w8,#0x0
+100307918 | ccmp w9,#0x0,#0x4,eq
+10030791c | b.eq 0x100307924
+100307920 | bl 0x1003096a4
+100307924 | ldr w8,[x19, #0xdb0]
+100307928 | mov w9,#0x98
+10030792c | madd x9,x8,x9,x20
+100307930 | ldr w9,[x9, #0x80]
+100307934 | cmp w9,#0x2
+100307938 | b.eq 0x100307948
+10030793c | mov w9,#0x1
+100307940 | sub w8,w9,w8
+100307944 | str w8,[x19, #0xdb0]
+100307948 | ldp x29,x30,[sp, #0x20]
+10030794c | ldp x20,x19,[sp, #0x10]
+100307950 | ldp x22,x21,[sp], #0x30
+100307954 | ret
+100307958 | ldr w0,[x19, #0xdb0]
+10030795c | adrp x20,0x1008e7000
+100307960 | add x20,x20,#0xf18
+100307964 | mov w9,#0x98
+100307968 | umaddl x9,w0,w9,x20
+10030796c | ldr w9,[x9, #0x80]
+100307970 | cbnz w9,0x1003078e4
+100307974 | b 0x1003078ec
+100307978 | mov x0,x8
+10030797c | bl 0x1003096a4
+100307980 | ldr w0,[x19, #0xdb0]
+100307984 | ldrb w8,[x21, #0x60]
+100307988 | cmp w8,#0x0
+10030798c | cset w9,eq
+100307990 | umaddl x8,w0,w22,x20
+100307994 | ldr w8,[x8, #0x80]
+100307998 | cmp w8,#0x0
+10030799c | ccmp w9,#0x0,#0x4,eq
+1003079a0 | b.ne 0x100307920
+1003079a4 | b 0x100307924
+=== CALLERS ===
+100082dec|FUN_100082dec
+=== CALLEES ===
+100307ac0|FUN_100307ac0
+1003096a4|FUN_1003096a4

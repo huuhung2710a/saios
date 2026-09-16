@@ -1,0 +1,290 @@
+
+================================================
+TARGET=CPed_VTABLE_AREA
+ADDR=1004a74f0
+--- SLOT -0x20 1004a74d0
+FROM=1004a71e0 TYPE=DATA
+FROM=1004a72e0 TYPE=DATA
+FROM=1004a73e0 TYPE=DATA
+FROM=1004a8460 TYPE=DATA
+COUNT=4
+--- SLOT -0x18 1004a74d8
+COUNT=0
+--- SLOT -0x10 1004a74e0
+COUNT=0
+--- SLOT -0x8 1004a74e8
+COUNT=0
+--- SLOT +0x0 1004a74f0
+COUNT=0
+--- SLOT +0x8 1004a74f8
+FROM=10023c150 TYPE=DATA
+  FUNCTION=10023c0a4|FUN_10023c0a4
+  CONTEXT:
+    10023c130 | strb wzr,[x19, #0x502]
+    10023c134 | strh wzr,[x19, #0x500]
+    10023c138 | movi v0.16B,#0x0
+    10023c13c | stur q0,[x21, #0x98]
+    10023c140 | stur q0,[x21, #0xa8]
+    10023c144 | adrp x8,0x1004a7000
+    10023c148 | add x8,x8,#0x4e8
+    10023c14c | add x8,x8,#0x10
+    10023c150 | str x8,[x19, #0x470]
+    10023c154 | str xzr,[x19, #0x530]
+    10023c158 | strb wzr,[x19, #0x528]
+    10023c15c | add x8,x19,#0x634
+    10023c160 | add x0,x19,#0x678
+    10023c164 | str wzr,[x19, #0x64c]
+    10023c168 | stp xzr,xzr,[x8, #0x8]
+    10023c16c | str xzr,[x8]
+    10023c170 | mov x1,x19
+    10023c174 | bl 0x100260818
+COUNT=1
+--- SLOT +0x10 1004a7500
+COUNT=0
+--- SLOT +0x18 1004a7508
+COUNT=0
+--- SLOT +0x20 1004a7510
+COUNT=0
+--- SLOT +0x28 1004a7518
+FROM=100246eec TYPE=DATA
+  FUNCTION=100246ed8|FUN_100246ed8
+  CONTEXT:
+    100246ecc | ldp x26,x25,[sp, #0x40]
+    100246ed0 | add sp,sp,#0x90
+    100246ed4 | ret
+    100246ed8 | ldrsw x8,[x0, #0x54c]
+    100246edc | cmp w8,#0x40
+    100246ee0 | b.hi 0x100246ef4
+    100246ee4 | adrp x9,0x1004a7000
+    100246ee8 | add x9,x9,#0x518
+    100246eec | ldr x0,[x9, x8, LSL #0x3]
+    100246ef0 | ret
+    100246ef4 | adrp x0,0x100482000
+    100246ef8 | add x0,x0,#0x740
+    100246efc | ret
+    100246f00 | stp x20,x19,[sp, #-0x20]!
+    100246f04 | stp x29,x30,[sp, #0x10]
+    100246f08 | add x29,sp,#0x10
+    100246f0c | adrp x19,0x10066b000
+    100246f10 | add x19,x19,#0x460
+COUNT=1
+--- SLOT +0x30 1004a7520
+COUNT=0
+--- SLOT +0x38 1004a7528
+COUNT=0
+--- SLOT +0x40 1004a7530
+COUNT=0
+--- SLOT +0x48 1004a7538
+COUNT=0
+--- SLOT +0x50 1004a7540
+COUNT=0
+--- SLOT +0x58 1004a7548
+COUNT=0
+--- SLOT +0x60 1004a7550
+COUNT=0
+
+================================================
+TARGET=CPlayerPed_VTABLE_AREA
+ADDR=1004a8470
+--- SLOT -0x20 1004a8450
+COUNT=0
+--- SLOT -0x18 1004a8458
+COUNT=0
+--- SLOT -0x10 1004a8460
+COUNT=0
+--- SLOT -0x8 1004a8468
+COUNT=0
+--- SLOT +0x0 1004a8470
+COUNT=0
+--- SLOT +0x8 1004a8478
+FROM=100275340 TYPE=DATA
+  FUNCTION=100275324|FUN_100275324
+  CONTEXT:
+    100275320 | ret
+    100275324 | stp x20,x19,[sp, #-0x20]!
+    100275328 | stp x29,x30,[sp, #0x10]
+    10027532c | add x29,sp,#0x10
+    100275330 | mov x19,x0
+    100275334 | adrp x8,0x1004a8000
+    100275338 | add x8,x8,#0x468
+    10027533c | add x8,x8,#0x10
+    100275340 | str x8,[x0]
+    100275344 | mov x1,x0
+    100275348 | ldr x0,[x1, #0x10]!
+    10027534c | cbz x0,0x100275354
+    100275350 | bl 0x10019275c
+    100275354 | mov x0,x19
+    100275358 | ldp x29,x30,[sp, #0x10]
+    10027535c | ldp x20,x19,[sp], #0x20
+    100275360 | b 0x1001a3e90
+    100275368 | stp x20,x19,[sp, #-0x20]!
+FROM=100275384 TYPE=DATA
+  FUNCTION=100275368|FUN_100275368
+  CONTEXT:
+    100275360 | b 0x1001a3e90
+    100275368 | stp x20,x19,[sp, #-0x20]!
+    10027536c | stp x29,x30,[sp, #0x10]
+    100275370 | add x29,sp,#0x10
+    100275374 | mov x19,x0
+    100275378 | adrp x8,0x1004a8000
+    10027537c | add x8,x8,#0x468
+    100275380 | add x8,x8,#0x10
+    100275384 | str x8,[x0]
+    100275388 | mov x1,x0
+    10027538c | ldr x0,[x1, #0x10]!
+    100275390 | cbz x0,0x100275398
+    100275394 | bl 0x10019275c
+    100275398 | mov x0,x19
+    10027539c | bl 0x1001a3e90
+    1002753a0 | ldp x29,x30,[sp, #0x10]
+    1002753a4 | ldp x20,x19,[sp], #0x20
+    1002753a8 | b 0x1001a3f28
+FROM=1002753f8 TYPE=DATA
+  FUNCTION=1002753c8|FUN_1002753c8
+  CONTEXT:
+    1002753d8 | mov w0,#0x18
+    1002753dc | bl 0x1001a3e9c
+    1002753e0 | mov x19,x0
+    1002753e4 | ldr x20,[x20, #0x10]
+    1002753e8 | bl 0x1001a3e78
+    1002753ec | adrp x8,0x1004a8000
+    1002753f0 | add x8,x8,#0x468
+    1002753f4 | add x8,x8,#0x10
+    1002753f8 | str x8,[x19]
+    1002753fc | mov x1,x19
+    100275400 | str x20,[x1, #0x10]!
+    100275404 | cbz x20,0x100275410
+    100275408 | mov x0,x20
+    10027540c | bl 0x1001924b0
+    100275410 | mov x0,x19
+    100275414 | ldp x29,x30,[sp, #0x10]
+    100275418 | ldp x20,x19,[sp], #0x20
+    10027541c | ret
+FROM=100274544 TYPE=DATA
+  FUNCTION=1002742a0|FUN_1002742a0
+  CONTEXT:
+    100274524 | bl 0x1002469c4
+    100274528 | mov w0,#0x18
+    10027452c | bl 0x1001a3e9c
+    100274530 | mov x21,x0
+    100274534 | bl 0x1001a3e78
+    100274538 | adrp x8,0x1004a8000
+    10027453c | add x8,x8,#0x468
+    100274540 | add x8,x8,#0x10
+    100274544 | str x8,[x21]
+    100274548 | mov x1,x21
+    10027454c | str x19,[x1, #0x10]!
+    100274550 | cbz x19,0x10027455c
+    100274554 | mov x0,x19
+    100274558 | bl 0x1001924b0
+    10027455c | add x0,sp,#0x8
+    100274560 | mov x1,x20
+    100274564 | mov x2,x21
+    100274568 | bl 0x1001a4af8
+COUNT=4
+--- SLOT +0x10 1004a8480
+COUNT=0
+--- SLOT +0x18 1004a8488
+COUNT=0
+--- SLOT +0x20 1004a8490
+COUNT=0
+--- SLOT +0x28 1004a8498
+COUNT=0
+--- SLOT +0x30 1004a84a0
+COUNT=0
+--- SLOT +0x38 1004a84a8
+COUNT=0
+--- SLOT +0x40 1004a84b0
+COUNT=0
+--- SLOT +0x48 1004a84b8
+COUNT=0
+--- SLOT +0x50 1004a84c0
+COUNT=0
+--- SLOT +0x58 1004a84c8
+COUNT=0
+--- SLOT +0x60 1004a84d0
+COUNT=0
+
+================================================
+TARGET=CVehicle_VTABLE_AREA
+ADDR=1004b4478
+--- SLOT -0x20 1004b4458
+FROM=1004b30d8 TYPE=DATA
+FROM=1004b33d8 TYPE=DATA
+FROM=1004b46a8 TYPE=DATA
+FROM=1004b48e8 TYPE=DATA
+COUNT=4
+--- SLOT -0x18 1004b4460
+COUNT=0
+--- SLOT -0x10 1004b4468
+COUNT=0
+--- SLOT -0x8 1004b4470
+COUNT=0
+--- SLOT +0x0 1004b4478
+COUNT=0
+--- SLOT +0x8 1004b4480
+FROM=100423420 TYPE=DATA
+  FUNCTION=1004233f8|FUN_1004233f8
+  CONTEXT:
+    100423400 | stp x29,x30,[sp, #0x20]
+    100423404 | add x29,sp,#0x20
+    100423408 | mov x22,x1
+    10042340c | mov x19,x0
+    100423410 | mov x1,x2
+    100423414 | bl 0x10040815c
+    100423418 | adrp x8,0x1004b4000
+    10042341c | add x8,x8,#0x480
+    100423420 | str x8,[x0]
+    100423424 | str xzr,[x0, #0x7c8]
+    100423428 | str xzr,[x0, #0x7d8]
+    10042342c | adrp x8,0x1007bc000
+    100423430 | add x8,x8,#0x170
+    100423434 | str xzr,[x0, #0x7d0]
+    100423438 | ldr x20,[x8, w22, SXTW #0x3]
+    10042343c | ldrb w21,[x20, #0x7a]
+    100423440 | add x8,x0,#0x734
+    100423444 | movi v0.2S,#0x5
+FROM=100423680 TYPE=DATA
+  FUNCTION=100423668|FUN_100423668
+  CONTEXT:
+    10042364c | ret
+    100423664 | b 0x1004233f8
+    100423668 | stp x20,x19,[sp, #-0x20]!
+    10042366c | stp x29,x30,[sp, #0x10]
+    100423670 | add x29,sp,#0x10
+    100423674 | mov x19,x0
+    100423678 | adrp x8,0x1004b4000
+    10042367c | add x8,x8,#0x480
+    100423680 | str x8,[x0]
+    100423684 | ldr x0,[x0, #0x710]
+    100423688 | cbz x0,0x100423694
+    10042368c | bl 0x1001a2228
+    100423690 | str xzr,[x19, #0x710]
+    100423694 | ldr x0,[x19, #0x818]
+    100423698 | cbz x0,0x1004236a4
+    10042369c | bl 0x1001a2228
+    1004236a0 | str xzr,[x19, #0x818]
+    1004236a4 | ldr x0,[x19, #0x820]
+COUNT=2
+--- SLOT +0x10 1004b4488
+COUNT=0
+--- SLOT +0x18 1004b4490
+COUNT=0
+--- SLOT +0x20 1004b4498
+COUNT=0
+--- SLOT +0x28 1004b44a0
+COUNT=0
+--- SLOT +0x30 1004b44a8
+COUNT=0
+--- SLOT +0x38 1004b44b0
+COUNT=0
+--- SLOT +0x40 1004b44b8
+COUNT=0
+--- SLOT +0x48 1004b44c0
+COUNT=0
+--- SLOT +0x50 1004b44c8
+COUNT=0
+--- SLOT +0x58 1004b44d0
+COUNT=0
+--- SLOT +0x60 1004b44d8
+COUNT=0

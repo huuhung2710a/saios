@@ -1,0 +1,813 @@
+
+========================================
+NAME=Virtual30_ModelCandidate
+TARGET=10023cdd8
+FUNCTION=FUN_10023cdd8
+ENTRY=10023cdd8
+BODY=[[10023cdd8, 10023cfd7]]
+
+=== DECOMPILE ===
+
+void FUN_10023cdd8(long param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  uint uVar3;
+  ulong uVar4;
+  short sVar5;
+  long lVar6;
+  long lVar7;
+  
+  *(ulong *)(param_1 + 0x28) = *(ulong *)(param_1 + 0x28) | 0x80;
+  FUN_100141dcc();
+  FUN_100047a04(*(undefined8 *)(param_1 + 0x20));
+  FUN_1000476cc(*(undefined8 *)(param_1 + 0x20),param_1 + 0x598);
+  lVar7 = (&DAT_1007bc170)[*(short *)(param_1 + 0x32)];
+  lVar6 = DAT_1007f3c90 + (long)*(int *)(lVar7 + 0x58) * 0x34;
+  *(long *)(param_1 + 0x728) = lVar6;
+  *(undefined4 *)(param_1 + 0x6cc) = *(undefined4 *)(lVar6 + 0x20);
+  if (*(uint *)(param_1 + 0x720) < 2) {
+    FUN_100266d90(*(undefined8 *)(param_1 + 0x538),0xfffffffe);
+    uVar4 = (ulong)*(short *)(param_1 + 0x32);
+    FUN_100276730(uVar4,1);
+  }
+  else if (*(char *)(param_1 + 0x548) == '\x02') {
+    FUN_100266d90(*(undefined8 *)(param_1 + 0x538),0xffffffff);
+    uVar4 = (ulong)*(short *)(param_1 + 0x32);
+    FUN_100276730(uVar4,1);
+  }
+  else {
+    FUN_100266d90(*(undefined8 *)(param_1 + 0x538),(long)*(char *)(lVar6 + 0x32));
+    uVar4 = (ulong)*(short *)(param_1 + 0x32);
+    FUN_100276730(uVar4,1);
+  }
+  if ((uVar4 & 1) == 0) {
+    lVar6 = (long)*(short *)(param_1 + 0x32);
+    FUN_100276730(lVar6,6);
+    if ((int)lVar6 == 0) {
+      iVar2 = _rand();
+      sVar5 = (short)iVar2 +
+              (((short)(iVar2 / 0x19) + (short)(iVar2 >> 0x1f)) -
+              (short)((long)iVar2 * 0x51eb851f >> 0x3f)) * -0x19;
+      goto LAB_10023cf10;
+    }
+  }
+  iVar2 = _rand();
+  sVar5 = (short)iVar2 +
+          (((short)(iVar2 / 0x32) + (short)(iVar2 >> 0x1f)) -
+          (short)((long)iVar2 * 0x51eb851f >> 0x3f)) * -0x32 + 0x14;
+LAB_10023cf10:
+  *(short *)(param_1 + 0x932) = sVar5;
+  uVar3 = _rand();
+  if ((int)((float)(uVar3 & 0xffff) * 1.5258789e-05 * 100.0) < 3) {
+    *(undefined2 *)(param_1 + 0x932) = 400;
+  }
+  uVar1 = *(undefined4 *)(lVar7 + 0x50);
+  *(undefined4 *)(param_1 + 0x630) = uVar1;
+  FUN_100042320(*(undefined8 *)(param_1 + 0x20),uVar1,3);
+  if (((*(uint *)(param_1 + 0x54c) | 8) == 0x3a) || ((*(byte *)(param_1 + 0x587) >> 2 & 1) != 0)) {
+    *(uint *)(param_1 + 0x698) = *(uint *)(param_1 + 0x698) | 2;
+  }
+  *(long *)(*(long *)(*(long *)(param_1 + 0x20) + (long)DAT_1006952c4) + 0x18) = param_1 + 0x634;
+  if (*(long *)(lVar7 + 0x60) != 0) {
+    FUN_100143204(param_1);
+    return;
+  }
+  FUN_10022ee5c(lVar7,*(undefined8 *)(param_1 + 0x20));
+  FUN_100143204(param_1);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10023cdd8 | stp x20,x19,[sp, #-0x20]!
+10023cddc | stp x29,x30,[sp, #0x10]
+10023cde0 | add x29,sp,#0x10
+10023cde4 | mov x19,x0
+10023cde8 | ldr x8,[x0, #0x28]
+10023cdec | orr x8,x8,#0x80
+10023cdf0 | str x8,[x0, #0x28]
+10023cdf4 | bl 0x100141dcc
+10023cdf8 | ldr x0,[x19, #0x20]
+10023cdfc | bl 0x100047a04
+10023ce00 | ldr x0,[x19, #0x20]
+10023ce04 | add x1,x19,#0x598
+10023ce08 | bl 0x1000476cc
+10023ce0c | ldrsh x8,[x19, #0x32]
+10023ce10 | adrp x9,0x1007bc000
+10023ce14 | add x9,x9,#0x170
+10023ce18 | ldr x20,[x9, x8, LSL #0x3]
+10023ce1c | ldrsw x8,[x20, #0x58]
+10023ce20 | adrp x9,0x1007f3000
+10023ce24 | add x9,x9,#0xc90
+10023ce28 | ldr x9,[x9]
+10023ce2c | mov w10,#0x34
+10023ce30 | smaddl x8,w8,w10,x9
+10023ce34 | str x8,[x19, #0x728]
+10023ce38 | ldr s0,[x8, #0x20]
+10023ce3c | str s0,[x19, #0x6cc]
+10023ce40 | ldr w9,[x19, #0x720]
+10023ce44 | cmp w9,#0x1
+10023ce48 | b.hi 0x10023ce6c
+10023ce4c | ldr x0,[x19, #0x538]
+10023ce50 | mov w1,#0xfffffffe
+10023ce54 | bl 0x100266d90
+10023ce58 | ldrsh w0,[x19, #0x32]
+10023ce5c | mov w1,#0x1
+10023ce60 | bl 0x100276730
+10023ce64 | tbz w0,#0x0,0x10023ceb0
+10023ce68 | b 0x10023cec0
+10023ce6c | ldrb w9,[x19, #0x548]
+10023ce70 | ldr x0,[x19, #0x538]
+10023ce74 | cmp w9,#0x2
+10023ce78 | b.ne 0x10023ce98
+10023ce7c | mov w1,#0xffffffff
+10023ce80 | bl 0x100266d90
+10023ce84 | ldrsh w0,[x19, #0x32]
+10023ce88 | mov w1,#0x1
+10023ce8c | bl 0x100276730
+10023ce90 | tbz w0,#0x0,0x10023ceb0
+10023ce94 | b 0x10023cec0
+10023ce98 | ldrsb w1,[x8, #0x32]
+10023ce9c | bl 0x100266d90
+10023cea0 | ldrsh w0,[x19, #0x32]
+10023cea4 | mov w1,#0x1
+10023cea8 | bl 0x100276730
+10023ceac | tbnz w0,#0x0,0x10023cec0
+10023ceb0 | ldrsh w0,[x19, #0x32]
+10023ceb4 | mov w1,#0x6
+10023ceb8 | bl 0x100276730
+10023cebc | cbz w0,0x10023ceec
+10023cec0 | bl 0x10043e798
+10023cec4 | mov w8,#0x851f
+10023cec8 | movk w8,#0x51eb, LSL #16
+10023cecc | smull x8,w0,w8
+10023ced0 | lsr x9,x8,#0x3f
+10023ced4 | asr x8,x8,#0x24
+10023ced8 | add w8,w8,w9
+10023cedc | mov w9,#0x32
+10023cee0 | msub w8,w8,w9,w0
+10023cee4 | add w8,w8,#0x14
+10023cee8 | b 0x10023cf10
+10023ceec | bl 0x10043e798
+10023cef0 | mov w8,#0x851f
+10023cef4 | movk w8,#0x51eb, LSL #16
+10023cef8 | smull x8,w0,w8
+10023cefc | lsr x9,x8,#0x3f
+10023cf00 | asr x8,x8,#0x23
+10023cf04 | add w8,w8,w9
+10023cf08 | mov w9,#0x19
+10023cf0c | msub w8,w8,w9,w0
+10023cf10 | strh w8,[x19, #0x932]
+10023cf14 | bl 0x10043e798
+10023cf18 | and w8,w0,#0xffff
+10023cf1c | scvtf s0,w8
+10023cf20 | mov w8,#0x37800000
+10023cf24 | fmov s1,w8
+10023cf28 | fmul s0,s0,s1
+10023cf2c | mov w8,#0x42c80000
+10023cf30 | fmov s1,w8
+10023cf34 | fmul s0,s0,s1
+10023cf38 | fcvtzs w8,s0
+10023cf3c | cmp w8,#0x2
+10023cf40 | b.gt 0x10023cf4c
+10023cf44 | mov w8,#0x190
+10023cf48 | strh w8,[x19, #0x932]
+10023cf4c | ldr w1,[x20, #0x50]
+10023cf50 | str w1,[x19, #0x630]
+10023cf54 | ldr x0,[x19, #0x20]
+10023cf58 | mov w2,#0x3
+10023cf5c | bl 0x100042320
+10023cf60 | ldr w8,[x19, #0x54c]
+10023cf64 | orr w8,w8,#0x8
+10023cf68 | cmp w8,#0x3a
+10023cf6c | b.ne 0x10023cfcc
+10023cf70 | ldr w8,[x19, #0x698]
+10023cf74 | orr w8,w8,#0x2
+10023cf78 | str w8,[x19, #0x698]
+10023cf7c | ldr x8,[x19, #0x20]
+10023cf80 | adrp x9,0x100695000
+10023cf84 | add x9,x9,#0x2c4
+10023cf88 | ldrsw x9,[x9]
+10023cf8c | ldr x8,[x8, x9, LSL #0x0]
+10023cf90 | add x9,x19,#0x634
+10023cf94 | str x9,[x8, #0x18]
+10023cf98 | ldr x8,[x20, #0x60]
+10023cf9c | cbz x8,0x10023cfb0
+10023cfa0 | mov x0,x19
+10023cfa4 | ldp x29,x30,[sp, #0x10]
+10023cfa8 | ldp x20,x19,[sp], #0x20
+10023cfac | b 0x100143204
+10023cfb0 | ldr x1,[x19, #0x20]
+10023cfb4 | mov x0,x20
+10023cfb8 | bl 0x10022ee5c
+10023cfbc | mov x0,x19
+10023cfc0 | ldp x29,x30,[sp, #0x10]
+10023cfc4 | ldp x20,x19,[sp], #0x20
+10023cfc8 | b 0x100143204
+10023cfcc | ldrb w8,[x19, #0x587]
+10023cfd0 | tbnz w8,#0x2,0x10023cf70
+10023cfd4 | b 0x10023cf7c
+
+=== CALLERS ===
+10023bdf4|FUN_10023bdf4
+10023b2b8|FUN_10023b2b8
+10023b388|FUN_10023b388
+
+=== CALLEES ===
+1000476cc|FUN_1000476cc
+10043e798|_rand
+100047a04|FUN_100047a04
+100042320|FUN_100042320
+100266d90|FUN_100266d90
+10022ee5c|FUN_10022ee5c
+100141dcc|FUN_100141dcc
+100276730|FUN_100276730
+100143204|FUN_100143204
+
+========================================
+NAME=EntityMatrixSetup
+TARGET=10016c590
+FUNCTION=FUN_10016c590
+ENTRY=10016c590
+BODY=[[10016c590, 10016c5fb]]
+
+=== DECOMPILE ===
+
+void FUN_10016c590(undefined8 param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4)
+
+{
+  float fVar1;
+  
+  fVar1 = (float)param_3[3];
+  ___sincosf_stret();
+  *param_4 = param_2;
+  param_4[1] = fVar1;
+  param_4[2] = 0;
+  param_4[4] = -fVar1;
+  param_4[5] = param_2;
+  param_4[6] = 0;
+  *(undefined8 *)(param_4 + 8) = 0;
+  param_4[10] = 0x3f800000;
+  param_4[0xc] = *param_3;
+  param_4[0xd] = param_3[1];
+  param_4[0xe] = param_3[2];
+  FUN_1002b8070(param_4);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c590 | stp x20,x19,[sp, #-0x20]!
+10016c594 | stp x29,x30,[sp, #0x10]
+10016c598 | add x29,sp,#0x10
+10016c59c | mov x19,x1
+10016c5a0 | mov x20,x0
+10016c5a4 | ldr s0,[x0, #0xc]
+10016c5a8 | bl 0x10043de14
+10016c5ac | str s1,[x19]
+10016c5b0 | str s0,[x19, #0x4]
+10016c5b4 | str wzr,[x19, #0x8]
+10016c5b8 | fneg s0,s0
+10016c5bc | str s0,[x19, #0x10]
+10016c5c0 | str s1,[x19, #0x14]
+10016c5c4 | str wzr,[x19, #0x18]
+10016c5c8 | str xzr,[x19, #0x20]
+10016c5cc | mov w8,#0x3f800000
+10016c5d0 | str w8,[x19, #0x28]
+10016c5d4 | ldr s0,[x20]
+10016c5d8 | str s0,[x19, #0x30]
+10016c5dc | ldr s0,[x20, #0x4]
+10016c5e0 | str s0,[x19, #0x34]
+10016c5e4 | ldr s0,[x20, #0x8]
+10016c5e8 | str s0,[x19, #0x38]
+10016c5ec | mov x0,x19
+10016c5f0 | ldp x29,x30,[sp, #0x10]
+10016c5f4 | ldp x20,x19,[sp], #0x20
+10016c5f8 | b 0x1002b8070
+
+=== CALLERS ===
+1000f9b30|FUN_1000f9b30
+1002374e4|FUN_1002374e4
+100428880|FUN_100428880
+100186578|FUN_100186578
+100419904|FUN_100419904
+10023858c|FUN_10023858c
+1000f7828|FUN_1000f7828
+1002370b8|FUN_1002370b8
+1000cd844|FUN_1000cd844
+10012c91c|FUN_10012c91c
+10010f8a4|FUN_10010f8a4
+1003caab0|FUN_1003caab0
+100234a58|FUN_100234a58
+1000def8c|FUN_1000def8c
+10041954c|FUN_10041954c
+10011feb8|FUN_10011feb8
+1001826ac|FUN_1001826ac
+1000c4a18|FUN_1000c4a18
+1003cbdb0|FUN_1003cbdb0
+1000d6254|FUN_1000d6254
+10012417c|FUN_10012417c
+1003e3900|FUN_1003e3900
+100236cfc|FUN_100236cfc
+10026a880|FUN_10026a880
+100121584|FUN_100121584
+100234db0|FUN_100234db0
+100126fe4|FUN_100126fe4
+10016acfc|FUN_10016acfc
+1003cb6ac|FUN_1003cb6ac
+1002edfb4|FUN_1002edfb4
+1001434c8|FUN_1001434c8
+100144358|FUN_100144358
+100238a20|FUN_100238a20
+100423108|FUN_100423108
+10027bb1c|FUN_10027bb1c
+100238d78|FUN_100238d78
+100142940|FUN_100142940
+100186e9c|FUN_100186e9c
+1000cdc08|FUN_1000cdc08
+1000d40bc|FUN_1000d40bc
+
+=== CALLEES ===
+1002b8070|FUN_1002b8070
+10043de14|___sincosf_stret
+
+========================================
+NAME=EntityMatrixAlt
+TARGET=10022a654
+FUNCTION=FUN_10022a654
+ENTRY=10022a654
+BODY=[[10022a654, 10022a6bb]]
+
+=== DECOMPILE ===
+
+void FUN_10022a654(undefined4 *param_1,undefined4 *param_2)
+
+{
+  *param_2 = *param_1;
+  param_2[1] = param_1[1];
+  param_2[2] = param_1[2];
+  param_2[4] = param_1[4];
+  param_2[5] = param_1[5];
+  param_2[6] = param_1[6];
+  param_2[8] = param_1[8];
+  param_2[9] = param_1[9];
+  param_2[10] = param_1[10];
+  param_2[0xc] = param_1[0xc];
+  param_2[0xd] = param_1[0xd];
+  param_2[0xe] = param_1[0xe];
+  FUN_1002b8070(param_2);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10022a654 | ldr s0,[x0]
+10022a658 | str s0,[x1]
+10022a65c | ldr s0,[x0, #0x4]
+10022a660 | str s0,[x1, #0x4]
+10022a664 | ldr s0,[x0, #0x8]
+10022a668 | str s0,[x1, #0x8]
+10022a66c | ldr s0,[x0, #0x10]
+10022a670 | str s0,[x1, #0x10]
+10022a674 | ldr s0,[x0, #0x14]
+10022a678 | str s0,[x1, #0x14]
+10022a67c | ldr s0,[x0, #0x18]
+10022a680 | str s0,[x1, #0x18]
+10022a684 | ldr s0,[x0, #0x20]
+10022a688 | str s0,[x1, #0x20]
+10022a68c | ldr s0,[x0, #0x24]
+10022a690 | str s0,[x1, #0x24]
+10022a694 | ldr s0,[x0, #0x28]
+10022a698 | str s0,[x1, #0x28]
+10022a69c | ldr s0,[x0, #0x30]
+10022a6a0 | str s0,[x1, #0x30]
+10022a6a4 | ldr s0,[x0, #0x34]
+10022a6a8 | str s0,[x1, #0x34]
+10022a6ac | ldr s0,[x0, #0x38]
+10022a6b0 | str s0,[x1, #0x38]
+10022a6b4 | mov x0,x1
+10022a6b8 | b 0x1002b8070
+
+=== CALLERS ===
+1000f9b30|FUN_1000f9b30
+1002374e4|FUN_1002374e4
+100428880|FUN_100428880
+100186578|FUN_100186578
+100419904|FUN_100419904
+10023858c|FUN_10023858c
+1000f7828|FUN_1000f7828
+1002370b8|FUN_1002370b8
+1000cd844|FUN_1000cd844
+10012c91c|FUN_10012c91c
+10010f8a4|FUN_10010f8a4
+1003caab0|FUN_1003caab0
+100234a58|FUN_100234a58
+1000def8c|FUN_1000def8c
+10041954c|FUN_10041954c
+10011feb8|FUN_10011feb8
+1001826ac|FUN_1001826ac
+1000c4a18|FUN_1000c4a18
+1003cbdb0|FUN_1003cbdb0
+100423ddc|FUN_100423ddc
+1000d6254|FUN_1000d6254
+10012417c|FUN_10012417c
+1003e3900|FUN_1003e3900
+100236cfc|FUN_100236cfc
+10026a880|FUN_10026a880
+100121584|FUN_100121584
+100234db0|FUN_100234db0
+100126fe4|FUN_100126fe4
+10016acfc|FUN_10016acfc
+1003cb6ac|FUN_1003cb6ac
+1002edfb4|FUN_1002edfb4
+1001434c8|FUN_1001434c8
+100144358|FUN_100144358
+100238a20|FUN_100238a20
+100423108|FUN_100423108
+10027bb1c|FUN_10027bb1c
+100238d78|FUN_100238d78
+100142940|FUN_100142940
+100186e9c|FUN_100186e9c
+1000cdc08|FUN_1000cdc08
+1000d40bc|FUN_1000d40bc
+
+=== CALLEES ===
+1002b8070|FUN_1002b8070
+
+========================================
+NAME=EntityVirtual48
+TARGET=100142940
+FUNCTION=FUN_100142940
+ENTRY=100142940
+BODY=[[100142940, 100142b47]]
+
+=== DECOMPILE ===
+
+void FUN_100142940(long *param_1)
+
+{
+  char cVar1;
+  int iVar2;
+  long *plVar3;
+  long lVar4;
+  char *pcVar5;
+  long *plVar6;
+  
+  if (((uint)param_1[5] >> 7 & 1) == 0) {
+    return;
+  }
+  plVar6 = (long *)(&DAT_1007bc170)[*(short *)((long)param_1 + 0x32)];
+  plVar3 = plVar6;
+  if (((uint)param_1[5] >> 9 & 1) == 0) {
+    (**(code **)(*plVar6 + 0x58))();
+    param_1[4] = (long)plVar3;
+  }
+  else {
+    DAT_1007bc168 = 1;
+    (**(code **)(*plVar6 + 0x58))();
+    DAT_1007bc168 = 0;
+    param_1[4] = (long)plVar3;
+  }
+  if (plVar3 != (long *)0x0) {
+    if ((*(byte *)((long)param_1 + 0x5a) & 7) == 1) {
+      DAT_1007331c0 = DAT_1007331c0 + 1;
+    }
+    if (param_1[3] == 0) {
+      FUN_10016c590(param_1 + 1,plVar3[1] + 0x20);
+      cVar1 = *(char *)param_1[4];
+    }
+    else {
+      FUN_10022a654(param_1[3],plVar3[1] + 0x20);
+      cVar1 = *(char *)param_1[4];
+    }
+    if (cVar1 == '\x02') {
+      if ((*(ushort *)((long)plVar6 + 0x2c) >> 8 & 1) != 0) {
+        if ((*(byte *)((long)param_1 + 0x5a) & 7) == 4) {
+          if (param_1[0x1c] == 0) {
+            FUN_100160c10(param_1);
+          }
+          (**(code **)(*param_1 + 0x28))(param_1,0);
+          plVar3 = DAT_10077d678;
+        }
+        else {
+          plVar3 = (long *)&DAT_00000018;
+          FUN_10016dd28();
+          *plVar3 = (long)param_1;
+          plVar3[1] = (long)DAT_10077d678;
+          plVar3[2] = 0;
+          if (DAT_10077d678 != (long *)0x0) {
+            DAT_10077d678[2] = (long)plVar3;
+          }
+        }
+        DAT_10077d678 = plVar3;
+        if ((((param_1[10] != 0) && (pcVar5 = *(char **)(param_1[10] + 0x20), pcVar5 != (char *)0x0)
+             ) && (*pcVar5 == '\x02')) && (FUN_100041aa0(), pcVar5 != (char *)0x0)) {
+          lVar4 = param_1[4];
+          FUN_100041aa0();
+          if (lVar4 != 0) {
+            FUN_10003e05c(*(undefined4 *)(pcVar5 + 0x38));
+          }
+        }
+      }
+    }
+    else if ((cVar1 == '\x01') && (plVar3 = param_1, FUN_100119ce8(), (int)plVar3 != 0)) {
+      FUN_100119fa4(param_1);
+    }
+    FUN_10022c5c8(plVar6);
+    plVar3 = param_1;
+    FUN_10030c0e8();
+    param_1[8] = (long)plVar3;
+    FUN_10014216c(param_1);
+    pcVar5 = (char *)param_1[4];
+    if (*pcVar5 != '\x01') {
+      FUN_100319328();
+    }
+    iVar2 = (int)pcVar5;
+    FUN_10027f030();
+    if (iVar2 == 0) {
+      param_1[5] = param_1[5] | 0x10000000;
+      return;
+    }
+    return;
+  }
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+100142940 | stp x22,x21,[sp, #-0x30]!
+100142944 | stp x20,x19,[sp, #0x10]
+100142948 | stp x29,x30,[sp, #0x20]
+10014294c | add x29,sp,#0x20
+100142950 | ldr x8,[x0, #0x28]
+100142954 | tbz w8,#0x7,0x100142988
+100142958 | mov x19,x0
+10014295c | ldrsh x9,[x0, #0x32]
+100142960 | adrp x10,0x1007bc000
+100142964 | add x10,x10,#0x170
+100142968 | ldr x20,[x10, x9, LSL #0x3]
+10014296c | tbnz w8,#0x9,0x100142998
+100142970 | ldr x8,[x20]
+100142974 | ldr x8,[x8, #0x58]
+100142978 | mov x0,x20
+10014297c | blr x8
+100142980 | str x0,[x19, #0x20]
+100142984 | cbnz x0,0x1001429c4
+100142988 | ldp x29,x30,[sp, #0x20]
+10014298c | ldp x20,x19,[sp, #0x10]
+100142990 | ldp x22,x21,[sp], #0x30
+100142994 | ret
+100142998 | adrp x21,0x1007bc000
+10014299c | add x21,x21,#0x168
+1001429a0 | mov w8,#0x1
+1001429a4 | strb w8,[x21]
+1001429a8 | ldr x8,[x20]
+1001429ac | ldr x8,[x8, #0x58]
+1001429b0 | mov x0,x20
+1001429b4 | blr x8
+1001429b8 | strb wzr,[x21]
+1001429bc | str x0,[x19, #0x20]
+1001429c0 | cbz x0,0x100142988
+1001429c4 | ldrb w8,[x19, #0x5a]
+1001429c8 | and w8,w8,#0x7
+1001429cc | cmp w8,#0x1
+1001429d0 | b.ne 0x1001429e4
+1001429d4 | adrp x8,0x100733000
+1001429d8 | ldr w9,[x8, #0x1c0]
+1001429dc | add w9,w9,#0x1
+1001429e0 | str w9,[x8, #0x1c0]
+1001429e4 | ldr x8,[x19, #0x18]
+1001429e8 | cbz x8,0x100142a2c
+1001429ec | ldr x9,[x0, #0x8]
+1001429f0 | add x1,x9,#0x20
+1001429f4 | mov x0,x8
+1001429f8 | bl 0x10022a654
+1001429fc | ldr x8,[x19, #0x20]
+100142a00 | ldrb w8,[x8]
+100142a04 | cmp w8,#0x2
+100142a08 | b.eq 0x100142a50
+100142a0c | cmp w8,#0x1
+100142a10 | b.ne 0x100142af4
+100142a14 | mov x0,x19
+100142a18 | bl 0x100119ce8
+100142a1c | cbz w0,0x100142af4
+100142a20 | mov x0,x19
+100142a24 | bl 0x100119fa4
+100142a28 | b 0x100142af4
+100142a2c | add x8,x19,#0x8
+100142a30 | ldr x9,[x0, #0x8]
+100142a34 | add x1,x9,#0x20
+100142a38 | mov x0,x8
+100142a3c | bl 0x10016c590
+100142a40 | ldr x8,[x19, #0x20]
+100142a44 | ldrb w8,[x8]
+100142a48 | cmp w8,#0x2
+100142a4c | b.ne 0x100142a0c
+100142a50 | ldrh w8,[x20, #0x2c]
+100142a54 | tbz w8,#0x8,0x100142af4
+100142a58 | ldrb w8,[x19, #0x5a]
+100142a5c | and w8,w8,#0x7
+100142a60 | cmp w8,#0x4
+100142a64 | b.ne 0x100142a90
+100142a68 | ldr x8,[x19, #0xe0]
+100142a6c | cbnz x8,0x100142a78
+100142a70 | mov x0,x19
+100142a74 | bl 0x100160c10
+100142a78 | ldr x8,[x19]
+100142a7c | ldr x8,[x8, #0x28]
+100142a80 | mov x0,x19
+100142a84 | mov w1,#0x0
+100142a88 | blr x8
+100142a8c | b 0x100142ab8
+100142a90 | mov w0,#0x18
+100142a94 | bl 0x10016dd28
+100142a98 | str x19,[x0]
+100142a9c | adrp x8,0x10077d000
+100142aa0 | add x8,x8,#0x678
+100142aa4 | ldr x9,[x8]
+100142aa8 | stp x9,xzr,[x0, #0x8]
+100142aac | cbz x9,0x100142ab4
+100142ab0 | str x0,[x9, #0x10]
+100142ab4 | str x0,[x8]
+100142ab8 | ldr x8,[x19, #0x50]
+100142abc | cbz x8,0x100142af4
+100142ac0 | ldr x0,[x8, #0x20]
+100142ac4 | cbz x0,0x100142af4
+100142ac8 | ldrb w8,[x0]
+100142acc | cmp w8,#0x2
+100142ad0 | b.ne 0x100142af4
+100142ad4 | bl 0x100041aa0
+100142ad8 | cbz x0,0x100142af4
+100142adc | mov x21,x0
+100142ae0 | ldr x0,[x19, #0x20]
+100142ae4 | bl 0x100041aa0
+100142ae8 | cbz x0,0x100142af4
+100142aec | ldr s0,[x21, #0x38]
+100142af0 | bl 0x10003e05c
+100142af4 | mov x0,x20
+100142af8 | bl 0x10022c5c8
+100142afc | mov x0,x19
+100142b00 | bl 0x10030c0e8
+100142b04 | str x0,[x19, #0x40]
+100142b08 | mov x0,x19
+100142b0c | bl 0x10014216c
+100142b10 | ldr x0,[x19, #0x20]
+100142b14 | ldrb w8,[x0]
+100142b18 | cmp w8,#0x1
+100142b1c | b.eq 0x100142b24
+100142b20 | bl 0x100319328
+100142b24 | bl 0x10027f030
+100142b28 | cbnz w0,0x100142988
+100142b2c | ldr x8,[x19, #0x28]
+100142b30 | orr x8,x8,#0x10000000
+100142b34 | str x8,[x19, #0x28]
+100142b38 | ldp x29,x30,[sp, #0x20]
+100142b3c | ldp x20,x19,[sp, #0x10]
+100142b40 | ldp x22,x21,[sp], #0x30
+100142b44 | ret
+
+=== CALLERS ===
+100235dec|thunk_FUN_100142940
+
+=== CALLEES ===
+10003e05c|FUN_10003e05c
+100119ce8|FUN_100119ce8
+100041aa0|FUN_100041aa0
+10016dd28|FUN_10016dd28
+10030c0e8|FUN_10030c0e8
+10014216c|FUN_10014216c
+100319328|FUN_100319328
+100160c10|FUN_100160c10
+10016c590|FUN_10016c590
+10022a654|FUN_10022a654
+10022c5c8|FUN_10022c5c8
+10027f030|FUN_10027f030
+100119fa4|FUN_100119fa4
+
+========================================
+NAME=EntityVirtual38
+TARGET=100141e00
+FUNCTION=FUN_100141e00
+ENTRY=100141e00
+BODY=[[100141e00, 100141ee3]]
+
+=== DECOMPILE ===
+
+void FUN_100141e00(long param_1,int param_2)
+
+{
+  ushort uVar1;
+  long lVar2;
+  long *plVar3;
+  ulong uVar4;
+  long *plVar5;
+  
+  plVar5 = (long *)(&DAT_1007bc170)[param_2];
+  *(short *)(param_1 + 0x32) = (short)param_2;
+  lVar2 = param_1;
+  FUN_100141ee4();
+  uVar4 = 0x200000;
+  if ((int)lVar2 == 0) {
+    uVar4 = 0;
+  }
+  uVar4 = *(ulong *)(param_1 + 0x28) & 0xffffffffffdfffff | uVar4;
+  *(ulong *)(param_1 + 0x28) = uVar4;
+  uVar1 = *(ushort *)((long)plVar5 + 0x2c);
+  if ((uVar1 >> 1 & 1) != 0) {
+    uVar4 = uVar4 | 0x4000;
+    *(ulong *)(param_1 + 0x28) = uVar4;
+    uVar1 = *(ushort *)((long)plVar5 + 0x2c);
+  }
+  plVar3 = plVar5;
+  if ((uVar1 >> 6 & 1) == 0) {
+    *(ulong *)(param_1 + 0x28) = uVar4 & 0xfffffffff7ffffff;
+    (**(code **)(*plVar5 + 0x10))();
+  }
+  else {
+    (**(code **)(*plVar5 + 0x10))();
+  }
+  if (((plVar3 != (long *)0x0) &&
+      (plVar3 = plVar5, (**(code **)(*plVar5 + 0x10))(), -1 < *(short *)((long)plVar3 + 0x2c))) &&
+     ((**(code **)(*plVar5 + 0x10))(), (*(ushort *)((long)plVar5 + 0x2c) & 0x7800) == 0x3000)) {
+    FUN_100119cc0(param_1);
+    return;
+  }
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+100141e00 | stp x20,x19,[sp, #-0x20]!
+100141e04 | stp x29,x30,[sp, #0x10]
+100141e08 | add x29,sp,#0x10
+100141e0c | mov x19,x0
+100141e10 | adrp x8,0x1007bc000
+100141e14 | add x8,x8,#0x170
+100141e18 | ldr x20,[x8, w1, SXTW #0x3]
+100141e1c | strh w1,[x0, #0x32]
+100141e20 | bl 0x100141ee4
+100141e24 | ldr x8,[x19, #0x28]
+100141e28 | cmp w0,#0x0
+100141e2c | mov w9,#0x200000
+100141e30 | csel x9,x9,xzr,ne
+100141e34 | and x8,x8,#-0x200001
+100141e38 | orr x8,x8,x9
+100141e3c | str x8,[x19, #0x28]
+100141e40 | ldrh w9,[x20, #0x2c]
+100141e44 | tbnz w9,#0x1,0x100141e64
+100141e48 | tbz w9,#0x6,0x100141e74
+100141e4c | ldr x8,[x20]
+100141e50 | ldr x8,[x8, #0x10]
+100141e54 | mov x0,x20
+100141e58 | blr x8
+100141e5c | cbnz x0,0x100141e90
+100141e60 | b 0x100141ed8
+100141e64 | orr x8,x8,#0x4000
+100141e68 | str x8,[x19, #0x28]
+100141e6c | ldrh w9,[x20, #0x2c]
+100141e70 | tbnz w9,#0x6,0x100141e4c
+100141e74 | and x8,x8,#-0x8000001
+100141e78 | str x8,[x19, #0x28]
+100141e7c | ldr x8,[x20]
+100141e80 | ldr x8,[x8, #0x10]
+100141e84 | mov x0,x20
+100141e88 | blr x8
+100141e8c | cbz x0,0x100141ed8
+100141e90 | ldr x8,[x20]
+100141e94 | ldr x8,[x8, #0x10]
+100141e98 | mov x0,x20
+100141e9c | blr x8
+100141ea0 | ldrsh w8,[x0, #0x2c]
+100141ea4 | tbnz w8,#0x1f,0x100141ed8
+100141ea8 | ldr x8,[x20]
+100141eac | ldr x8,[x8, #0x10]
+100141eb0 | mov x0,x20
+100141eb4 | blr x8
+100141eb8 | ldrh w8,[x0, #0x2c]
+100141ebc | and w8,w8,#0x7800
+100141ec0 | cmp w8,#0x3, LSL #12
+100141ec4 | b.ne 0x100141ed8
+100141ec8 | mov x0,x19
+100141ecc | ldp x29,x30,[sp, #0x10]
+100141ed0 | ldp x20,x19,[sp], #0x20
+100141ed4 | b 0x100119cc0
+100141ed8 | ldp x29,x30,[sp, #0x10]
+100141edc | ldp x20,x19,[sp], #0x20
+100141ee0 | ret
+
+=== CALLERS ===
+100235934|FUN_100235934
+1001473b0|FUN_1001473b0
+1002354c8|FUN_1002354c8
+100235448|FUN_100235448
+
+=== CALLEES ===
+100141ee4|FUN_100141ee4
+100119cc0|FUN_100119cc0
