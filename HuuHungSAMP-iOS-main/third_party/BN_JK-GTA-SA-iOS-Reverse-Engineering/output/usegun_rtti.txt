@@ -1,0 +1,57 @@
+BASE=1004aa570
+IMAGE_BASE=100000000
+
+=== AROUND RTTI ===
+-0x80 1004aa4f0 -> 100357060 [__text R=true W=false X=true] FUNCTION=100357060|FUN_100357060
+-0x78 1004aa4f8 -> 1000b7438 [__text R=true W=false X=true] FUNCTION=1000b7438|FUN_1000b7438
+-0x70 1004aa500 -> 100357068 [__text R=true W=false X=true] FUNCTION=100357068|FUN_100357068
+-0x68 1004aa508 -> 10032962c [__text R=true W=false X=true] FUNCTION=10032962c|FUN_10032962c
+-0x60 1004aa510 -> 1003566b4 [__text R=true W=false X=true] FUNCTION=1003566b4|FUN_1003566b4
+-0x58 1004aa518 -> 1000b7450 [__text R=true W=false X=true] FUNCTION=1000b7450|FUN_1000b7450
+-0x50 1004aa520 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
+-0x48 1004aa528 -> 100468f60 [__const R=true W=false X=false] DATA=ds "39CTaskSimpleSetCharIgnoreWeaponRangeFlag"
+-0x40 1004aa530 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
+-0x38 1004aa538 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
+-0x30 1004aa540 -> 100468f8a [__const R=true W=false X=false] DATA=ds "16CTaskSimpleFight"
+-0x28 1004aa548 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
+-0x20 1004aa550 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
+-0x18 1004aa558 -> 100468f9d [__const R=true W=false X=false] DATA=ds "26CTaskSimpleFightingControl"
+-0x10 1004aa560 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
+-0x08 1004aa568 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0x00 1004aa570 -> 100468fba [__const R=true W=false X=false] DATA=ds "17CTaskSimpleUseGun"
++0x08 1004aa578 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
++0x10 1004aa580 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0x18 1004aa588 -> 100468fce [__const R=true W=false X=false] DATA=ds "21CTaskSimpleGunControl"
++0x20 1004aa590 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
++0x28 1004aa598 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0x30 1004aa5a0 -> 100468fe6 [__const R=true W=false X=false] DATA=ds "26CTaskSimpleThrowProjectile"
++0x38 1004aa5a8 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
++0x40 1004aa5b0 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0x48 1004aa5b8 -> 100469003 [__const R=true W=false X=false] DATA=ds "23CTaskSimpleThrowControl"
++0x50 1004aa5c0 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
++0x58 1004aa5c8 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0x60 1004aa5d0 -> 10046901d [__const R=true W=false X=false] DATA=ds "18CTaskSimpleChoking"
++0x68 1004aa5d8 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
++0x70 1004aa5e0 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0x78 1004aa5e8 -> 100469032 [__const R=true W=false X=false] DATA=ds "16CTaskSimpleBeHit"
++0x80 1004aa5f0 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
++0x88 1004aa5f8 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0x90 1004aa600 -> 100469045 [__const R=true W=false X=false] DATA=ds "25CTaskComplexKillPedOnFoot"
++0x98 1004aa608 -> 1004a9608 [__const R=true W=false X=false] DATA=addr 1009c8100
++0xA0 1004aa610 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0xA8 1004aa618 -> 100469061 [__const R=true W=false X=false] DATA=ds "32CTaskComplexKillPedOnFootStealth"
++0xB0 1004aa620 -> 1004aa5f8 [__const R=true W=false X=false] DATA=addr 1009c8100
++0xB8 1004aa628 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0xC0 1004aa630 -> 100469084 [__const R=true W=false X=false] DATA=ds "30CTaskComplexKillPedOnFootMelee"
++0xC8 1004aa638 -> 1004a9608 [__const R=true W=false X=false] DATA=addr 1009c8100
++0xD0 1004aa640 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0xD8 1004aa648 -> 1004690a5 [__const R=true W=false X=false] DATA=ds "30CTaskComplexKillPedOnFootArmed"
++0xE0 1004aa650 -> 1004a9608 [__const R=true W=false X=false] DATA=addr 1009c8100
++0xE8 1004aa658 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
++0xF0 1004aa660 -> 1004690c6 [__const R=true W=false X=false] DATA=ds "22CTaskSimpleGangDriveBy"
++0xF8 1004aa668 -> 1004a95f0 [__const R=true W=false X=false] DATA=addr 1009c8100
++0x100 1004aa670 -> 1009c8100 [EXTERNAL R=true W=true X=false] DATA=?? ??
+
+=== REFERENCES TO EACH SLOT ===
+
+USEGUN_RTTI_EXPORT_OK

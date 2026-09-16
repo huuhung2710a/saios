@@ -1,0 +1,46 @@
+FUNCTION=10023cb2c|FUN_10023cb2c
+=== DECOMPILE ===
+
+void FUN_10023cb2c(long param_1)
+
+{
+  long *plVar1;
+  int iVar2;
+  
+  plVar1 = DAT_100734fd8;
+  iVar2 = (int)(param_1 - *DAT_100734fd8 >> 3) * 0x39409d09;
+  *(byte *)(DAT_100734fd8[1] + (long)iVar2) = *(byte *)(DAT_100734fd8[1] + (long)iVar2) | 0x80;
+  if (iVar2 < *(int *)((long)plVar1 + 0x14)) {
+    *(int *)((long)plVar1 + 0x14) = iVar2;
+  }
+  return;
+}
+
+
+=== INSTRUCTIONS ===
+10023cb2c | adrp x8,0x100734000
+10023cb30 | add x8,x8,#0xfd8
+10023cb34 | ldr x8,[x8]
+10023cb38 | ldp x9,x10,[x8]
+10023cb3c | sub x9,x0,x9
+10023cb40 | asr x9,x9,#0x3
+10023cb44 | mov x11,#0x9d09
+10023cb48 | movk x11,#0x3940, LSL #16
+10023cb4c | movk x11,#0xf8a, LSL #32
+10023cb50 | movk x11,#0x5855, LSL #48
+10023cb54 | mul x9,x9,x11
+10023cb58 | sxtw x11,w9
+10023cb5c | ldrb w12,[x10, x11, LSL ]
+10023cb60 | orr w12,w12,#0x80
+10023cb64 | strb w12,[x10, x11, LSL ]
+10023cb68 | ldr w10,[x8, #0x14]
+10023cb6c | cmp w10,w9
+10023cb70 | b.le 0x10023cb78
+10023cb74 | str w9,[x8, #0x14]
+10023cb78 | ret
+=== CALLERS ===
+10026cf78|FUN_10026cf78
+10023b318|FUN_10023b318
+10023bec4|FUN_10023bec4
+10023b764|FUN_10023b764
+=== CALLEES ===

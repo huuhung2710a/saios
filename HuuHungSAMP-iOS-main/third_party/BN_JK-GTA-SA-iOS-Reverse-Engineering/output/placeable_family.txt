@@ -1,0 +1,1032 @@
+
+================================================
+FUNCTION=10016c360|FUN_10016c360
+BODY=[[10016c360, 10016c3f7]]
+
+=== DECOMPILE ===
+
+undefined8 FUN_10016c360(long param_1,undefined4 param_2,undefined1 *param_3)
+
+{
+  byte bVar1;
+  
+  if (param_3 != (undefined1 *)0x0) {
+    *param_3 = 0;
+  }
+  switch(param_2) {
+  case 0:
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+  case 6:
+  case 7:
+  case 8:
+  case 9:
+  case 10:
+  case 0xb:
+  case 0xc:
+  case 0xd:
+  case 0xe:
+  case 0xf:
+    if ((*(byte *)(param_1 + 0x66) >> 5 & 1) != 0) {
+      return 0;
+    }
+    return 1;
+  case 0x10:
+  case 0x13:
+  case 0x14:
+  case 0x15:
+  case 0x23:
+  case 0x24:
+  case 0x27:
+  case 0x28:
+  case 0x33:
+    if (*(char *)(param_1 + 0x66) < '\0') {
+      return 0;
+    }
+    if (param_3 == (undefined1 *)0x0) {
+      return 1;
+    }
+    goto LAB_10016c3b4;
+  default:
+    goto switchD_10016c388_caseD_11;
+  case 0x12:
+    bVar1 = *(byte *)(param_1 + 0x66) & 0x88;
+    break;
+  case 0x16:
+  case 0x17:
+  case 0x18:
+  case 0x19:
+  case 0x1a:
+  case 0x1b:
+  case 0x1c:
+  case 0x1d:
+  case 0x1e:
+  case 0x1f:
+  case 0x20:
+  case 0x21:
+  case 0x22:
+  case 0x26:
+  case 0x34:
+    bVar1 = *(byte *)(param_1 + 0x66) >> 2 & 1;
+    break;
+  case 0x25:
+    bVar1 = *(byte *)(param_1 + 0x66) >> 3;
+    goto joined_r0x00010016c3c8;
+  case 0x31:
+  case 0x32:
+  case 0x36:
+    bVar1 = *(byte *)(param_1 + 0x66) >> 4;
+joined_r0x00010016c3c8:
+    if ((bVar1 & 1) != 0) {
+      return 0;
+    }
+    goto switchD_10016c388_caseD_11;
+  }
+  if (bVar1 != 0) {
+    return 0;
+  }
+  if (param_3 != (undefined1 *)0x0) {
+LAB_10016c3b4:
+    *param_3 = 1;
+    return 1;
+  }
+switchD_10016c388_caseD_11:
+  return 1;
+}
+
+
+
+=== INSTRUCTIONS ===
+
+=== CALLERS ===
+10023660c|FUN_10023660c
+1001a8190|FUN_1001a8190
+10040a7c8|FUN_10040a7c8
+
+=== CALLEES ===
+
+================================================
+FUNCTION=10016c3f8|FUN_10016c3f8
+BODY=[[10016c3f8, 10016c43f]]
+
+=== DECOMPILE ===
+
+void FUN_10016c3f8(long param_1)
+
+{
+  FUN_10022a4a8(param_1 + 0x208);
+  FUN_10022a4a8(param_1 + 0x1a0);
+  FUN_10022a4a8(param_1 + 0x138);
+  FUN_10022a4a8(param_1 + 0xd0);
+  FUN_10022a4a8(param_1 + 0x68);
+  FUN_10022a4a8(param_1);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c3fc | stp x29,x30,[sp, #0x10]
+10016c434 | ldp x29,x30,[sp, #0x10]
+
+=== CALLERS ===
+
+=== CALLEES ===
+10022a4a8|FUN_10022a4a8
+
+================================================
+FUNCTION=10016c440|FUN_10016c440
+BODY=[[10016c440, 10016c4b7]]
+
+=== DECOMPILE ===
+
+void FUN_10016c440(undefined8 param_1,float param_2,float *param_3,float *param_4,float *param_5)
+
+{
+  float fVar1;
+  
+  fVar1 = param_4[3];
+  ___sincosf_stret();
+  *param_3 = *param_4 + param_5[1] * -fVar1 + *param_5 * param_2;
+  param_3[1] = param_4[1] + param_2 * param_5[1] + *param_5 * fVar1;
+  param_3[2] = param_5[2] + param_4[2];
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c444 | stp x20,x19,[sp, #0x10]
+10016c45c | ldr s0,[x1, #0xc]
+10016c460 | bl 0x10043de14
+10016c498 | ldr s0,[x19, #0x8]
+10016c49c | ldr s1,[x20, #0x8]
+10016c4a4 | str s0,[x21, #0x8]
+10016c4ac | ldp x20,x19,[sp, #0x10]
+
+=== CALLERS ===
+100263074|FUN_100263074
+10014216c|FUN_10014216c
+100142ec0|FUN_100142ec0
+100143254|FUN_100143254
+1001448b0|FUN_1001448b0
+1002825c4|FUN_1002825c4
+1001433ac|FUN_1001433ac
+1001447e4|FUN_1001447e4
+1001430f8|FUN_1001430f8
+10014316c|FUN_10014316c
+1002d5a2c|FUN_1002d5a2c
+100263628|FUN_100263628
+100142784|FUN_100142784
+
+=== CALLEES ===
+10043de14|___sincosf_stret
+
+================================================
+FUNCTION=10016c4b8|FUN_10016c4b8
+BODY=[[10016c4b8, 10016c523]]
+
+=== DECOMPILE ===
+
+void FUN_10016c4b8(long param_1,int param_2,undefined8 param_3,long param_4)
+
+{
+  FUN_10022b01c(param_3,DAT_100734628);
+  FUN_1002b8070(DAT_100734628);
+  for (; param_2 != 0; param_2 = param_2 + -1) {
+    FUN_1002bba08(param_1,param_4,DAT_100734628);
+    param_1 = param_1 + 0xc;
+    param_4 = param_4 + 0xc;
+  }
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c4bc | stp x20,x19,[sp, #0x10]
+10016c518 | ldp x20,x19,[sp, #0x10]
+
+=== CALLERS ===
+100138a64|FUN_100138a64
+
+=== CALLEES ===
+10022b01c|FUN_10022b01c
+1002b8070|FUN_1002b8070
+1002bba08|FUN_1002bba08
+
+================================================
+FUNCTION=10016c524|FUN_10016c524
+BODY=[[10016c524, 10016c58f]]
+
+=== DECOMPILE ===
+
+void FUN_10016c524(long param_1,int param_2,undefined8 param_3,long param_4)
+
+{
+  FUN_10022b01c(param_3,DAT_100734628);
+  FUN_1002b8070(DAT_100734628);
+  for (; param_2 != 0; param_2 = param_2 + -1) {
+    FUN_1002bb988(param_1,param_4,DAT_100734628);
+    param_1 = param_1 + 0xc;
+    param_4 = param_4 + 0xc;
+  }
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c528 | stp x20,x19,[sp, #0x10]
+10016c584 | ldp x20,x19,[sp, #0x10]
+
+=== CALLERS ===
+100282c80|FUN_100282c80
+100283080|FUN_100283080
+
+=== CALLEES ===
+10022b01c|FUN_10022b01c
+1002bb988|FUN_1002bb988
+1002b8070|FUN_1002b8070
+
+================================================
+FUNCTION=10016c590|FUN_10016c590
+BODY=[[10016c590, 10016c5fb]]
+
+=== DECOMPILE ===
+
+void FUN_10016c590(undefined8 param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4)
+
+{
+  float fVar1;
+  
+  fVar1 = (float)param_3[3];
+  ___sincosf_stret();
+  *param_4 = param_2;
+  param_4[1] = fVar1;
+  param_4[2] = 0;
+  param_4[4] = -fVar1;
+  param_4[5] = param_2;
+  param_4[6] = 0;
+  *(undefined8 *)(param_4 + 8) = 0;
+  param_4[10] = 0x3f800000;
+  param_4[0xc] = *param_3;
+  param_4[0xd] = param_3[1];
+  param_4[0xe] = param_3[2];
+  FUN_1002b8070(param_4);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c594 | stp x29,x30,[sp, #0x10]
+10016c5a4 | ldr s0,[x0, #0xc]
+10016c5a8 | bl 0x10043de14
+10016c5b4 | str wzr,[x19, #0x8]
+10016c5bc | str s0,[x19, #0x10]
+10016c5c0 | str s1,[x19, #0x14]
+10016c5c4 | str wzr,[x19, #0x18]
+10016c5d8 | str s0,[x19, #0x30]
+10016c5e0 | str s0,[x19, #0x34]
+10016c5e4 | ldr s0,[x20, #0x8]
+10016c5e8 | str s0,[x19, #0x38]
+10016c5f0 | ldp x29,x30,[sp, #0x10]
+
+=== CALLERS ===
+1000c4a18|FUN_1000c4a18
+10012417c|FUN_10012417c
+1003caab0|FUN_1003caab0
+10010f8a4|FUN_10010f8a4
+100238d78|FUN_100238d78
+100423108|FUN_100423108
+10016acfc|FUN_10016acfc
+10026a880|FUN_10026a880
+10023858c|FUN_10023858c
+1000cdc08|FUN_1000cdc08
+1003cbdb0|FUN_1003cbdb0
+100236cfc|FUN_100236cfc
+100238a20|FUN_100238a20
+10012c91c|FUN_10012c91c
+100126fe4|FUN_100126fe4
+1000def8c|FUN_1000def8c
+10011feb8|FUN_10011feb8
+100186e9c|FUN_100186e9c
+100234a58|FUN_100234a58
+100144358|FUN_100144358
+1001434c8|FUN_1001434c8
+1000d6254|FUN_1000d6254
+1002374e4|FUN_1002374e4
+1001826ac|FUN_1001826ac
+1000d40bc|FUN_1000d40bc
+100186578|FUN_100186578
+1000cd844|FUN_1000cd844
+10027bb1c|FUN_10027bb1c
+100428880|FUN_100428880
+1003cb6ac|FUN_1003cb6ac
+100419904|FUN_100419904
+100121584|FUN_100121584
+10041954c|FUN_10041954c
+100142940|FUN_100142940
+100234db0|FUN_100234db0
+1002edfb4|FUN_1002edfb4
+1003e3900|FUN_1003e3900
+1002370b8|FUN_1002370b8
+1000f7828|FUN_1000f7828
+1000f9b30|FUN_1000f9b30
+
+=== CALLEES ===
+10043de14|___sincosf_stret
+1002b8070|FUN_1002b8070
+
+================================================
+FUNCTION=10016c5fc|FUN_10016c5fc
+BODY=[[10016c5fc, 10016c633]]
+
+=== DECOMPILE ===
+
+void FUN_10016c5fc(undefined4 *param_1,undefined8 param_2)
+
+{
+  FUN_10022a780(*param_1,param_1[1],param_1[2],param_2);
+  FUN_10022a7c8(param_1[3],param_2);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c600 | stp x29,x30,[sp, #0x10]
+10016c614 | ldr s2,[x0, #0x8]
+10016c620 | ldr s0,[x20, #0xc]
+10016c628 | ldp x29,x30,[sp, #0x10]
+
+=== CALLERS ===
+100227428|FUN_100227428
+100183668|FUN_100183668
+10016be08|FUN_10016be08
+10024ffbc|FUN_10024ffbc
+100123678|FUN_100123678
+10011b414|FUN_10011b414
+10011a8e4|FUN_10011a8e4
+100278a80|FUN_100278a80
+100407530|FUN_100407530
+10040eba8|FUN_10040eba8
+10024cf20|FUN_10024cf20
+1000c3340|FUN_1000c3340
+1002f87e8|FUN_1002f87e8
+1001f0024|FUN_1001f0024
+10016aa3c|FUN_10016aa3c
+100389810|FUN_100389810
+10011b72c|FUN_10011b72c
+10016af5c|FUN_10016af5c
+10035270c|FUN_10035270c
+1002dd0f8|FUN_1002dd0f8
+1003b41ac|FUN_1003b41ac
+100197454|FUN_100197454
+1001249b0|FUN_1001249b0
+10012efe4|FUN_10012efe4
+1002409a8|FUN_1002409a8
+10012440c|FUN_10012440c
+1001647f4|FUN_1001647f4
+100142b48|FUN_100142b48
+10011c508|FUN_10011c508
+100344f44|FUN_100344f44
+1002d5a2c|FUN_1002d5a2c
+1000908bc|FUN_1000908bc
+100282c80|FUN_100282c80
+1003b09dc|FUN_1003b09dc
+1003e88c4|FUN_1003e88c4
+10008f508|FUN_10008f508
+1001299e8|FUN_1001299e8
+1003caed0|FUN_1003caed0
+10014f26c|FUN_10014f26c
+1000c1ad0|FUN_1000c1ad0
+1003d3dc4|FUN_1003d3dc4
+100433aa0|FUN_100433aa0
+100436278|FUN_100436278
+1003b3c80|FUN_1003b3c80
+10011feb8|FUN_10011feb8
+1002d4478|FUN_1002d4478
+1003b3e88|FUN_1003b3e88
+100263074|FUN_100263074
+10021a924|FUN_10021a924
+100129124|FUN_100129124
+1000a07bc|FUN_1000a07bc
+10018ba5c|FUN_10018ba5c
+10012bfe4|FUN_10012bfe4
+1002799b0|FUN_1002799b0
+100435b40|FUN_100435b40
+10016bb10|FUN_10016bb10
+1003cb6ac|FUN_1003cb6ac
+100103d58|FUN_100103d58
+100437ba4|FUN_100437ba4
+1000a699c|FUN_1000a699c
+1000c36d4|FUN_1000c36d4
+1002460f4|FUN_1002460f4
+1002de7f0|FUN_1002de7f0
+1002e0f4c|FUN_1002e0f4c
+1002f5354|FUN_1002f5354
+1003d3544|FUN_1003d3544
+1002d53e8|FUN_1002d53e8
+100352214|FUN_100352214
+10009e350|FUN_10009e350
+100145124|FUN_100145124
+1003b51d4|FUN_1003b51d4
+100389f10|FUN_100389f10
+1003cbdb0|FUN_1003cbdb0
+1001473b0|FUN_1001473b0
+10009ee30|FUN_10009ee30
+10012c91c|FUN_10012c91c
+100126fe4|FUN_100126fe4
+1000c1900|FUN_1000c1900
+1000a72bc|FUN_1000a72bc
+100351c3c|FUN_100351c3c
+10012840c|FUN_10012840c
+1002268b4|FUN_1002268b4
+100222a94|FUN_100222a94
+100247144|FUN_100247144
+100396d8c|FUN_100396d8c
+100144358|FUN_100144358
+100246440|FUN_100246440
+1003b2ee4|FUN_1003b2ee4
+100223534|FUN_100223534
+1000c2278|FUN_1000c2278
+1000d0ce4|FUN_1000d0ce4
+1002de584|FUN_1002de584
+1002df9c4|FUN_1002df9c4
+100222ea4|FUN_100222ea4
+10012f8a8|FUN_10012f8a8
+1003f4580|FUN_1003f4580
+10012d270|FUN_10012d270
+100346658|FUN_100346658
+10018b7d4|FUN_10018b7d4
+10024b464|FUN_10024b464
+100283080|FUN_100283080
+100184ce8|FUN_100184ce8
+10012ec34|FUN_10012ec34
+100190c40|FUN_100190c40
+1004002dc|FUN_1004002dc
+1000d0958|FUN_1000d0958
+10042eaf8|FUN_10042eaf8
+100388f30|FUN_100388f30
+10024d914|FUN_10024d914
+10038a2c4|FUN_10038a2c4
+10010fccc|FUN_10010fccc
+100431468|FUN_100431468
+1000d002c|FUN_1000d002c
+1000d0f00|FUN_1000d0f00
+100185778|FUN_100185778
+1002354c8|FUN_1002354c8
+10018756c|FUN_10018756c
+1002d3d28|FUN_1002d3d28
+100431d20|FUN_100431d20
+
+=== CALLEES ===
+10022a780|FUN_10022a780
+10022a7c8|FUN_10022a7c8
+
+================================================
+FUNCTION=10016c634|FUN_10016c634
+BODY=[[10016c634, 10016c647]]
+
+=== DECOMPILE ===
+
+void FUN_10016c634(undefined8 *param_1)
+
+{
+  *param_1 = &PTR_FUN_10049bd50;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c640 | stp xzr,xzr,[x0, #0x10]
+
+=== CALLERS ===
+1001300f8|FUN_1001300f8
+100141c38|FUN_100141c38
+
+=== CALLEES ===
+
+================================================
+FUNCTION=10016c648|FUN_10016c648
+BODY=[[10016c648, 10016c6f7]]
+
+=== DECOMPILE ===
+
+undefined8 * FUN_10016c648(undefined8 *param_1)
+
+{
+  long lVar1;
+  float fVar2;
+  undefined4 uVar3;
+  
+  *param_1 = &PTR_FUN_10049bd50;
+  lVar1 = param_1[3];
+  if (lVar1 != 0) {
+    uVar3 = *(undefined4 *)(lVar1 + 0x38);
+    fVar2 = -*(float *)(lVar1 + 0x10);
+    _atan2f(fVar2,*(undefined4 *)(lVar1 + 0x14));
+    param_1[1] = *(undefined8 *)(lVar1 + 0x30);
+    *(undefined4 *)(param_1 + 2) = uVar3;
+    *(float *)((long)param_1 + 0x14) = fVar2;
+    param_1[3] = 0;
+    *(undefined8 *)(lVar1 + 0x50) = 0;
+    *(undefined8 *)(*(long *)(lVar1 + 0x60) + 0x58) = *(undefined8 *)(lVar1 + 0x58);
+    *(undefined8 *)(*(long *)(lVar1 + 0x58) + 0x60) = *(undefined8 *)(lVar1 + 0x60);
+    *(long *)(lVar1 + 0x60) = DAT_100734f40;
+    *(long *)(DAT_100734f40 + 0x58) = lVar1;
+    *(undefined **)(lVar1 + 0x58) = &DAT_100734ee0;
+    DAT_100734fb8 = DAT_100734fb8 + -1;
+    DAT_100734f40 = lVar1;
+  }
+  param_1[3] = &DAT_100734cf0;
+  return param_1;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c64c | stp x20,x19,[sp, #0x10]
+10016c668 | ldr x20,[x0, #0x18]
+10016c670 | ldr s8,[x20, #0x38]
+10016c674 | ldp s0,s1,[x20, #0x10]
+10016c680 | ldr d1,[x20, #0x30]
+10016c684 | str d1,[x19, #0x8]
+10016c688 | str s8,[x19, #0x10]
+10016c68c | str s0,[x19, #0x14]
+10016c690 | str xzr,[x19, #0x18]
+10016c6e0 | str x8,[x19, #0x18]
+10016c6ec | ldp x20,x19,[sp, #0x10]
+
+=== CALLERS ===
+100130260|FUN_100130260
+10011b6cc|FUN_10011b6cc
+100141d10|FUN_100141d10
+100141cb4|FUN_100141cb4
+100141d6c|FUN_100141d6c
+
+=== CALLEES ===
+10043df7c|_atan2f
+
+================================================
+FUNCTION=10016c6f8|FUN_10016c6f8
+BODY=[[10016c6f8, 10016c7a7]]
+
+=== DECOMPILE ===
+
+undefined8 * FUN_10016c6f8(undefined8 *param_1)
+
+{
+  long lVar1;
+  float fVar2;
+  undefined4 uVar3;
+  
+  *param_1 = &PTR_FUN_10049bd50;
+  lVar1 = param_1[3];
+  if (lVar1 != 0) {
+    uVar3 = *(undefined4 *)(lVar1 + 0x38);
+    fVar2 = -*(float *)(lVar1 + 0x10);
+    _atan2f(fVar2,*(undefined4 *)(lVar1 + 0x14));
+    param_1[1] = *(undefined8 *)(lVar1 + 0x30);
+    *(undefined4 *)(param_1 + 2) = uVar3;
+    *(float *)((long)param_1 + 0x14) = fVar2;
+    param_1[3] = 0;
+    *(undefined8 *)(lVar1 + 0x50) = 0;
+    *(undefined8 *)(*(long *)(lVar1 + 0x60) + 0x58) = *(undefined8 *)(lVar1 + 0x58);
+    *(undefined8 *)(*(long *)(lVar1 + 0x58) + 0x60) = *(undefined8 *)(lVar1 + 0x60);
+    *(long *)(lVar1 + 0x60) = DAT_100734f40;
+    *(long *)(DAT_100734f40 + 0x58) = lVar1;
+    *(undefined **)(lVar1 + 0x58) = &DAT_100734ee0;
+    DAT_100734fb8 = DAT_100734fb8 + -1;
+    DAT_100734f40 = lVar1;
+  }
+  param_1[3] = &DAT_100734cf0;
+  return param_1;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c6fc | stp x20,x19,[sp, #0x10]
+10016c718 | ldr x20,[x0, #0x18]
+10016c720 | ldr s8,[x20, #0x38]
+10016c724 | ldp s0,s1,[x20, #0x10]
+10016c730 | ldr d1,[x20, #0x30]
+10016c734 | str d1,[x19, #0x8]
+10016c738 | str s8,[x19, #0x10]
+10016c73c | str s0,[x19, #0x14]
+10016c740 | str xzr,[x19, #0x18]
+10016c790 | str x8,[x19, #0x18]
+10016c79c | ldp x20,x19,[sp, #0x10]
+
+=== CALLERS ===
+
+=== CALLEES ===
+10043df7c|_atan2f
+
+================================================
+FUNCTION=10016c7a8|FUN_10016c7a8
+BODY=[[10016c7a8, 10016c847]]
+
+=== DECOMPILE ===
+
+void FUN_10016c7a8(undefined8 *param_1)
+
+{
+  long lVar1;
+  float fVar2;
+  undefined4 uVar3;
+  
+  *param_1 = &PTR_FUN_10049bd50;
+  lVar1 = param_1[3];
+  if (lVar1 != 0) {
+    uVar3 = *(undefined4 *)(lVar1 + 0x38);
+    fVar2 = -*(float *)(lVar1 + 0x10);
+    _atan2f(fVar2,*(undefined4 *)(lVar1 + 0x14));
+    param_1[1] = *(undefined8 *)(lVar1 + 0x30);
+    *(undefined4 *)(param_1 + 2) = uVar3;
+    *(float *)((long)param_1 + 0x14) = fVar2;
+    param_1[3] = 0;
+    *(undefined8 *)(lVar1 + 0x50) = 0;
+    *(undefined8 *)(*(long *)(lVar1 + 0x60) + 0x58) = *(undefined8 *)(lVar1 + 0x58);
+    *(undefined8 *)(*(long *)(lVar1 + 0x58) + 0x60) = *(undefined8 *)(lVar1 + 0x60);
+    *(long *)(lVar1 + 0x60) = DAT_100734f40;
+    *(long *)(DAT_100734f40 + 0x58) = lVar1;
+    *(undefined **)(lVar1 + 0x58) = &DAT_100734ee0;
+    DAT_100734fb8 = DAT_100734fb8 + -1;
+    DAT_100734f40 = lVar1;
+  }
+  operator_delete(param_1);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c7ac | stp x20,x19,[sp, #0x10]
+10016c7c8 | ldr x20,[x0, #0x18]
+10016c7d0 | ldr s8,[x20, #0x38]
+10016c7d4 | ldp s0,s1,[x20, #0x10]
+10016c7e0 | ldr d1,[x20, #0x30]
+10016c7e4 | str d1,[x19, #0x8]
+10016c7e8 | stp s8,s0,[x19, #0x10]
+10016c7ec | str xzr,[x19, #0x18]
+10016c83c | ldp x20,x19,[sp, #0x10]
+
+=== CALLERS ===
+
+=== CALLEES ===
+10043df7c|_atan2f
+10043dd6c|operator.delete
+
+================================================
+FUNCTION=10016c848|FUN_10016c848
+BODY=[[10016c848, 10016c8d7]]
+
+=== DECOMPILE ===
+
+void FUN_10016c848(long param_1,long param_2)
+
+{
+  float fVar1;
+  undefined4 uVar2;
+  
+  if (*(long *)(param_1 + 0x18) != 0) {
+    FUN_10022a2a8(*(long *)(param_1 + 0x18),param_2);
+    return;
+  }
+  if (*(float *)(param_2 + 0x28) == 1.0) {
+    uVar2 = *(undefined4 *)(param_2 + 0x38);
+    fVar1 = -*(float *)(param_2 + 0x10);
+    _atan2f(fVar1,*(undefined4 *)(param_2 + 0x14));
+    *(undefined8 *)(param_1 + 8) = *(undefined8 *)(param_2 + 0x30);
+    *(undefined4 *)(param_1 + 0x10) = uVar2;
+    *(float *)(param_1 + 0x14) = fVar1;
+    return;
+  }
+  FUN_10016c8d8(param_1);
+  FUN_10022a2a8(*(undefined8 *)(param_1 + 0x18),param_2);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c84c | stp x20,x19,[sp, #0x10]
+10016c860 | ldr x0,[x0, #0x18]
+10016c870 | ldp x20,x19,[sp, #0x10]
+10016c88c | ldr s8,[x19, #0x38]
+10016c890 | ldp s0,s1,[x19, #0x10]
+10016c89c | ldr d1,[x19, #0x30]
+10016c8a0 | str d1,[x20, #0x8]
+10016c8a4 | stp s8,s0,[x20, #0x10]
+10016c8ac | ldp x20,x19,[sp, #0x10]
+10016c8c0 | ldr x0,[x20, #0x18]
+10016c8cc | ldp x20,x19,[sp, #0x10]
+
+=== CALLERS ===
+1002460f4|FUN_1002460f4
+100238d78|FUN_100238d78
+10021dc70|FUN_10021dc70
+10024589c|FUN_10024589c
+10016af5c|FUN_10016af5c
+10021ef6c|FUN_10021ef6c
+1003847c8|FUN_1003847c8
+1000e5018|FUN_1000e5018
+1001387dc|FUN_1001387dc
+1002354c8|FUN_1002354c8
+10042eaf8|FUN_10042eaf8
+10031d334|FUN_10031d334
+1003e3900|FUN_1003e3900
+
+=== CALLEES ===
+10016c8d8|FUN_10016c8d8
+10043df7c|_atan2f
+10022a2a8|FUN_10022a2a8
+
+================================================
+FUNCTION=10016c8d8|FUN_10016c8d8
+BODY=[[10016c8d8, 10016ca23]]
+
+=== DECOMPILE ===
+
+void FUN_10016c8d8(long param_1)
+
+{
+  undefined *puVar1;
+  long lVar2;
+  float fVar3;
+  undefined4 uVar4;
+  
+  puVar1 = DAT_100734f40;
+  if (*(long *)(param_1 + 0x18) != 0) {
+    FUN_10022a6bc();
+    return;
+  }
+  if (DAT_100734f40 != &DAT_100734f48) {
+    *(undefined8 *)(*(long *)(DAT_100734f40 + 0x60) + 0x58) = *(undefined8 *)(DAT_100734f40 + 0x58);
+    *(undefined8 *)(*(long *)(puVar1 + 0x58) + 0x60) = *(undefined8 *)(puVar1 + 0x60);
+    *(undefined **)(puVar1 + 0x60) = DAT_100734da0;
+    *(undefined **)(DAT_100734da0 + 0x58) = puVar1;
+    *(undefined **)(puVar1 + 0x58) = &DAT_100734d40;
+    DAT_100734da0 = puVar1;
+    if (puVar1 != (undefined *)0x0) goto LAB_10016ca00;
+  }
+  lVar2 = *(long *)(DAT_100734e00 + 0x50);
+  puVar1 = *(undefined **)(lVar2 + 0x18);
+  uVar4 = *(undefined4 *)(puVar1 + 0x38);
+  fVar3 = -*(float *)(puVar1 + 0x10);
+  _atan2f(fVar3,*(undefined4 *)(puVar1 + 0x14));
+  *(undefined8 *)(lVar2 + 8) = *(undefined8 *)(puVar1 + 0x30);
+  *(undefined4 *)(lVar2 + 0x10) = uVar4;
+  *(float *)(lVar2 + 0x14) = fVar3;
+  *(undefined8 *)(lVar2 + 0x18) = 0;
+  *(undefined8 *)(puVar1 + 0x50) = 0;
+  *(undefined8 *)(*(long *)(puVar1 + 0x60) + 0x58) = *(undefined8 *)(puVar1 + 0x58);
+  *(undefined8 *)(*(long *)(puVar1 + 0x58) + 0x60) = *(undefined8 *)(puVar1 + 0x60);
+  *(undefined **)(puVar1 + 0x60) = DAT_100734f40;
+  *(undefined **)(DAT_100734f40 + 0x58) = puVar1;
+  *(undefined **)(puVar1 + 0x58) = &DAT_100734ee0;
+  DAT_100734f40 = puVar1;
+  if (puVar1 == &DAT_100734f48) {
+    puVar1 = (undefined *)0x0;
+  }
+  else {
+    *(undefined8 *)(*(long *)(puVar1 + 0x60) + 0x58) = *(undefined8 *)(puVar1 + 0x58);
+    *(undefined8 *)(*(long *)(puVar1 + 0x58) + 0x60) = *(undefined8 *)(puVar1 + 0x60);
+    *(undefined **)(puVar1 + 0x60) = DAT_100734da0;
+    *(undefined **)(DAT_100734da0 + 0x58) = puVar1;
+    *(undefined **)(puVar1 + 0x58) = &DAT_100734d40;
+    DAT_100734da0 = puVar1;
+  }
+LAB_10016ca00:
+  *(long *)(puVar1 + 0x50) = param_1;
+  *(undefined **)(param_1 + 0x18) = puVar1;
+  FUN_10022a6bc(puVar1);
+  return;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016c8dc | stp x24,x23,[sp, #0x10]
+10016c8e4 | stp x20,x19,[sp, #0x30]
+10016c8f4 | ldr x0,[x0, #0x18]
+10016c900 | ldp x20,x19,[sp, #0x30]
+10016c908 | ldp x24,x23,[sp, #0x10]
+10016c96c | ldr x20,[x23, #0x18]
+10016c970 | ldr s8,[x20, #0x38]
+10016c974 | ldp s0,s1,[x20, #0x10]
+10016c980 | ldr d1,[x20, #0x30]
+10016c984 | str d1,[x23, #0x8]
+10016c988 | str s8,[x23, #0x10]
+10016c98c | str s0,[x23, #0x14]
+10016c990 | str xzr,[x23, #0x18]
+10016ca04 | str x20,[x19, #0x18]
+10016ca10 | ldp x20,x19,[sp, #0x30]
+10016ca18 | ldp x24,x23,[sp, #0x10]
+
+=== CALLERS ===
+100227428|FUN_100227428
+1003b2ee4|FUN_1003b2ee4
+1002409a8|FUN_1002409a8
+100183668|FUN_100183668
+10016be08|FUN_10016be08
+1003d3544|FUN_1003d3544
+10012440c|FUN_10012440c
+10040eba8|FUN_10040eba8
+10011a8e4|FUN_10011a8e4
+100431468|FUN_100431468
+10024cf20|FUN_10024cf20
+100437ba4|FUN_100437ba4
+1000c3340|FUN_1000c3340
+1001f0024|FUN_1001f0024
+100278a80|FUN_100278a80
+100247144|FUN_100247144
+100123678|FUN_100123678
+100352214|FUN_100352214
+10011b72c|FUN_10011b72c
+10016af5c|FUN_10016af5c
+1002d5a2c|FUN_1002d5a2c
+100351c3c|FUN_100351c3c
+100433aa0|FUN_100433aa0
+1003cbdb0|FUN_1003cbdb0
+1002f5354|FUN_1002f5354
+1001299e8|FUN_1001299e8
+10009e350|FUN_10009e350
+1002799b0|FUN_1002799b0
+10011c508|FUN_10011c508
+1003caed0|FUN_1003caed0
+1001249b0|FUN_1001249b0
+1000908bc|FUN_1000908bc
+10024d914|FUN_10024d914
+1003b3e88|FUN_1003b3e88
+100129124|FUN_100129124
+100283080|FUN_100283080
+1002de584|FUN_1002de584
+100197454|FUN_100197454
+1002f87e8|FUN_1002f87e8
+100282c80|FUN_100282c80
+10008f508|FUN_10008f508
+10042eaf8|FUN_10042eaf8
+10014f26c|FUN_10014f26c
+1000c1ad0|FUN_1000c1ad0
+1002dd0f8|FUN_1002dd0f8
+10016aa3c|FUN_10016aa3c
+100246440|FUN_100246440
+1002d4478|FUN_1002d4478
+1001473b0|FUN_1001473b0
+10021a924|FUN_10021a924
+1002e0f4c|FUN_1002e0f4c
+10018ba5c|FUN_10018ba5c
+10024b464|FUN_10024b464
+10012bfe4|FUN_10012bfe4
+1003b51d4|FUN_1003b51d4
+100344f44|FUN_100344f44
+100142b48|FUN_100142b48
+100103d58|FUN_100103d58
+10011b414|FUN_10011b414
+100144358|FUN_100144358
+10016c848|FUN_10016c848
+1000c36d4|FUN_1000c36d4
+1002460f4|FUN_1002460f4
+100145124|FUN_100145124
+100407530|FUN_100407530
+10016bb10|FUN_10016bb10
+1003b09dc|FUN_1003b09dc
+10009ee30|FUN_10009ee30
+1002354c8|FUN_1002354c8
+1001647f4|FUN_1001647f4
+10012c91c|FUN_10012c91c
+1000c1900|FUN_1000c1900
+1002268b4|FUN_1002268b4
+1000d0ce4|FUN_1000d0ce4
+100126fe4|FUN_100126fe4
+100222a94|FUN_100222a94
+1000d0958|FUN_1000d0958
+100223534|FUN_100223534
+10012ec34|FUN_10012ec34
+1000c2278|FUN_1000c2278
+1000a699c|FUN_1000a699c
+1000a07bc|FUN_1000a07bc
+100222ea4|FUN_100222ea4
+100431d20|FUN_100431d20
+1003f4580|FUN_1003f4580
+1003e88c4|FUN_1003e88c4
+1002de7f0|FUN_1002de7f0
+1000a72bc|FUN_1000a72bc
+10012f8a8|FUN_10012f8a8
+10012d270|FUN_10012d270
+100396d8c|FUN_100396d8c
+10012efe4|FUN_10012efe4
+100388f30|FUN_100388f30
+1002df9c4|FUN_1002df9c4
+1002d3d28|FUN_1002d3d28
+1003b41ac|FUN_1003b41ac
+100436278|FUN_100436278
+100389810|FUN_100389810
+100184ce8|FUN_100184ce8
+100263074|FUN_100263074
+1003cb6ac|FUN_1003cb6ac
+100190c40|FUN_100190c40
+1000d002c|FUN_1000d002c
+10012840c|FUN_10012840c
+1003b3c80|FUN_1003b3c80
+1002d53e8|FUN_1002d53e8
+100346658|FUN_100346658
+100389f10|FUN_100389f10
+10010fccc|FUN_10010fccc
+100435b40|FUN_100435b40
+1003d3dc4|FUN_1003d3dc4
+1000d0f00|FUN_1000d0f00
+10035270c|FUN_10035270c
+10018b7d4|FUN_10018b7d4
+10011feb8|FUN_10011feb8
+100185778|FUN_100185778
+10024ffbc|FUN_10024ffbc
+10018756c|FUN_10018756c
+1004002dc|FUN_1004002dc
+10038a2c4|FUN_10038a2c4
+
+=== CALLEES ===
+10022a6bc|FUN_10022a6bc
+10043df7c|_atan2f
+
+================================================
+FUNCTION=10016ca24|FUN_10016ca24
+BODY=[[10016ca24, 10016cac7]]
+
+=== DECOMPILE ===
+
+bool FUN_10016ca24(float param_1,float param_2,float param_3,float param_4,long param_5)
+
+{
+  undefined8 *puVar1;
+  undefined1 auVar2 [16];
+  undefined1 auVar3 [16];
+  undefined1 auVar4 [12];
+  undefined1 auVar5 [12];
+  uint uVar9;
+  undefined1 auVar6 [16];
+  undefined1 auVar7 [16];
+  undefined1 auVar8 [16];
+  float fVar10;
+  float fVar11;
+  
+  puVar1 = (undefined8 *)(param_5 + 8);
+  if (*(long *)(param_5 + 0x18) != 0) {
+    puVar1 = (undefined8 *)(*(long *)(param_5 + 0x18) + 0x30);
+  }
+  auVar6._0_4_ = (int)(short)-(ushort)(param_3 < param_1);
+  auVar6._4_4_ = (int)(short)-(ushort)(param_4 < param_2);
+  auVar6._8_4_ = (int)(short)-(ushort)(param_3 < param_1);
+  auVar6._12_4_ = (int)(short)-(ushort)(param_4 < param_2);
+  auVar2._4_4_ = param_4;
+  auVar2._0_4_ = param_3;
+  auVar2._8_4_ = param_1;
+  auVar2._12_4_ = param_2;
+  auVar3._4_4_ = param_2;
+  auVar3._0_4_ = param_1;
+  auVar3._8_4_ = param_3;
+  auVar3._12_4_ = param_4;
+  auVar7._4_4_ = param_4;
+  auVar7._0_4_ = param_3;
+  auVar7._8_4_ = param_1;
+  auVar7._12_4_ = param_2;
+  auVar7 = auVar7 ^ (auVar2 ^ auVar3) & auVar6;
+  fVar10 = (float)*puVar1;
+  fVar11 = (float)((ulong)*puVar1 >> 0x20);
+  auVar4._4_8_ = auVar7._8_8_;
+  auVar4._0_4_ = -(uint)(auVar7._4_4_ <= fVar11);
+  auVar8._0_8_ = auVar4._0_8_ << 0x20;
+  auVar8._8_4_ = -(uint)(auVar7._8_4_ <= fVar10);
+  auVar8._12_4_ = -(uint)(auVar7._12_4_ <= fVar11);
+  auVar5._2_10_ = auVar8._6_10_;
+  auVar5._0_2_ = (short)auVar8._8_4_;
+  uVar9 = (uint)(CONCAT26((short)auVar8._12_4_,auVar5._0_6_ << 0x20) >> 0x20);
+  return ((((ushort)-(ushort)(fVar10 <= auVar7._0_4_) & 1 |
+            ((ushort)-(ushort)(fVar11 <= auVar7._4_4_) & 1) << 1 | (uVar9 & 1) << 2 |
+           (uVar9 >> 0x10) << 3) ^ 0xffffffff) & 0xf) == 0;
+}
+
+
+
+=== INSTRUCTIONS ===
+10016ca28 | ldr x8,[x0, #0x18]
+
+=== CALLERS ===
+1000fa268|FUN_1000fa268
+1000fb7bc|FUN_1000fb7bc
+1000ddb5c|FUN_1000ddb5c
+100108ab4|FUN_100108ab4
+
+=== CALLEES ===

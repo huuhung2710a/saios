@@ -1,0 +1,10 @@
+# Arquivos proprietários / inputs locais
+input/gtasa
+input/*.ipa
+*.ipa
+
+# Backups compactados
+*.zip
+
+# Sistema
+.DS_Store

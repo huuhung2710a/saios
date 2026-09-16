@@ -1,0 +1,165 @@
+TARGET=100486b18
+IMAGE_BASE=100000000
+
+=== MEMORY BLOCK ===
+__cstring 10046f3a0-10048730f
+
+=== DATA AT TARGET ===
+ds "CTaskSimpleUseGun"
+TYPE=TerminatedCString
+
+=== REFERENCES TO STRING ===
+REF#1 FROM=100349198 TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  100349180 | ldrb w8,[x20, #0x55]
+  100349184 | cbnz w8,0x100349214
+  100349188 | ldr x4,[x20, #0x28]
+  10034918c | adrp x0,0x100808000
+  100349190 | add x0,x0,#0x6a0
+  100349194 | adrp x1,0x100486000
+  100349198 | add x1,x1,#0xb18
+  10034919c | mov w8,#0x42c80000
+  1003491a0 | fmov s1,w8
+  1003491a4 | mov w2,#0x0
+  1003491a8 | mov x3,x19
+  1003491ac | mov x5,x23
+  1003491b0 | mov x6,#0x0
+  1003491b4 | fmov s0,s8
+REF#2 FROM=1003491e4 TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  1003491cc | ldrb w8,[x24, #0xa]
+  1003491d0 | tbnz w8,#0x1,0x10034920c
+  1003491d4 | ldr x4,[x25]
+  1003491d8 | adrp x0,0x100808000
+  1003491dc | add x0,x0,#0x6a0
+  1003491e0 | adrp x1,0x100486000
+  1003491e4 | add x1,x1,#0xb18
+  1003491e8 | mov w8,#0x42c80000
+  1003491ec | fmov s1,w8
+  1003491f0 | mov w2,#0x1
+  1003491f4 | mov x3,x19
+  1003491f8 | mov x5,x23
+  1003491fc | mov x6,#0x0
+  100349200 | fmov s0,s8
+REF#3 FROM=100348f30 TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  100348f18 | mov w7,#0x1
+  100348f1c | bl 0x1002d1f94
+  100348f20 | strb w23,[x20, #0x56]
+  100348f24 | adrp x0,0x100808000
+  100348f28 | add x0,x0,#0x6a0
+  100348f2c | adrp x1,0x100486000
+  100348f30 | add x1,x1,#0xb18
+  100348f34 | mov w8,#0x42c80000
+  100348f38 | fmov s1,w8
+  100348f3c | add x6,sp,#0x10
+  100348f40 | mov w2,#0x0
+  100348f44 | mov x3,x19
+  100348f48 | mov x4,#0x0
+  100348f4c | mov w5,#0xffffffff
+REF#4 FROM=100348f7c TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  100348f64 | tbz w8,#0x3,0x100348fa8
+  100348f68 | ldrb w8,[x24, #0xa]
+  100348f6c | tbnz w8,#0x1,0x100348fa8
+  100348f70 | adrp x0,0x100808000
+  100348f74 | add x0,x0,#0x6a0
+  100348f78 | adrp x1,0x100486000
+  100348f7c | add x1,x1,#0xb18
+  100348f80 | mov w8,#0x42c80000
+  100348f84 | fmov s1,w8
+  100348f88 | add x6,sp,#0x10
+  100348f8c | mov w2,#0x1
+  100348f90 | mov x3,x19
+  100348f94 | mov x4,#0x0
+  100348f98 | mov w5,#0xffffffff
+REF#5 FROM=100349050 TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  100349038 | mov x6,x22
+  10034903c | mov w7,#0x1
+  100349040 | bl 0x1002d1f94
+  100349044 | adrp x0,0x100808000
+  100349048 | add x0,x0,#0x6a0
+  10034904c | adrp x1,0x100486000
+  100349050 | add x1,x1,#0xb18
+  100349054 | mov w8,#0x42c80000
+  100349058 | fmov s1,w8
+  10034905c | mov w2,#0x0
+  100349060 | mov x3,x19
+  100349064 | mov x4,#0x0
+  100349068 | mov w5,#0xffffffff
+  10034906c | mov x6,x22
+REF#6 FROM=10034909c TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  100349084 | tbz w8,#0x3,0x100349384
+  100349088 | ldrb w8,[x24, #0xa]
+  10034908c | tbnz w8,#0x1,0x100349384
+  100349090 | adrp x0,0x100808000
+  100349094 | add x0,x0,#0x6a0
+  100349098 | adrp x1,0x100486000
+  10034909c | add x1,x1,#0xb18
+  1003490a0 | mov w8,#0x42c80000
+  1003490a4 | fmov s1,w8
+  1003490a8 | mov w2,#0x1
+  1003490ac | mov x3,x19
+  1003490b0 | mov x4,#0x0
+  1003490b4 | mov w5,#0xffffffff
+  1003490b8 | mov x6,x22
+REF#7 FROM=10034930c TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  1003492f4 | mov w7,#0x1
+  1003492f8 | bl 0x1002d1f94
+  1003492fc | strb w22,[x20, #0x56]
+  100349300 | adrp x0,0x100808000
+  100349304 | add x0,x0,#0x6a0
+  100349308 | adrp x1,0x100486000
+  10034930c | add x1,x1,#0xb18
+  100349310 | mov w8,#0x42c80000
+  100349314 | fmov s1,w8
+  100349318 | add x6,sp,#0x20
+  10034931c | mov w2,#0x0
+  100349320 | mov x3,x19
+  100349324 | mov x4,x19
+  100349328 | mov w5,#0x16
+REF#8 FROM=100349358 TYPE=PARAM
+  CODEUNIT=add x1,x1,#0xb18
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text EXEC=true
+  --- NEARBY ---
+  100349340 | tbz w8,#0x3,0x100349384
+  100349344 | ldrb w8,[x24, #0xa]
+  100349348 | tbnz w8,#0x1,0x100349384
+  10034934c | adrp x0,0x100808000
+  100349350 | add x0,x0,#0x6a0
+  100349354 | adrp x1,0x100486000
+  100349358 | add x1,x1,#0xb18
+  10034935c | mov w8,#0x42c80000
+  100349360 | fmov s1,w8
+  100349364 | add x6,sp,#0x20
+  100349368 | mov w2,#0x1
+  10034936c | mov x3,x19
+  100349370 | mov x4,x19
+  100349374 | mov w5,#0x16
+
+TOTAL_REFS=8

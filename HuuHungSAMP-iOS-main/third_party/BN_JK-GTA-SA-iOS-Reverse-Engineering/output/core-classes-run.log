@@ -1,0 +1,48 @@
+openjdk version "21.0.11" 2026-04-21
+OpenJDK Runtime Environment (build 21.0.11+10-1-24.04.2-Ubuntu)
+OpenJDK 64-Bit Server VM (build 21.0.11+10-1-24.04.2-Ubuntu, mixed mode)
+INFO  Using log config file: jar:file:/root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /root/.config/BN_JK/BN_JK_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /root/.config/BN_JK/BN_JK_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (921 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (3707 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/DecompilerDependent/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/GnuDemangler/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/BytePatterns/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/VersionTracking/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/MicrosoftCodeAnalyzer/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Processors/8051/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Debug/Debugger-rmi-trace/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/Decompiler/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/SystemEmulation/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/PyBN_JK/BN_JK_scripts
+    /root/BN_JK-analysis/scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/FileFormats/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/FunctionID/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Processors/Atmel/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Processors/PIC/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Processors/JVM/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/Base/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/SwiftDemangler/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Debug/Debugger/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/BSim/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Processors/DATA/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/WildcardAssembler/BN_JK_scripts
+    /root/BN_JK-analysis/tools/BN_JK_12.1.3_PUBLIC/BN_JK/Features/PDB/BN_JK_scripts (HeadlessAnalyzer)  
+ERROR REPORT SCRIPT ERROR: MapCoreClasses.java : Script not found: MapCoreClasses.java (HeadlessAnalyzer)  
+ERROR Abort due to Headless analyzer error: Invalid script: MapCoreClasses.java (HeadlessAnalyzer) java.lang.IllegalArgumentException: Invalid script: MapCoreClasses.java
+	at BN_JK.app.util.headless.HeadlessAnalyzer.checkScript(HeadlessAnalyzer.java:799)
+	at BN_JK.app.util.headless.HeadlessAnalyzer.checkScriptsList(HeadlessAnalyzer.java:812)
+	at BN_JK.app.util.headless.HeadlessAnalyzer.compileScripts(HeadlessAnalyzer.java:846)
+	at BN_JK.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:415)
+	at BN_JK.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:199)
+	at BN_JK.BN_JKLauncher.launch(BN_JKLauncher.java:81)
+	at BN_JK.BN_JK.main(BN_JK.java:54)
+ 

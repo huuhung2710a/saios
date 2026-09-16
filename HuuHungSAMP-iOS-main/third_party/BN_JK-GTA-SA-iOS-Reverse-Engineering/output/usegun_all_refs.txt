@@ -1,0 +1,70 @@
+
+================================================
+TARGET=100486b0d
+DATA=ds "TaskUseGun"
+REF#1 FROM=100349154 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb0d
+REF#2 FROM=100348ef4 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb0d
+REF#3 FROM=10034901c TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb0d
+REF#4 FROM=1003492d0 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb0d
+TOTAL_REFS=4
+
+================================================
+TARGET=100486b18
+DATA=ds "CTaskSimpleUseGun"
+REF#1 FROM=100349198 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+REF#2 FROM=1003491e4 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+REF#3 FROM=100348f30 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+REF#4 FROM=100348f7c TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+REF#5 FROM=100349050 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+REF#6 FROM=10034909c TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+REF#7 FROM=10034930c TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+REF#8 FROM=100349358 TYPE=PARAM
+  FUNCTION=100348bbc|FUN_100348bbc
+  BLOCK=__text X=true
+  CODE=add x1,x1,#0xb18
+TOTAL_REFS=8
+
+================================================
+TARGET=100468fba
+DATA=ds "17CTaskSimpleUseGun"
+REF#1 FROM=1004aa570 TYPE=DATA
+  BLOCK=__const X=false
+  CODE=addr 100468fba
+TOTAL_REFS=1
+
+================================================
+UNIQUE_FUNCTIONS
+100348bbc|FUN_100348bbc
