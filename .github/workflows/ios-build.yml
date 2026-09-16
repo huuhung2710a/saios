@@ -1,4 +1,4 @@
-Name: HuuHungSAMP iOS IPA
+name: HuuHungSAMP iOS IPA
 
 on:
   workflow_dispatch:
