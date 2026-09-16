@@ -156,6 +156,8 @@ jobs:
                   CFBundleShortVersionString: "1.0"
                   CFBundleVersion: "1"
                   LSRequiresIPhoneOS: true
+                  UIFileSharingEnabled: true
+                  LSSupportsOpeningDocumentsInPlace: true
                   UILaunchScreen: {}
                   UISupportedInterfaceOrientations:
                     - UIInterfaceOrientationLandscapeLeft
@@ -187,6 +189,13 @@ jobs:
               <string>1</string>
               <key>LSRequiresIPhoneOS</key>
               <true/>
+              
+              <!-- BẬT CHỨC NĂNG CHÉP DATA QUA APP TỆP (FILES) -->
+              <key>UIFileSharingEnabled</key>
+              <true/>
+              <key>LSSupportsOpeningDocumentsInPlace</key>
+              <true/>
+
               <key>UILaunchScreen</key>
               <dict/>
               <key>UISupportedInterfaceOrientations</key>
@@ -418,4 +427,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: HuuHungSAMP-iOS-IPA
+          path: HuuHungSAMP.ipa
           path: HuuHungSAMP.ipa
