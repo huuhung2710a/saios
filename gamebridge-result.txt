@@ -1,0 +1,24 @@
+===== GTAIOSRuntime.cpp =====
+#include "GTAIOSRuntime.h"
+namespace HuuHungSAMP {
+bool GTAIOSRuntime::initialize() {
+    // Binary-specific image-slide/offset resolution belongs here.
+    // The supplied BN_JK study targets GTA iOS 2.2.21, not 2.02.11.
+    initialized_ = false;
+    return false;
+}
+bool GTAIOSRuntime::setPlayerPosition(Vec3) { return initialized_; }
+bool GTAIOSRuntime::setPlayerHeading(float) { return initialized_; }
+bool GTAIOSRuntime::spawnPlayer(int, Vec3, float) { return initialized_; }
+}
+========== GTA2221Offsets.h ==========
+#pragma once
+#include <cstdint>
+
+// GTA San Andreas iOS ARM64 2.2.21 research metadata.
+// Values are image virtual addresses from the supplied BN_JK analysis.
+// Convert to runtime addresses with the dyld image slide.
+namespace HuuHungSAMP::GTA2221 {
+inline constexpr uintptr_t POSITION_HEADING_CANDIDATE = 0x1003e3900;
+inline constexpr const char* VERSION = "2.2.21";
+}
